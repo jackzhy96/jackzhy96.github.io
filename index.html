@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="Jack (Haoying) Zhou">
+    <meta property="og:title" content="Jack Zhou">
+    <meta property="og:url" content="https://JackHaoyingZhou.github.io/">
+    <meta property="og:description" content="Jack (Haoying) Zhou's portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jack (Haoying) Zhou</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#publication">Publications</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Haoying(Jack) Zhou</h1>
+            <h2>Research & Development, Surgical Robotics, AI</h2>
+            <a href="assets/Resume_HaoyingZhou_2025.pdf" class="btn-rounded-white">Download Resume</a>
+            <a href="assets/CV_HaoyingZhou_2025.pdf" class="btn-rounded-white">Download CV</a>
+            <!-- where to update your Resume files-->
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about" class="background">
+        <h2 class="heading">About Me</h2>
+        <div class="container">
+            <div class="row">
+<!--                <div class="col-md-4">-->
+<!--                    <h2 class="heading">About Me</h2>-->
+<!--                </div>-->
+                <div class="col-md-4">
+                    <img src="images/JackHaoyingZhou_profile.jpg" alt="Jack Zhou" id="profilePicture" class="img-full-width img-thumbnail"">
+<!--                    height="200" width="133"-->
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        As a fifth-year PhD candidate in Robotics Engineering at Worcester Polytechnic Institute,
+                        I am passionate about developing innovative solutions for exoskeleton and surgical robot control,
+                        perception, simulation, optimization and automation. I have been working with the da Vinci Research Kit (dVRK),
+                        a first-generation da Vinci surgical system, since 2021. I have contributed multiple hardware
+                        solutions to dVRK community, including but not limit to robot arm encoder replacement, robot arm
+                        brake replacement, viewer console linear actuator custom control enablement and surgical instrument
+                        lubrication & reactivation. I also take care of both hardware and software infrastructure development
+                        and maintenance for dVRK at WPI.
+                        <br>
+                        Currently, I am a visiting graduate scholar at LCSR JHU Robotics, where I conduct research on
+                        suturing tasks automation based on skills learned from demonstrations in simulation. Meanwhile,
+                        I also conduct research on accelerating surgery automation using sim-to-real method via creating
+                        more realistic simulation environments. In addition, I contribute to the software infrastructure
+                        construction of the AccelNet Surgical Robotics Challenge, which is an online challenge in simulation
+                        with following physical implementation aims to advance the state-of-the-art in suturing automation
+                        using dVRK. Additionally, I design frameworks for customized controller teleoperation, robot motion
+                        recording and replaying using ROS. Moreover, I also build realistic models for 6D pose estimation
+                        using deep learning and Pytorch.
+                        <br>
+                        Previously, I was a robotic intern at Philips, where I designed a synthetic motion simulator with
+                        GUI in Python using 3D DICOM data as the only input, and improved the image refreshing rate by over 30 times.
+                        <br>
+                        I have a master's degree in Mechanical Engineering from Boston University, and a bachelor's degree
+                        in Mechanical Engineering from Beijing Institute of Technology with senior-year exchange experience
+                        to University of California, Berkeley. I have also completed multiple online courses and certifications
+                        in machine learning and IRB trainings. I am proficient in Python, C++, MATLAB and familiar with both Linux
+                        and Windows development environments. I also have experience with ROS, Blender, VTK, ITK, VMTK, and Magic
+                        Leap 1& Xbox controller integration with robots. I am fluent in English and Chinese, and have strong
+                        communication and collaboration skills.
+                        <br>
+                        I am actively seeking for 2025 full-time position or internships in robotics, simulation, or AI-related fields.
+                    </p>
+<!--                    <p style="color:red;"> To be updated </p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="June 2023 – Present">
+                <h3>Laboratory for Computational Sensing and Robotics, Johns Hopkins University </h3>
+                <h4>Visiting Graduate Scholar</h4>
+                <p>
+                    - Core Developer of the
+                    <a href="https://surgical-robotics-ai.github.io/surgical-robotics-challenge-2023/challenge-2023.html">
+                        AccelNet Surgical Robotics Challenge
+                    </a>.
+                    <br>
+                    - Conduct research on simulation environment construction and the applications of various AI/ML algorithms for the dVRK
+                    <br>
+                    - Conduct research on Augmented Reality integration with the dVRK, such as recovery from teleoperation loss and AR-based measurement tool
+                    <br>
+                    - Develop infrastructures to be shared with the dVRK community.
+                    <br>
+                    - Led the dVRK workshop demonstration at 2024 ISMR.
+                    <br>
+                    - Integrate the dVRK with multiple platform, including Magic Leap 1 and NVIDIA Clara AGX.
+                    <br>
+                </p>
+
+            </div>
+
+            <div data-date="May 2022 – August 2022">
+                <h3>Philips Research North America</h3>
+                <h4>Image-Guided Therapy Robotics Intern</h4>
+                <p>
+                    - Design a synthetic motion simulator with GUI in Python using 3D DICOM data as the only input.
+                    <br>
+                    - Implement phantom feature extraction, volume rendering and 3D volume visualization with VTK, ITK and VMTK.
+                    <br>
+                    - Construct data auto-generator based on the synthetic motion simulator with flexible configuration inputs.
+                    <br>
+                    - Integrate the simulator with Xbox controller as motion control input.
+                    <br>
+                    - Improve the refreshing rate of the simulator from 0.15 fps to 5 fps.
+                    <br>
+                    - Implement analytical analysis on the generated data.
+                </p>
+            </div>
+
+            <div data-date="May 2021 – Present">
+                <h3>Automation and Interventional Medicine Robotics Research Laboratory, Worcester Polytechnic Institute</h3>
+                <h4>Research Assistant</h4>
+                <p>
+                    - Manage and lead all da Vinci Research Kit(dVRK) related projects, including suturing automation,
+                    dynamic identification, customized controller teleoperation, kinematic & dynamic controller design
+                    and customized tool integration.
+                    <br>
+                    - Reactivate a full da Vinci surgical system with dVRK software framework; actively repair, maintenance
+                    and improve both hardware and software infrastructures.
+                    <br>
+                    - Integrate probe for photoacoustic scanning on dVRK PSM (patient side manipulator) with auto-scanning enabled.
+                    <br>
+                    - Lead and manage user study for collecting human motion patterns on the physical dVRK.
+                    <br>
+                    - Implement suturing subtask automation with learning from demonstrations in simulation.
+                </p>
+            </div>
+
+            <div data-date="Sep 2020 – May 2021">
+                <h3>Worcester Polytechnic Institute</h3>
+                <h4>Teaching Assistant</h4>
+                <p>
+                    - TA for Control Engineering, Introduction to Dynamic Systems, Design of Machine Elements
+                    <br>
+                    - Design and Construct lab documents and GitHub repository for Control Engineering course
+                    <br>
+                    - Lead conference lectures for undergraduate courses
+                    <br>
+                    - Hold TA session to answer students' questions about homework assignments, labs and lectures
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education" class="background">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>Worcester Polytechnic Institute</h3>
+            <span class="education-date">Sep 2020 - Present</span>
+            <h4>Doctor of Philosophy in Robotics Engineering</h4>
+            <h4>GPA: 3.95/4.00</h4>
+            <ul>
+                <li>
+                    WPI AIM Lab
+                </li>
+                <li>
+                    da Vinci Research Kit(dVRK) and da Vinci Surgical System(dVSS)
+                </li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Boston University</h3>
+            <span class="education-date">Sep 2018 - May 2020</span>
+            <h4>Master of Science in Mechanical Engineering</h4>
+            <h4>GPA: 3.78/4.00</h4>
+            <ul>
+                <li>
+                    BU Robotics Lab
+                </li>
+                <li>
+                    Master's thesis: <a href="https://open.bu.edu/handle/2144/40948">
+                        Imitation Learning with Dynamic Movement Primitives
+                    </a>.
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="education-block">
+            <h3>University of California, Berkeley</h3>
+            <span class="education-date">Sep 2017 - May 2018</span>
+            <h4>Bachelor of Science in Mechanical Engineering</h4>
+            <h4>GPA: 3.95/4.00</h4>
+            <ul>
+                <li>
+                    Senior-year Exchange Program
+                </li>
+                <li>
+                    Berkeley Autonomous Racing Car(BARC) Controller Design
+                </li>
+            </ul>
+        </div>
+
+        <div class="education-block">
+            <h3>Beijing Institute of Technology</h3>
+            <span class="education-date">Sep 2014 - May 2018</span>
+            <h4>Bachelor of Science in Mechanical Engineering</h4>
+            <h4>Ranked: 10/33</h4>
+            <p>
+                Senior year exchanged to University of California, Berkeley
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Research Projects</h2>
+        <div class="container">
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/simulation_3dmed.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Suturing Automation based on Imitation Learning</h3>
+                    <h4>WPI AIM Lab & JHU LCSR</h4>
+<!--                    , Sep 2022 - Present-->
+                    <p>
+                        - Construct user study for collecting human demonstration in both simulation and physical dVRK
+                        <br>
+                        - Implement learning from demonstrations with dynamic movement primitives(DMP) for suturing automation
+                        <br>
+                        - Achieve high generality for suturing automation, on the order of 91.5%, from experienced human subjects' demonstrations
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/suture_needle_est_example_old.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Suture Needle Pose Estimation in Simulation</h3>
+                    <h4>WPI AIM Lab & JHU LCSR</h4>
+<!--                    , Sep 2022 - Mar 2023-->
+                    <p>
+                        - Implement suturing needle 6D pose estimation algorithm using keypoint-based method and deep learning(fast RCNN)
+                        <br>
+                        - Achieve estimated position errors less than 1mm and orientation errors around 2 degrees
+                        <br>
+                        - Win second prize on 2021 AccelNet Surgical Robotics Challenge
+                        <br>
+                        - Generate a synthetic segmented 6D pose estimation dataset in simulation and train deep learning models on the dataset
+                        <br>
+                        - Related publication: <a href="#publication">Publication 3</a>
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/point_cloud_examples.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Point Cloud Completion</h3>
+                    <h4>WPI VISLab</h4>
+<!--                    , May 2023 - Nov 2023-->
+                    <p>
+                        - Purpose a novel chamfer distance loss function for point cloud completion task using Landau distribution
+                        <br>
+                        - Achieve  new state-of-the-art results on some benchmark datasets
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/PA_scan_examples.jpg" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>dVRK Customized Photoacoustic Scanning Instrument Integration and Automation</h3>
+                    <h4>WPI AIM Lab & WPI FUSION Lab</h4>
+<!--                    , Feb 2022 - May 2023-->
+                    <p>
+                        - Integrate a customized surgical instrument using ultrasound probe with dVRK for photoacoustic scanning
+                        <br>
+                        - Utilize April Tag and computer vision technique to find the transformation between the probe and the endoscope
+                        <br>
+                        - Construct kinematic model for the customized instrument
+                        <br>
+                        - Build a ROS network to enable scanning automation
+                        <br>
+                        - Related publication: <a href="#publication">Publication 1 & 2</a>
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/sEMG_example.jpg" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>dVRK PSM Teleoperation using sEMG Proportional Control</h3>
+                    <h4>WPI AIM Lab</h4>
+<!--                    , Dec 2021 - Mar 2023-->
+                    <p>
+                        - Utilize sEMG bio-signal differences on muscles to control the surgical instrument grippers open or close
+                        <br>
+                        - Leverage the trackers of a motion capture system to implement dVRK PSM teleoperation for human subjects
+                        <br>
+                        - Related publication: <a href="#publication">Publication 4</a>
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/exoskeletion_example.png" width="300" height="350"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Lower Limb Exoskeleton Automation based on Learning from Demonstration</h3>
+                    <h4>WPI AIM Lab</h4>
+<!--                    , Sep 2020 - Mar 2021-->
+                    <p>
+                        - Construct and optimize an algorithm on imitation learning with Task-Parameterized Gaussian Mixture Model (TPGMM) applied to human walking strategies for lower-limb exoskeleton
+                        <br>
+                        - Collect data using motion capture technique with real-life human motion
+                        <br>
+                        - Leverage AMBF for simulating the exoskeleton and human lower limb movements
+                        <br>
+                        - Design and implement iLQR controller to above algorithm and managed to find the optimal weight matrix
+                        <br>
+                        - Related publication: <a href="#publication">Publication 5</a>
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/bu_IL_example.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Reach-to-Grasp Imitation Learning</h3>
+                    <h4>BU Robotics Lab</h4>
+<!--                    , Nov 2018 - May 2020-->
+                    <p>
+                        -Implement generalized research-to-grasp automation using imitation learning with dynamic movement primitives(DMP) in Python
+                        <br>
+                        -Leverage VREP for simulating robot arm motions
+                        <br>
+                        -Collect human demonstration data using joystick controller
+                        <br>
+                        -Accomplish 6D pose imitation learning for the end-effector of Baxter Robot
+                        <br>
+                        -Write and defend my Master’s Thesis based the research project
+                    </p>
+                    <a href="https://open.bu.edu/handle/2144/40948">View Project</a>
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+        </div>
+
+        <h2 class="heading">Technical Projects</h2>
+        <div class="container">
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/dVSS.jpeg" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Physical dVRK Reactivation</h3>
+                    <h4>Worcester Polytechnic Institute</h4>
+<!--                    , Apr 2021 - Feb 2022-->
+                    <p>
+                        -Deploy both hardware and software infrastructures of <a href="https://research.intusurg.com/index.php/Main_Page">dVRK</a>
+                        <br>
+                        -Resolve multiple mechanical failures for components of the da Vinci Surgical System, including broken joint encoders and joint brakes
+                        <br>
+                        -Upgrade the stereo viewer of the da Vinci Surgical System
+                        <br>
+                        -Implement full dVRK system teleoperation using MTM and dVRK control boxes
+                        <br>
+                        -Enable Geomagic Touch device and Razer Hydra controller as alternative teleoperation options for dVRK
+                        <br>
+                        -Implement dynamic identification on dVRK PSM
+                    </p>
+<!--                        <a href="#">View Project</a>-->
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/tool_clean_sol.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Surgical Instrument Lubrication</h3>
+                    <h4>Worcester Polytechnic Institute</h4>
+<!--                    , Oct 2021 - Feb 2022-->
+                    <p>
+                        -Develop a practical method to lubricate the surgical instruments of the first generation da Vinci Surgical system
+                        <br>
+                        -Tighten the internal cables of the instruments to enable solid grasping solutions
+                        <br>
+                        -Decrease the mechanical noise due to the instruments by two or three orders of magnitude
+                    </p>
+<!--                    <a href="#">View Project</a>-->
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+        </div>
+
+        <h2 class="heading">Selected Course Projects</h2>
+        <div class="container">
+<!--            <div class="project shadow-large">-->
+<!--                <div class="project-image">-->
+<!--                    <img src="images/barc_example.png" width="300" height="300"/>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; End .project-image &ndash;&gt;-->
+<!--                <div class="project-info">-->
+<!--                    <h3>Autonomous Race Car Modelling and Control</h3>-->
+<!--                    <h4>University of California, Berkeley</h4>-->
+<!--                    <p>-->
+<!--                        test-->
+<!--                    </p>-->
+<!--                    <a href="#">View Project</a>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; End .project-info &ndash;&gt;-->
+<!--            </div>-->
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/UAV_control_example.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Adaptive Robustness Control Design for UAV with ROS Gazebo</h3>
+                    <h4>Worcester Polytechnic Institute</h4>
+                    <p>
+                        -Construct dynamic model for Crazyflie 2.0 drone and simulate the drone in ROS Gazebo
+                        <br>
+                        -Implement robustness control algorithm for UAV hovering
+                        <br>
+                        -Design adaptive robustness controller for UAV following specific trajectories
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/barc_example.png" width="300" height="350"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Autonomous Race Car Modelling and Control</h3>
+                    <h4>University of California, Berkeley</h4>
+                    <p>
+                        -Construct the vehicle model and its tire model under different road conditions for predicting the vehicle movements
+                        <br>
+                        -Utilize MATLAB, Simulink, and ROS Turtlesim to simulate BARC movements under different conditions
+                        <br>
+                        -Remotely connect to the Linux-based vehicle operating system via VNC Viewer and SSH
+                        <br>
+                        -Implement lane keeping, drift parking, and adaptive cruise control on BARC with linear controllers such as PID and LQR
+                        <br>
+                        -Analyze data in MATLAB, including camera calibration and result data analysis utilizing methods such as FFT interpolation and least square method to obtain and discern relationships between variables
+                    </p>
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+
+            <div class="project shadow-large">
+                <div class="project-image">
+                    <img src="images/tri_bot_example.png" width="300" height="300"/>
+                </div>
+                <!-- End .project-image -->
+                <div class="project-info">
+                    <h3>Tri-Bot Design and Manufacturing</h3>
+                    <h4>University of California, Berkeley</h4>
+                    <p>
+                        -Utilize MyRio as the microprocessor and program in LabVIEW for target detection and tracking algorithm in the upper camera system
+                        <br>
+                        -Leverage Arduino board as the processor and code in Arduino for lane keeping algorithm in the lower moving system
+                        <br>
+                        -Champion full design and manufacturing of product from conception to delivery
+                    </p>
+                    <a href="https://sites.google.com/berkeley.edu/tri-bot-com/home">View Project</a>
+                </div>
+                <!-- End .project-info -->
+            </div>
+            <!-- End .project -->
+        </div>
+
+        <h2 class="heading">Other Selected Projects</h2>
+        <div class="optional-section-block">
+            <ul>
+                <li>
+                    Laboratory Animal Surgery, Worcester Polytechnic Institute
+                </li>
+                <li>
+                    FaceSwap and 3D Reconstruction(NeRF) Implementation, Worcester Polytechnic Institute
+                </li>
+                <li>
+                    Visual Inertial Odometry with Multi-Scale Constraint Kalman Filter, Worcester Polytechnic Institute
+                </li>
+                <li>
+                    Hand Gesture Recognition for Numbers, Boston University
+                </li>
+                <li>
+                    Bubble Recognition using Matlab, University of California, Berkeley
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="publication" class="optional-section background">
+        <h2 class="heading">Academic Publications</h2>
+        <div class="optional-section-block">
+            <ol>
+                <li>
+                    Gao, Shang, Yang Wang, Xihan Ma, <strong>Haoying Zhou</strong>, Yiwei Jiang, Kehan Yang, Liang Lu et al.
+                    <a href="https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-9-4914&id=536903">"Intraoperative laparoscopic
+                        photoacoustic image guidance system in the da Vinci surgical system."</a>
+                    <em>Biomedical optics express</em> 14, no. 9 (2023): 4914-4928.
+                </li>
+                <li>
+                    Gao, Shang, Yang Wang, <strong>Haoying Zhou</strong>, Kehan Yang, Yiwei Jiang, Liang Lu, Shiyue Wang et al.
+                    <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12466/1246609/Laparoscopic-photoacoustic-imaging-system-integrated-with-the-da-Vinci-surgical/10.1117/12.2653967.short?SSO=1">
+                        "Laparoscopic photoacoustic imaging system integrated with the da Vinci surgical system."</a>
+                    In <em>Medical Imaging 2023: Image-Guided Procedures, Robotic Interventions, and Modeling</em>, vol. 12466, pp. 62-70. SPIE, 2023.
+                </li>
+                <li>
+                    Jiang, Yiwei, <strong>Haoying Zhou</strong>, and Gregory S. Fischer.
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10130199">"Markerless Suture Needle Tracking From A Robotic Endoscope Based On Deep Learning." </a>
+                    In <em>2023 International Symposium on Medical Robotics (ISMR)</em>, pp. 1-7. IEEE, 2023.
+                </li>
+                <li>
+                    Yang, Kehan, Tess B. Meier, <strong>Haoying Zhou</strong>, Gregory S. Fischer, and Christopher J. Nycz.
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9871664">"A sEMG Proportional Control for the Gripper of Patient Side Manipulator in da Vinci Surgical System."</a>
+                    In <em>2022 44th Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC)</em>, pp. 4843-4848. IEEE, 2022.
+                </li>
+                <li>
+                    Goldfarb, Nathaniel, <strong>Haoying Zhou</strong>, Charles Bales, and Gregory S. Fischer.
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9630810">"Control of a lower limb exoskeleton
+                        using Learning from Demonstration and an iterative Linear Quadratic Regulator Controller: A simulation study."</a>
+                    In <em>2021 43rd Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC)</em>, pp. 4687-4693. IEEE, 2021.
+                </li>
+            </ol>
+        </div>
+        <p>
+            ** Some publications submitted in 2023 are still under review. The list of publications will be updated when the decisions are made.
+        </p>
+    </div>
+
+
+    <!-- End #projects -->
+
+     <!-- Different media viewers -->
+
+<!--    &lt;!&ndash; image viewer &ndash;&gt;-->
+<!--    <div class="overlay-viewer" id="image-viewer">-->
+<!--        <span class="close">&times;</span>-->
+<!--        <img class="modal-content" id="full-image">-->
+<!--    </div>-->
+<!--    &lt;!&ndash; End of image viewer &ndash;&gt;-->
+
+<!--    &lt;!&ndash; video viewer &ndash;&gt;-->
+<!--    <div class="overlay-viewer" id="video-viewer">-->
+<!--        <span class="close">&times;</span>-->
+<!--        <video id="full-video" class="modal-content" controls autoplay loop src="#">-->
+<!--            Your browser does not support HTML5 video element.-->
+<!--        </video>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; End of video viewer &ndash;&gt;-->
+
+<!--    &lt;!&ndash; glb viewer &ndash;&gt;-->
+<!--    <div class="overlay-viewer" id="glb-viewer">-->
+<!--        <span class="close">&times;</span>-->
+<!--        <model-viewer id="full-glb" class="glb-content" src="#" autoplay ar shadow-intensity="1" camera-controls-->
+<!--            auto-rotate></model-viewer>-->
+<!--    </div>-->
+    <!-- End of glb viewer -->
+
+    <div id="skills" class="background-alt">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>Robotics</li>
+            <li>Surgical Robotics</li>
+            <li>Research and Development(R&D)</li>
+            <li>dVRK(da Vinci Research Kit)</li>
+            <li>AMBF(Asynchronous Multi-Body Framework)</li>
+            <li>Python</li>
+            <li>Matlab</li>
+            <li>Pytorch</li>
+            <li>TensorFlow</li>
+            <li>PyQt</li>
+            <li>VTK</li>
+            <li>ITK</li>
+            <li>VMTK</li>
+            <li>Slicer</li>
+            <li>Object-Oriented Programming(OOP)</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>Robot Operation System(ROS)</li>
+            <li>Linux</li>
+            <li>C++</li>
+            <li>C</li>
+            <li>VREP</li>
+            <li>Simulink</li>
+            <li>Arduino</li>
+            <li>LabVIEW</li>
+            <li>SolidWorks</li>
+            <li>Leadership</li>
+            <li>Latex</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Contact Information</h2>
+        <div id="contact-form">
+<!--            <form method="POST" action="https://formspree.io/email@email.com">-->
+<!--                <input type="hidden" name="_subject" value="Contact request from personal website" />-->
+<!--                <input type="email" name="_replyto" placeholder="Your email" required>-->
+<!--                <textarea name="message" placeholder="Your message" required></textarea>-->
+<!--                <button type="submit">Send</button>-->
+<!--            </form>-->
+            <article>
+                <i class="fa fa-envelope fa-fw"></i>
+                <span>hzhou6@wpi.edu / zhyjack0718@gmail.com</span>
+            </article>
+            <article>
+                <i class="fa fa-phone fa-fw"></i>
+                <span>(774)-823-0984</span>
+            </article>
+            <article>
+                <i class="fa fa-home fa-fw"></i>
+                <span>Worcester, Massachusetts, USA</span>
+            </article>
+<!--            <article>-->
+<!--                <i class="fa fa-weixin fa-fw"></i>-->
+<!--                <span>JackZHY718</span>-->
+<!--            </article>-->
+<!--            <article>-->
+<!--                <i class="fa fa-qq fa-fw"></i>-->
+<!--                <span>2898199740</span>-->
+<!--            </article>-->
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; <span id="current-year">2023</span> Haoying(Jack) Zhou
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/JackHaoyingZhou" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+<!--                        <li>-->
+<!--                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>-->
+<!--                        </li>-->
+                        <li>
+                            <a href="https://www.linkedin.com/in/haoyingzhoujack/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+<!--                        <li>-->
+<!--                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+<!--                        </li>-->
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=HeS1lTAAAAAJ&hl=en" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.researchgate.net/profile/Haoying_Zhou4" target="_blank"><i class="fa fa-institution" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
