@@ -1,17 +1,19 @@
-github_users:
-  - jackzhy96
+github_users: -jackzhy96;
 
-repo_description_lines_max: 1
+repo_description_lines_max: 1;
 
-github_repos:
-  - surgical-robotics-ai/surgical_robotics_challenge
-  - WPI-AIM/ambf
-  - jackzhy96/dVRK_starter_tutorial
-  - jackzhy96/holohub
-  - jackzhy96/Slicer
-  - jhu-dvrk/instrument-cad
-  - jackzhy96/ismr2024_demo_needle_grasping
-  - jackzhy96/cv_marker_generator
-  - jackzhy96/DL_numpy_implementations
-  - jackzhy96/ubuntu_chrome_remote_desktop
-
+github_repos: -surgical -
+  robotics -
+  ai / surgical_robotics_challenge -
+  WPI -
+  AIM / ambf -
+  jackzhy96 / dVRK_starter_tutorial -
+  jackzhy96 / holohub -
+  jackzhy96 / Slicer -
+  jhu -
+  dvrk / instrument -
+  cad -
+  jackzhy96 / ismr2024_demo_needle_grasping -
+  jackzhy96 / cv_marker_generator -
+  jackzhy96 / DL_numpy_implementations -
+  jackzhy96 / ubuntu_chrome_remote_desktop;
