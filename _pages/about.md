@@ -2,8 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://smarts.lcsr.jhu.edu/'>JHU SMARTS Lab</a> and <a href='https://www.wpi.edu/'>WPI</a>. 
-  Baltimore, Maryland, USA. Contacts. Motto. Etc.
+subtitle: <a href='https://smarts.lcsr.jhu.edu/'>JHU SMARTS Lab</a> and <a href='https://www.wpi.edu/'>WPI</a>. Baltimore, Maryland, USA. Contacts. Motto. Etc.
 
 profile:
   align: right

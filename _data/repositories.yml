@@ -1,14 +1,17 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - jackzhy96
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - surgical-robotics-ai/surgical_robotics_challenge
+  - WPI-AIM/ambf
+  - jackzhy96/dVRK_starter_tutorial
+  - jackzhy96/holohub
+  - jackzhy96/Slicer
+  - jhu-dvrk/instrument-cad
+  - jackzhy96/ismr2024_demo_needle_grasping
+  - jackzhy96/cv_marker_generator
+  - jackzhy96/DL_numpy_implementations
+  - jackzhy96/ubuntu_chrome_remote_desktop
+
