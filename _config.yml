@@ -34,7 +34,7 @@ author:
   employer         : "Johns Hopkins University"
   employer2        : "Worcester Polytechnic Institute"  # Second affiliation (remove or leave empty to hide)
   uri              : # URL
-  email            : "hzhou6@wpi.edu"
+  email            : "haoyingzhoujack@gmail.com"
 
   # Academic websites
   academia         : # URL
@@ -42,7 +42,7 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=rVeVNB0AAAAJ" # Update with your Google Scholar profile URL
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : # Update with your ORCID URL if available
+  orcid            : "https://orcid.org/my-orcid?orcid=0000-0001-6976-4015"# Update with your ORCID URL if available
   semantic         : # URL
   ssrn             : # URL
   pubmed           : # URL

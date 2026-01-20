@@ -9,11 +9,11 @@ redirect_from:
 
 ## Summary
 
+**Robotics Systems & Simulation Infrastructure Engineer** specializing in **asset pipelines (real2sim)** and **multi-modal synchronized data collection & analysis**, with a **controls/dynamics backbone**. Also, a **software engineer** with a background in **computer vision** and **machine learning**.
+
 Final-year PhD candidate (Expected to graduate in May 2026) in Robotics Engineering at Worcester Polytechnic Institute, specializing in surgical robotics (dVRK, the da Vinci Research Kit). I have a strong background in long-horizon R&D: from robot infrastructure development, dynamic model identification and system integration to simulation, multi-modal learning & analysis and AI-driven perception & automation.
 
-I am a **Robotics Systems & Simulation Infrastructure Engineer** specializing in **asset pipelines (CAD to robot/scene)** and **multi-modal synchronized data collection**, with a controls/dynamics backbone. I am also a software engineer with a background in computer vision and machine learning. I can vibe code and I'm particularly proficient in Python and MATLAB.
-
-I am a practical robotic problem solver for both hardware and software, open to relocation inside the U.S., and targeting Full-Time positions starting May 2026.
+I am a **practical robotic problem solver for both hardware and software**, open to relocation inside the U.S., and targeting Full-Time positions starting **May/June 2026**.
 
 ---
 
@@ -27,27 +27,7 @@ I am a practical robotic problem solver for both hardware and software, open to 
     <span class="location">Baltimore, MD</span>
   </div>
   <div class="highlight-content">
-    Visiting Graduate Scholar at <a href="https://lcsr.jhu.edu/" target="_blank">Johns Hopkins University</a>, working on surgical robotics simulation and infrastructure with <a href="https://engineering.jhu.edu/faculty/peter-kazanzides/" target="_blank">Prof. Peter Kazanzides</a>.
-  </div>
-</div>
-
-<div class="highlight-item">
-  <div class="highlight-date">
-    <span class="date">2021 - Present</span>
-    <span class="location">Worcester, MA</span>
-  </div>
-  <div class="highlight-content">
-    Research Technician at <a href="https://www.wpi.edu/academics/departments/robotics-engineering" target="_blank">Worcester Polytechnic Institute</a>, reactivating da Vinci Surgical Systems and developing dVRK infrastructure solutions.
-  </div>
-</div>
-
-<div class="highlight-item">
-  <div class="highlight-date">
-    <span class="date">2022 Summer</span>
-    <span class="location">Cambridge, MA</span>
-  </div>
-  <div class="highlight-content">
-    Image-Guided Therapy Robotics Intern at <a href="https://www.philips.com/a-w/research/home" target="_blank">Philips Research North America</a>, developing robot motion simulators with 30x improved performance.
+    Visiting Graduate Scholar in <a href="https://lcsr.jhu.edu/" target="_blank">Laboratory for Computational Sensing and Robotics (LCSR)</a> at Johns Hopkin University, working on <a href="https://www.intuitive-foundation.org/dvrk/" target="_blank">the da Vinci Research Kit (dVRK)</a> infrastructure, simultion, multi-modal data collection and AI solutions with Prof. <a href="https://engineering.jhu.edu/faculty/peter-kazanzides/" target="_blank">Peter Kazanzides</a>.
   </div>
 </div>
 
@@ -57,7 +37,27 @@ I am a practical robotic problem solver for both hardware and software, open to 
     <span class="location">Worcester, MA</span>
   </div>
   <div class="highlight-content">
-    Ph.D. in Robotics Engineering at <a href="https://www.wpi.edu/" target="_blank">WPI</a> with <a href="https://users.wpi.edu/~gfischer/" target="_blank">Prof. Gregory S. Fischer</a>. Research focus: surgical robotics, dynamic identification, simulation, and multi-modal learning.
+    Ph.D. in Robotics Engineering at <a href="https://www.wpi.edu/" target="_blank">Worcester Polytechnic Institute</a> with Prof. <a href="https://www.wpi.edu/people/faculty/gfischer" target="_blank">Gregory S. Fischer</a>. Research focus: surgical robotics, dynamic identification, robot infrastructure development, simulation, multi-modal data collection & analysis, AI for advanced perception and automation.
+  </div>
+</div>
+
+<div class="highlight-item">
+  <div class="highlight-date">
+    <span class="date">2022 Summer</span>
+    <span class="location">Cambridge, MA</span>
+  </div>
+  <div class="highlight-content">
+    Image-Guided Therapy Robotics Intern at <a href="https://www.philips.com/a-w/research/home" target="_blank">Philips Research North America</a>.
+  </div>
+</div>
+
+<div class="highlight-item">
+  <div class="highlight-date">
+    <span class="date">2020 - 2023</span>
+    <span class="location">Worcester, MA</span>
+  </div>
+  <div class="highlight-content">
+    Support the dVRK systems in <a href="https://www.wpi.edu/research/core-research-facilities/practicepoint" target="_blank">PracticePoint</a> at WPI, reactivating the dVRK, developing the dVRK infrastructure solutions and conducting & leading dVRK-related research projects.
   </div>
 </div>
 
@@ -67,7 +67,7 @@ I am a practical robotic problem solver for both hardware and software, open to 
     <span class="location">Boston, MA</span>
   </div>
   <div class="highlight-content">
-    M.S. in Mechanical Engineering at <a href="https://www.bu.edu/" target="_blank">Boston University</a>. GPA: 3.78/4.0.
+    M.S. in Mechanical Engineering at <a href="https://www.bu.edu/" target="_blank">Boston University</a>. Advisor: Prof. <a href="https://www.bu.edu/eng/profile/calin-belta-ph-d-me-se/" target="_blank">Calin Belta</a> and my <a href="https://www.proquest.com/openview/2d6dedf90421cb7378dd14d54d2a5220" target="_blank">Master's Thesis</a>: Imitation Learning with Dynamic Movement Primitives.
   </div>
 </div>
 
@@ -77,17 +77,7 @@ I am a practical robotic problem solver for both hardware and software, open to 
     <span class="location">Berkeley, CA</span>
   </div>
   <div class="highlight-content">
-    Senior-year visiting student at <a href="https://www.berkeley.edu/" target="_blank">UC Berkeley</a>, Mechanical Engineering. GPA: 3.95/4.0.
-  </div>
-</div>
-
-<div class="highlight-item">
-  <div class="highlight-date">
-    <span class="date">2014 - 2018</span>
-    <span class="location">Beijing, China</span>
-  </div>
-  <div class="highlight-content">
-    B.S. in Mechanical Engineering at <a href="https://english.bit.edu.cn/" target="_blank">Beijing Institute of Technology</a>.
+    Senior-year exchange undergraduate student at <a href="https://www.berkeley.edu/" target="_blank">UC Berkeley</a>, Mechanical Engineering.
   </div>
 </div>
 
@@ -101,29 +91,24 @@ I am a practical robotic problem solver for both hardware and software, open to 
 
 <ul class="news-list">
   <li class="news-item">
-    <span class="news-date">2026 Jan:</span>
-    <a href="/publication/2026-surgsync">SurgSync</a> paper submitted to ICRA 2026!
-  </li>
-  <li class="news-item">
     <span class="news-date">2025 Oct:</span>
-    Our <a href="/publication/2025-isaac-sim-suturing">Isaac Sim Suturing</a> work has been accepted to ICRA 2025!
-    <span class="badge badge-highlight">ICRA 2025</span>
+    Our <a href="/publication/2025-isaac-sim-suturing">Isaac Sim Suturing</a> work has been accepted to ISMR 2025!
   </li>
   <li class="news-item">
-    <span class="news-date">2025 Sept:</span>
-    <a href="/publication/2025-surgpose">SurgPose</a> paper has been accepted to IEEE RAL!
-  </li>
-  <li class="news-item">
-    <span class="news-date">2025 May:</span>
+    <span class="news-date">2025 Jun:</span>
     Successfully defended my PhD proposal!
   </li>
   <li class="news-item">
-    <span class="news-date">2024 Oct:</span>
-    Led live demonstrations at the International Symposium on Medical Robotics (ISMR) 2024
+    <span class="news-date">2025 Mar:</span>
+    Our <a href="https://surgpose.github.io/">SurgPose</a> paper has been accepted to ICRA 2025! Also see it on <a href="https://www.cs.jhu.edu/news/operation-glow-up-how-tiny-dots-could-teach-robots-surgery/">JHU CS News</a>.
   </li>
   <li class="news-item">
-    <span class="news-date">2024 Apr:</span>
-    <a href="/publication/2024-suturing-automation">Suturing automation</a> paper accepted to ISMR 2024!
+    <span class="news-date">2024 Dec:</span>
+    Our <a href="/publication/2024-surgicai">SurgicAI</a> paper accepted to 2024 NeurIPS Datasets and Benchmarks Track! Also see it on <a href="https://www.cs.jhu.edu/news/ais-stitch-in-time/">JHU CS News</a>.
+  </li>
+  <li class="news-item">
+    <span class="news-date">2024 Jun:</span>
+    Led live demonstrations at the 2024 International Symposium on Medical Robotics (ISMR) <a href="https://surgical-robotics-ai.github.io/ismr-2024-workshop.html">Workshop</a>.
   </li>
   <li class="news-item">
     <span class="news-date">2023 June:</span>
@@ -142,10 +127,12 @@ I am a practical robotic problem solver for both hardware and software, open to 
 <div class="skills-category">
   <h3><i class="fas fa-code"></i> Programming Languages</h3>
   <div class="skills-tags">
+    <span class="skill-tag">Vibe Coding</span>
     <span class="skill-tag" data-level="expert"><i class="fab fa-python"></i>Python</span>
     <span class="skill-tag" data-level="expert">MATLAB</span>
+    <span class="skill-tag" data-level="expert">Linux</span>
+    <span class="skill-tag" data-level="expert">ROS/ROS 2</span>
     <span class="skill-tag">C/C++</span>
-    <span class="skill-tag">ROS/ROS 2</span>
     <span class="skill-tag">Bash/Shell</span>
   </div>
 </div>
@@ -153,9 +140,9 @@ I am a practical robotic problem solver for both hardware and software, open to 
 <div class="skills-category">
   <h3><i class="fas fa-robot"></i> Simulation & Visualization</h3>
   <div class="skills-tags">
-    <span class="skill-tag" data-level="expert">NVIDIA Isaac Sim</span>
     <span class="skill-tag" data-level="expert">AMBF (Bullet Physics)</span>
-    <span class="skill-tag">Blender 3D</span>
+    <span class="skill-tag">Blender</span>
+    <span class="skill-tag">NVIDIA Isaac Sim</span>
     <span class="skill-tag">Gazebo</span>
     <span class="skill-tag">V-REP</span>
     <span class="skill-tag">Rviz</span>
@@ -169,11 +156,11 @@ I am a practical robotic problem solver for both hardware and software, open to 
 <div class="skills-category">
   <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
   <div class="skills-tags">
-    <span class="skill-tag">PyTorch</span>
-    <span class="skill-tag">TensorFlow</span>
+    <span class="skill-tag" data-level="expert">PyTorch</span>
     <span class="skill-tag">Computer Vision</span>
     <span class="skill-tag">Deep Learning</span>
     <span class="skill-tag">Imitation Learning</span>
+    <span class="skill-tag">TensorFlow</span>
   </div>
 </div>
 
@@ -181,11 +168,10 @@ I am a practical robotic problem solver for both hardware and software, open to 
   <h3><i class="fas fa-server"></i> Platform & Infrastructure</h3>
   <div class="skills-tags">
     <span class="skill-tag" data-level="expert">dVRK Classic/Si</span>
-    <span class="skill-tag">Linux</span>
+    <span class="skill-tag" data-level="expert">Linux</span>
     <span class="skill-tag">Git</span>
     <span class="skill-tag">Docker/NGC</span>
     <span class="skill-tag">NVIDIA Clara AGX</span>
-    <span class="skill-tag">Magic Leap 1</span>
     <span class="skill-tag">PyQt</span>
   </div>
 </div>
@@ -193,11 +179,11 @@ I am a practical robotic problem solver for both hardware and software, open to 
 <div class="skills-category">
   <h3><i class="fas fa-wrench"></i> Design & Manufacturing</h3>
   <div class="skills-tags">
-    <span class="skill-tag">SolidWorks</span>
-    <span class="skill-tag">AutoCAD</span>
+    <span class="skill-tag" data-level="expert">Rapid Prototyping</span>
     <span class="skill-tag">3D Printing</span>
     <span class="skill-tag">Machine Shop</span>
-    <span class="skill-tag">Rapid Prototyping</span>
+    <span class="skill-tag">SolidWorks</span>
+    <span class="skill-tag">AutoCAD</span>
   </div>
 </div>
 
@@ -240,4 +226,4 @@ I am a practical robotic problem solver for both hardware and software, open to 
 
 ## Contact
 
-Feel free to reach out to me at [hzhou6@wpi.edu](mailto:hzhou6@wpi.edu) or connect with me on [LinkedIn](https://linkedin.com/in/haoyingzhoujack).
+Feel free to reach out to me at [haoyingzhoujack@gmail.com](mailto:haoyingzhoujack@gmail.com) or connect with me on [LinkedIn](https://linkedin.com/in/haoyingzhoujack).
