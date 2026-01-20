@@ -131,27 +131,34 @@ I am a **practical robotic problem solver for both hardware and software**, open
 <div class="skills-category">
   <h3><i class="fas fa-code"></i> Programming Languages</h3>
   <div class="skills-tags">
-    <span class="skill-tag">Vibe Coding</span>
     <span class="skill-tag" data-level="expert"><i class="fab fa-python"></i>Python</span>
     <span class="skill-tag" data-level="expert">MATLAB</span>
-    <span class="skill-tag" data-level="expert">Linux</span>
-    <span class="skill-tag" data-level="expert">ROS/ROS 2</span>
     <span class="skill-tag">C/C++</span>
     <span class="skill-tag">Bash/Shell</span>
+    <span class="skill-tag">AI-assisted Rapid Prototyping</span>
   </div>
 </div>
 
 <div class="skills-category">
-  <h3><i class="fas fa-robot"></i> Simulation & Visualization</h3>
+  <h3><i class="fas fa-robot"></i> Robotics</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert">ROS/ROS2</span>
+    <span class="skill-tag" data-level="expert">model-based robotics (kinematics/dynamics/control)</span>
+    <span class="skill-tag" data-level="expert">system identification</span>
+    <span class="skill-tag">teleoperation</span>
+    <span class="skill-tag">calibration</span>
+  </div>
+</div>
+
+<div class="skills-category">
+  <h3><i class="fas fa-gears"></i> Simulation & Visualization</h3>
   <div class="skills-tags">
     <span class="skill-tag" data-level="expert">AMBF (Bullet Physics)</span>
     <span class="skill-tag">Blender</span>
+    <span class="skill-tag">Gazebo/RViz</span>
+    <span class="skill-tag">CoppeliaSim (V-REP)</span>
     <span class="skill-tag">NVIDIA Isaac Sim</span>
-    <span class="skill-tag">Gazebo</span>
-    <span class="skill-tag">V-REP</span>
-    <span class="skill-tag">Rviz</span>
     <span class="skill-tag">3D Slicer</span>
-    <span class="skill-tag">VTK/ITK/VMTK</span>
     <span class="skill-tag">Simulink</span>
     <span class="skill-tag">Ansys FEA</span>
   </div>
@@ -161,6 +168,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
   <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
   <div class="skills-tags">
     <span class="skill-tag" data-level="expert">PyTorch</span>
+    <span class="skill-tag">OpenCV</span>
     <span class="skill-tag">Computer Vision</span>
     <span class="skill-tag">Deep Learning</span>
     <span class="skill-tag">Imitation Learning</span>
@@ -174,9 +182,9 @@ I am a **practical robotic problem solver for both hardware and software**, open
     <span class="skill-tag" data-level="expert">dVRK Classic/Si</span>
     <span class="skill-tag" data-level="expert">Linux</span>
     <span class="skill-tag">Git</span>
-    <span class="skill-tag">Docker/NGC</span>
-    <span class="skill-tag">NVIDIA Clara AGX</span>
+    <span class="skill-tag">Image pipeline (v4l2, udev)</span>
     <span class="skill-tag">PyQt</span>
+    <span class="skill-tag">Docker</span>
   </div>
 </div>
 
