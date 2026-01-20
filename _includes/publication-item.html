@@ -1,0 +1,111 @@
+{% include base_path %}
+
+{% comment %}
+  Publication Item Include
+
+  This include creates a clean publication list item with:
+  - Title (clickable if paper URL available)
+  - Authors with highlighted author name
+  - Venue and year
+  - Links for paper, code, slides, etc.
+
+  Usage in pages:
+    {% for post in site.publications reversed %}
+      {% include publication-item.html post=post %}
+    {% endfor %}
+
+  Required front matter:
+  - title: Publication title
+  - venue: Publication venue
+
+  Optional front matter:
+  - paperurl: Link to paper/PDF
+  - arxiv_url: Link to arXiv
+  - code_url: Link to code
+  - video_url: Link to video
+  - slides_url: Link to slides
+  - citation: Full citation text
+  - authors: List of authors (will highlight Zhou or site.author.name)
+  - under_review: Set to true for papers under review
+  - award: Award text if any
+{% endcomment %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="publication-item">
+  <div class="pub-title">
+    {% if post.paperurl %}
+      <a href="{{ post.paperurl }}" target="_blank">{{ title }}</a>
+    {% elsif post.arxiv_url %}
+      <a href="{{ post.arxiv_url }}" target="_blank">{{ title }}</a>
+    {% else %}
+      <a href="{{ base_path }}{{ post.url }}">{{ title }}</a>
+    {% endif %}
+  </div>
+
+  {% if post.citation %}
+  <div class="pub-authors">
+    {% comment %} Parse citation to highlight author name {% endcomment %}
+    {{ post.citation | replace: "Zhou, H.", "<span class='highlight-author'>Zhou, H.</span>" | replace: "Zhou, H.*", "<span class='highlight-author'>Zhou, H.*</span>" }}
+  </div>
+  {% elsif post.authors %}
+  <div class="pub-authors">
+    {% for author in post.authors %}
+      {% if author == site.author.name or author contains "Zhou" %}
+        <span class="highlight-author">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+      {% else %}
+        {{ author }}{% unless forloop.last %}, {% endunless %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="pub-venue">
+    {% if post.venue %}{{ post.venue }}{% endif %}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}
+    {% if post.under_review %}<span class="badge badge-highlight">Under Review</span>{% endif %}
+    {% if post.award %}<span class="badge badge-award">{{ post.award }}</span>{% endif %}
+  </div>
+
+  <div class="pub-links">
+    {% if post.paperurl %}
+      <a href="{{ post.paperurl }}" class="pub-link" target="_blank">[Paper]</a>
+    {% endif %}
+
+    {% if post.arxiv_url %}
+      <a href="{{ post.arxiv_url }}" class="pub-link" target="_blank">[arXiv]</a>
+    {% endif %}
+
+    {% if post.video_url %}
+      <a href="{{ post.video_url }}" class="pub-link" target="_blank">[Video]</a>
+    {% endif %}
+
+    {% if post.code_url %}
+      {% if post.code_url == "coming_soon" %}
+        <span class="pub-link under-review">[Code Coming Soon]</span>
+      {% else %}
+        <a href="{{ post.code_url }}" class="pub-link" target="_blank">[Code]</a>
+      {% endif %}
+    {% endif %}
+
+    {% if post.slides_url or post.slidesurl %}
+      <a href="{{ post.slides_url | default: post.slidesurl }}" class="pub-link" target="_blank">[Slides]</a>
+    {% endif %}
+
+    {% if post.bibtexurl %}
+      <a href="{{ post.bibtexurl }}" class="pub-link" target="_blank">[BibTeX]</a>
+    {% endif %}
+
+    {% comment %} If no links are available and paper is under review {% endcomment %}
+    {% unless post.paperurl or post.arxiv_url or post.code_url or post.video_url %}
+      {% if post.under_review or post.citation contains "under review" %}
+        <span class="pub-link under-review">[Under Review]</span>
+      {% else %}
+        <span class="pub-link under-review">[Coming Soon]</span>
+      {% endif %}
+    {% endunless %}
+  </div>
+</div>

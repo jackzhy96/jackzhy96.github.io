@@ -1,0 +1,18 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+<p class="page-description">
+  A collection of academic and personal projects spanning computer vision, robotics control,
+  and machine learning applications. These projects demonstrate my hands-on experience with
+  various technologies and problem-solving approaches.
+</p>
+
+{% include base_path %}
+
+{% for post in site.projects reversed %}
+  {% include project-card.html post=post %}
+{% endfor %}

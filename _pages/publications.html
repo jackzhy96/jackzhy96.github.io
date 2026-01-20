@@ -5,32 +5,43 @@ permalink: /publications/
 author_profile: true
 ---
 
+<p class="page-description">
+  A comprehensive list of my peer-reviewed publications in surgical robotics, simulation,
+  and AI-driven automation. Click on paper titles or links to access the full papers.
+</p>
+
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <p>You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</p>
 {% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
+<div class="publications-list">
+
+{% comment %} Render publications by category if categories are defined {% endcomment %}
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
+  {% for category in site.publication_category %}
     {% assign title_shown = false %}
     {% for post in site.publications reversed %}
       {% if post.category != category[0] %}
         {% continue %}
       {% endif %}
       {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
+        <div class="publication-category">
+          <h2>{{ category[1].title }}</h2>
         {% assign title_shown = true %}
       {% endunless %}
-      {% include archive-single.html %}
+      {% include publication-item.html post=post %}
     {% endfor %}
+    {% if title_shown %}
+        </div>
+    {% endif %}
   {% endfor %}
 {% else %}
+  {% comment %} Render all publications without categories {% endcomment %}
   {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+    {% include publication-item.html post=post %}
   {% endfor %}
 {% endif %}
 
-
-
+</div>

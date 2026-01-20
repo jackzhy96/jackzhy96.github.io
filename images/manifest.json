@@ -1,5 +1,6 @@
 {
-	"name": "OOjs UI icon academic-progressive",
+	"name": "Jack Zhou - Surgical Robotics",
+	"short_name": "JZ",
 	"icons": [
 		{
 			"src": "/images/favicon-192x192.png",
@@ -11,5 +12,8 @@
 			"sizes": "512x512",
 			"type": "image/png"
 		}
-	]
+	],
+	"theme_color": "#4a90d9",
+	"background_color": "#ffffff",
+	"display": "standalone"
 }

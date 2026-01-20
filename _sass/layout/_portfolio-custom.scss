@@ -1,0 +1,1552 @@
+/* ==========================================================================
+   PORTFOLIO CUSTOM STYLES
+   Custom styling for portfolio pages, sidebar, timeline, projects, and more
+   ========================================================================== */
+
+/* ==========================================================================
+   TWO-COLUMN LAYOUT
+   Left panel (sidebar) + Right panel (content)
+   Pattern reference: overall.png
+
+   HTML Structure: #main > .sidebar + article.page
+   ========================================================================== */
+
+/* Override #main to be flex container for two-panel layout */
+#main {
+  display: flex;
+  flex-direction: row;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+/* The article.page and .archive elements - right content panel */
+.page,
+.archive {
+  flex: 1;
+  min-width: 0;
+  padding: 2em;
+  /* Reset Susy grid overrides */
+  float: none !important;
+  width: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1024px) {
+    padding: 1.5em;
+  }
+}
+
+/* Copyright at bottom of content area */
+.page__copyright {
+  margin-top: auto;
+  padding-top: 2em;
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--global-text-color-light);
+  border-top: 1px solid var(--global-border-color);
+}
+
+/* ==========================================================================
+   SIDEBAR STYLING (LEFT PANEL)
+   TRUE TWO-SECTION SPLIT: Sidebar takes ~30% of viewport width
+   This creates a proper two-panel layout, not just a narrow bar
+   ========================================================================== */
+
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+  padding: 2.5em 2em;
+  text-align: center;
+  flex: 0 0 30%;
+  max-width: 400px;
+  min-width: 300px;
+  align-self: flex-start;
+  position: sticky;
+  top: 50px;
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
+
+  @media (max-width: 1200px) {
+    flex: 0 0 35%;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 2em 1.5em;
+  }
+
+  @media (max-width: 1024px) {
+    flex: none;
+    max-width: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+    max-height: none;
+    padding: 2em;
+  }
+}
+
+/* Author profile container */
+.author__content {
+  text-align: center;
+  margin-bottom: 1em;
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+/* Author avatar styling - centered with decorative border */
+.author__avatar {
+  display: block;
+  margin: 0 auto 1.5em auto;
+  width: 180px;
+  height: 180px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--sidebar-text-light);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    object-position: center 15%; /* Position to show head and shoulders */
+    padding: 0;
+  }
+
+  @media (max-width: 1024px) {
+    width: 150px;
+    height: 150px;
+
+    img {
+      max-width: 150px;
+      border-width: 4px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 120px;
+
+    img {
+      max-width: 120px;
+    }
+  }
+}
+
+/* Author name - large and centered */
+.author__name {
+  color: var(--sidebar-text-color);
+  font-weight: 700;
+  font-size: 1.6em;
+  margin: 0.5em 0 0.1em 0;
+  letter-spacing: 0.02em;
+}
+
+/* Author Chinese name - below English name */
+.author__name-chinese {
+  color: var(--sidebar-text-light);
+  font-size: 1.1em;
+  margin: 0 0 0.25em 0;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* Author pronouns */
+.author__pronouns {
+  color: var(--sidebar-text-light);
+  font-size: 0.9em;
+  margin: 0 0 0.5em 0;
+}
+
+/* Author bio title - bold headline (supports multiple lines) */
+.author__bio-title {
+  color: var(--sidebar-text-color);
+  font-weight: 700;
+  font-size: 1.05em;
+  line-height: 1.4;
+  margin: 0 0 0.2em 0;
+  text-align: center;
+
+  &:first-of-type {
+    margin-top: 0.5em;
+  }
+}
+
+/* Author bio - role/title description (supports multiple lines) */
+.author__bio {
+  color: var(--sidebar-text-light);
+  line-height: 1.5;
+  font-size: 0.95em;
+  margin: 0 0 0.3em 0;
+  text-align: center;
+
+  &:last-of-type {
+    margin-bottom: 1em;
+  }
+}
+
+/* Author info items (location, employer) - always visible, centered */
+.author__urls li.author__desktop {
+  display: block !important;
+  color: var(--sidebar-text-light);
+  font-size: 0.85em;
+  margin-bottom: 0.4em;
+  text-align: center;
+
+  i {
+    color: var(--sidebar-link-icon);
+    margin-right: 0.5em;
+  }
+}
+
+/* Social links wrapper - NO dropdown, always visible */
+.author__urls-wrapper {
+  margin-top: 1.5em;
+  display: block;
+  position: relative;
+  cursor: default;
+}
+
+/* Hide the Follow/dropdown button completely */
+.author__urls-wrapper button {
+  display: none !important;
+}
+
+/* Social links list - always visible, no dropdown */
+.author__urls {
+  display: block !important;
+  position: relative !important;
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  list-style: none;
+  z-index: 1;
+
+  /* Remove dropdown arrow pseudo-elements */
+  &:before,
+  &:after {
+    display: none !important;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    white-space: normal;
+  }
+
+  /* Pill button styling for social links - full width */
+  li a {
+    display: flex;
+    align-items: center;
+    padding: 0.6em 1em;
+    background-color: var(--sidebar-link-bg);
+    color: var(--sidebar-link-text);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--sidebar-link-hover-bg);
+      color: var(--sidebar-link-hover-text);
+      transform: translateY(-1px);
+    }
+
+    i {
+      color: var(--sidebar-link-icon);
+      font-size: 1.1em;
+      margin-right: 0.6em;
+      width: 1.25em;
+      text-align: center;
+    }
+  }
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA (RIGHT PANEL)
+   ========================================================================== */
+
+.page__content {
+  flex: 1;
+  padding: 1.5em 2em;
+  background-color: var(--global-bg-color);
+  min-width: 0;
+
+  @media (max-width: 1024px) {
+    padding: 1em;
+  }
+}
+
+/* ==========================================================================
+   NAVIGATION / MASTHEAD STYLING
+   Keep default fixed positioning, just style the links
+   NO DROPDOWN - all links always visible
+   ========================================================================== */
+
+/* Keep masthead fixed at top - don't override position */
+.masthead {
+  /* Inherit fixed positioning from _masthead.scss */
+  /* Only add visual enhancements */
+}
+
+/* Navigation - keep original structure, just hide dropdown */
+.greedy-nav {
+  /* Hide the hamburger/toggle button */
+  > button {
+    display: none !important;
+  }
+
+  /* Style the navigation links */
+  a {
+    padding: 0.5em 0.75em;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  /* Keep visible-links as table (original), just ensure all show */
+  .visible-links {
+    li {
+      display: table-cell !important;
+      vertical-align: middle;
+    }
+  }
+
+  /* DISABLE the hidden-links dropdown completely */
+  .hidden-links {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Hide greedy nav toggle button */
+.greedy-nav__toggle {
+  display: none !important;
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA STYLING
+   Light background for contrast with dark sidebar
+   ========================================================================== */
+
+.page__content {
+  background-color: var(--global-bg-color);
+}
+
+/* Page description styling */
+.page-description {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: var(--global-text-color);
+  margin-bottom: 1.5em;
+  padding: 1em;
+  background: var(--card-bg-color);
+  border-radius: 8px;
+  border-left: 4px solid var(--global-base-color);
+}
+
+.page-note {
+  font-size: 0.9em;
+  color: var(--global-text-color-light);
+  margin-bottom: 2em;
+  padding: 0.75em 1em;
+  background: var(--tag-bg-color);
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   TIMELINE STYLING
+   For Experience and Education sections on About Me page
+   ========================================================================== */
+
+/* ==========================================================================
+   EXPERIENCE HIGHLIGHTS (COMPACT TIMELINE)
+   Simple date/location on left, brief description on right
+   Pattern reference: about_me_part1.png
+   ========================================================================== */
+
+.experience-highlights {
+  margin: 1.5em 0;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.25em;
+  padding-bottom: 1.25em;
+  border-bottom: 1px solid var(--global-border-color);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.highlight-date {
+  flex: 0 0 140px;
+  padding-right: 1.5em;
+  text-align: right;
+
+  .date {
+    display: block;
+    color: var(--timeline-date-color);
+    font-weight: 500;
+    font-size: 0.95em;
+  }
+
+  .location {
+    display: block;
+    color: var(--timeline-location-color);
+    font-size: 0.85em;
+    margin-top: 0.2em;
+  }
+}
+
+.highlight-content {
+  flex: 1;
+  color: var(--global-text-color);
+  line-height: 1.6;
+  font-size: 0.95em;
+
+  a {
+    color: var(--global-link-color);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Responsive highlights for mobile */
+@media (max-width: 600px) {
+  .highlight-item {
+    flex-direction: column;
+  }
+
+  .highlight-date {
+    flex: none;
+    text-align: left;
+    padding-right: 0;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+
+    .date,
+    .location {
+      display: inline;
+    }
+
+    .location::before {
+      content: " · ";
+    }
+  }
+}
+
+/* ==========================================================================
+   CV TIMELINE (For CV Page)
+   Education and Professional Experience with date/location on left
+   ========================================================================== */
+
+.cv-timeline {
+  margin: 1.5em 0;
+}
+
+.cv-timeline-item {
+  display: flex;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid var(--global-border-color);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.cv-timeline-date {
+  flex: 0 0 180px;
+  padding-right: 1.5em;
+  text-align: right;
+
+  .date {
+    display: block;
+    color: var(--timeline-date-color);
+    font-weight: 500;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  .location {
+    display: block;
+    color: var(--timeline-location-color);
+    font-size: 0.85em;
+    margin-top: 0.2em;
+  }
+}
+
+.cv-timeline-content {
+  flex: 1;
+  padding-left: 1.5em;
+  border-left: 2px solid var(--timeline-border-color);
+
+  h3 {
+    margin: 0 0 0.25em 0;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+
+  .organization {
+    color: var(--global-link-color);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.25em;
+  }
+
+  .advisor {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.25em;
+    font-style: italic;
+
+    a {
+      color: var(--global-link-color);
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .gpa {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    margin: 0.5em 0 0 0;
+    padding-left: 1.25em;
+
+    li {
+      margin-bottom: 0.35em;
+      line-height: 1.5;
+      color: var(--global-text-color);
+      font-size: 0.95em;
+    }
+  }
+}
+
+/* Responsive CV timeline for mobile */
+@media (max-width: 768px) {
+  .cv-timeline-item {
+    flex-direction: column;
+  }
+
+  .cv-timeline-date {
+    flex: none;
+    text-align: left;
+    padding-right: 0;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .cv-timeline-content {
+    padding-left: 1em;
+  }
+}
+
+/* ==========================================================================
+   EXPERIENCE TIMELINE (DETAILED - Legacy)
+   For pages still using old format
+   ========================================================================== */
+
+.experience-timeline {
+  position: relative;
+}
+
+/* Timeline item wrapper */
+.timeline-item {
+  display: flex;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid var(--timeline-border-color);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Left side: date and location */
+.timeline-date {
+  flex: 0 0 180px;
+  padding-right: 2em;
+  text-align: right;
+
+  .date {
+    color: var(--timeline-date-color);
+    font-weight: 600;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 0.25em;
+  }
+
+  .location {
+    color: var(--timeline-location-color);
+    font-size: 0.85em;
+  }
+}
+
+/* Right side: content */
+.timeline-content {
+  flex: 1;
+  padding-left: 1.5em;
+  border-left: 2px solid var(--timeline-border-color);
+
+  h3 {
+    margin: 0 0 0.25em 0;
+    color: var(--global-text-color);
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .organization {
+    color: var(--global-link-color);
+    font-weight: 500;
+    margin-bottom: 0.25em;
+    display: block;
+  }
+
+  .advisor {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+
+    a {
+      color: var(--global-link-color);
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    margin: 0.5em 0;
+    color: var(--global-text-color);
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 0.75em 0 0 0;
+    padding-left: 1.5em;
+
+    li {
+      margin-bottom: 0.5em;
+      line-height: 1.6;
+      color: var(--global-text-color);
+    }
+  }
+}
+
+/* Responsive timeline for mobile */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-date {
+    flex: none;
+    text-align: left;
+    padding-right: 0;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--timeline-border-color);
+  }
+
+  .timeline-content {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+/* ==========================================================================
+   EDUCATION TIMELINE
+   ========================================================================== */
+
+.education-timeline {
+  .timeline-item {
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .degree {
+    font-weight: 600;
+    color: var(--global-text-color);
+    margin-bottom: 0.25em;
+  }
+
+  .school {
+    color: var(--global-link-color);
+    font-weight: 500;
+  }
+
+  .gpa {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-top: 0.25em;
+  }
+
+  .details {
+    color: var(--global-text-color);
+    font-size: 0.95em;
+    margin-top: 0.5em;
+  }
+}
+
+/* ==========================================================================
+   TECHNICAL SKILLS STYLING
+   Categorized skills with fancy pill/tag look
+   ========================================================================== */
+
+.skills-section {
+  margin-bottom: 2em;
+}
+
+.skills-category {
+  margin-bottom: 2em;
+
+  h3 {
+    color: var(--global-base-color);
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--global-base-color);
+    display: inline-block;
+  }
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  background: var(--tag-bg-color);
+  color: var(--tag-text-color);
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid var(--card-border-color);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--global-base-color);
+    color: #ffffff;
+    border-color: var(--global-base-color);
+    transform: translateY(-2px);
+  }
+
+  i {
+    margin-right: 0.5em;
+    color: var(--global-base-color);
+  }
+
+  &:hover i {
+    color: #ffffff;
+  }
+}
+
+/* Skill proficiency levels - optional visual indicator */
+.skill-tag[data-level="expert"] {
+  background: linear-gradient(135deg, var(--tag-bg-color), var(--global-base-color));
+  color: #ffffff;
+  border: none;
+
+  i {
+    color: #ffffff;
+  }
+}
+
+/* ==========================================================================
+   NEWS SECTION STYLING
+   Styled list with date, content, and badges
+   ========================================================================== */
+
+.news-section {
+  margin-bottom: 2em;
+
+  h2 {
+    color: var(--global-text-color);
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid var(--timeline-date-color);
+    display: inline-block;
+  }
+}
+
+.news-list {
+  list-style: disc;
+  padding-left: 1.5em;
+  margin: 0;
+}
+
+.news-item {
+  margin-bottom: 1em;
+  line-height: 1.6;
+  color: var(--global-text-color);
+
+  .news-date {
+    color: var(--timeline-date-color);
+    font-weight: 600;
+    margin-right: 0.5em;
+  }
+
+  a {
+    color: var(--timeline-date-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Badge styling for highlights (awards, spotlights, etc.) */
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+  font-weight: 600;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.badge-award {
+  background-color: var(--badge-award-bg);
+  color: var(--badge-award-text);
+  border: 1px solid var(--badge-highlight-border);
+}
+
+.badge-highlight {
+  background-color: var(--badge-highlight-bg);
+  color: var(--badge-highlight-text);
+  border: 1px solid var(--badge-highlight-border);
+}
+
+.badge-spotlight {
+  background-color: #fef3e7;
+  color: #c77a3c;
+  border: 1px solid #f5d4b3;
+}
+
+/* ==========================================================================
+   PROJECT CARD STYLING
+   Card layout with image on left, details on right
+   ========================================================================== */
+
+.project-card {
+  display: flex;
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background: var(--project-card-bg);
+  border: 1px solid var(--project-card-border);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+}
+
+.project-image {
+  flex: 0 0 200px;
+  margin-right: 1.5em;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+}
+
+.project-content {
+  flex: 1;
+
+  h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--global-text-color);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--project-link-color);
+      }
+    }
+  }
+
+  .project-description {
+    color: var(--global-text-color-light);
+    font-size: 0.95em;
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+  }
+
+  .project-authors {
+    font-style: italic;
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.75em;
+
+    .highlight-author {
+      background-color: var(--highlight-bg);
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
+  .project-venue {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 1em;
+  }
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  align-items: center;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  font-size: 0.85em;
+  color: var(--project-link-color);
+  text-decoration: none;
+  border: 1px solid var(--project-link-color);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--project-link-color);
+    color: #ffffff;
+  }
+
+  &.coming-soon {
+    color: var(--global-text-color-light);
+    border-color: var(--global-text-color-light);
+    cursor: default;
+
+    &:hover {
+      background: transparent;
+      color: var(--global-text-color-light);
+    }
+  }
+}
+
+.project-badge {
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  font-size: 0.8em;
+  font-weight: 600;
+  background-color: var(--badge-award-bg);
+  color: var(--badge-award-text);
+  border-radius: 4px;
+}
+
+/* Publications list within project cards */
+.project-publications {
+  margin-top: 0.5em;
+}
+
+.project-pub-item {
+  padding: 0.75em 0;
+  border-bottom: 1px solid var(--timeline-border-color);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.project-pub-title {
+  font-weight: 600;
+  color: var(--global-text-color);
+  font-size: 0.95em;
+  margin-bottom: 0.25em;
+  line-height: 1.4;
+}
+
+.project-pub-authors {
+  font-style: italic;
+  color: var(--global-text-color-light);
+  font-size: 0.85em;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+
+  .highlight-author {
+    background-color: var(--highlight-bg);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  em {
+    font-style: normal;
+  }
+}
+
+.project-pub-item .project-links {
+  margin-top: 0.25em;
+  gap: 0.5em;
+}
+
+.project-pub-item .project-link {
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+}
+
+.project-pub-item .project-badge {
+  padding: 0.2em 0.5em;
+  font-size: 0.75em;
+}
+
+/* Responsive project cards */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-image {
+    flex: none;
+    margin-right: 0;
+    margin-bottom: 1em;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   PUBLICATION LIST STYLING
+   Clean list format with clickable links
+   ========================================================================== */
+
+.publications-list {
+  margin-bottom: 2em;
+}
+
+.publication-category {
+  margin-bottom: 2em;
+
+  h2 {
+    color: var(--global-text-color);
+    font-size: 1.3em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--global-base-color);
+  }
+}
+
+.publication-item {
+  padding: 1.25em;
+  margin-bottom: 1em;
+  background: var(--card-bg-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .pub-title {
+    font-weight: 600;
+    color: var(--global-text-color);
+    font-size: 1.05em;
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-link-color);
+      }
+    }
+  }
+
+  .pub-authors {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+
+    .highlight-author {
+      background-color: var(--highlight-bg);
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+
+  .pub-venue {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.75em;
+  }
+
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    align-items: center;
+  }
+
+  .pub-link {
+    display: inline-block;
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+    color: var(--project-link-color);
+    text-decoration: none;
+    border: 1px solid var(--project-link-color);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--project-link-color);
+      color: #ffffff;
+    }
+
+    &.under-review {
+      color: var(--global-text-color-light);
+      border-color: var(--global-text-color-light);
+      font-style: italic;
+    }
+  }
+}
+
+/* ==========================================================================
+   TRAINING CERTIFICATES STYLING
+   ========================================================================== */
+
+.certificates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.certificate-item {
+  padding: 0.75em 0;
+  border-bottom: 1px solid var(--section-divider-color);
+  color: var(--global-text-color);
+  line-height: 1.5;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .cert-name {
+    font-weight: 500;
+  }
+
+  .cert-issuer {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+  }
+}
+
+/* ==========================================================================
+   CV DOWNLOAD BUTTON
+   ========================================================================== */
+
+.cv-download {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--global-base-color);
+  color: #ffffff;
+  border: 2px solid var(--global-base-color);
+}
+
+.btn--primary:hover {
+  background-color: var(--global-link-color-hover);
+  border-color: var(--global-link-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn--large {
+  padding: 1em 2em;
+  font-size: 1.1em;
+}
+
+/* ==========================================================================
+   ARCHIVE ITEM IMPROVEMENTS
+   For Research/Projects/Build pages (standard archive view)
+   ========================================================================== */
+
+.archive__item {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background: var(--card-bg-color);
+  border-radius: 8px;
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.archive__item:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.archive__item-title {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.archive__item-title a {
+  text-decoration: none;
+  color: var(--global-base-color);
+}
+
+.archive__item-title a:hover {
+  color: var(--global-link-color);
+}
+
+.archive__item-excerpt {
+  color: var(--global-text-color);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   TAG STYLING
+   ========================================================================== */
+
+.page__taxonomy {
+  margin-top: 1em;
+}
+
+.page__taxonomy-item {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0.25em;
+  font-size: 0.85em;
+  background: var(--tag-bg-color);
+  color: var(--tag-text-color);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.page__taxonomy-item:hover {
+  background: var(--global-link-color);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SECTION DIVIDERS
+   ========================================================================== */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--section-divider-color);
+  margin: 2em 0;
+}
+
+/* ==========================================================================
+   MEDIA CONTENT STYLING
+   For images/GIFs in page content
+   ========================================================================== */
+
+.page__content img,
+.page__content .responsive-video {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1.5em 0;
+}
+
+.page__content img:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   BLOG/COOKING GALLERY STYLING
+   Grid layout for multiple images
+   ========================================================================== */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .caption {
+    padding: 0.75em;
+    background: var(--card-bg-color);
+    font-size: 0.9em;
+    color: var(--global-text-color-light);
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  /* Stack layout on tablets and below */
+  #main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: none;
+    max-width: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+    max-height: none;
+    padding: 2em;
+  }
+
+  .page,
+  .archive {
+    padding: 1.5em;
+  }
+
+  .archive__item {
+    padding: 1em;
+  }
+
+  .author__avatar {
+    width: 150px;
+    height: 150px;
+
+    img {
+      max-width: 150px;
+    }
+  }
+
+  .author__name {
+    font-size: 1.5em;
+  }
+
+  /* Show social links inline on tablet */
+  .author__urls {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+
+    li {
+      margin-bottom: 0;
+    }
+
+    li a {
+      padding: 0.6em 1em;
+      font-size: 0.9em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page-description {
+    font-size: 1em;
+    padding: 0.75em;
+  }
+
+  .btn--large {
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    display: block;
+    text-align: center;
+  }
+
+  .archive__item {
+    padding: 0.75em;
+    margin-bottom: 1em;
+  }
+
+  .archive__item-title {
+    font-size: 1.1em;
+  }
+
+  /* Keep nav links visible on mobile too */
+  .greedy-nav .visible-links li {
+    display: table-cell !important;
+  }
+
+  .skills-tags {
+    gap: 0.4em;
+  }
+
+  .skill-tag {
+    padding: 0.4em 0.8em;
+    font-size: 0.85em;
+  }
+
+  /* Sidebar mobile adjustments */
+  .sidebar {
+    text-align: center;
+    padding: 1em;
+  }
+
+  .author__avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.75em;
+
+    img {
+      max-width: 100px;
+    }
+  }
+
+  .author__urls {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4em;
+
+    li a {
+      padding: 0.5em 1em;
+      font-size: 0.85em;
+      width: 100%;
+      max-width: 200px;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .page-description {
+    font-size: 0.95em;
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.9em;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author__name {
+    font-size: 1.2em;
+  }
+
+  .author__bio {
+    font-size: 0.85em;
+  }
+
+  .author__urls li a {
+    font-size: 0.8em;
+  }
+}
+
+/* ==========================================================================
+   FOOTER - HIDE DEFAULT FOOTER
+   Copyright moved to bottom of content area
+   ========================================================================== */
+
+.page__footer {
+  display: none !important;
+}
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+
+@media print {
+  .btn,
+  .author__urls-wrapper,
+  .masthead,
+  .sidebar {
+    display: none !important;
+  }
+
+  .archive__item,
+  .project-card,
+  .publication-item {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}

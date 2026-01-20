@@ -1,32 +1,34 @@
 /* ==========================================================================
     DEFAULT THEME - DARK VERSION
+    Custom color scheme: Professional Deep Blue/Indigo
     ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #0ea1c5;
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
+$primary-color              : #60a5fa;  /* Light blue for dark mode */
+$accent-color               : #3b82f6;  /* Blue accent */
+$gray                       : #94a3b8;  /* Slate gray */
+$dark-gray                  : #475569;  /* Dark slate */
+$darker-gray                : #334155;  /* Darker slate */
+$light-gray                 : #cbd5e1;  /* Light slate */
 
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+$background                 : #0f172a;  /* Very dark blue */
+$background-light           : #1e293b;  /* Dark slate blue */
+$background-lighter         : #334155;  /* Medium slate */
+$text                       : #f1f5f9;  /* Light text */
+$link                       : #60a5fa;  /* Light blue link */
+$link-dark                  : #3b82f6;  /* Blue */
+$link-light                 : #93c5fd;  /* Lighter blue */
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #f87171;  /* Red */
+$info-color                 : #38bdf8;  /* Sky blue */
+$notice-color               : #94a3b8;  /* Slate */
+$success-color              : #4ade80;  /* Green */
+$warning-color              : #fbbf24;  /* Amber */
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$border-radius              : 6px;
+$box-shadow                 : 0 1px 3px rgba(0, 0, 0, 0.3);
 $global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
@@ -37,20 +39,57 @@ $sidebar-screen-min-width   : 1024px;
 /* Dark theme for the site */
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
+    --global-accent-color               : #{$accent-color};
     --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$light-gray};
+    --global-footer-bg-color            : #{$background-light};
+    --global-border-color               : #{$background-lighter};
+    --global-dark-border-color          : #{$background-lighter};
+    --global-code-background-color      : #{$background-light};
+    --global-code-text-color            : #{$light-gray};
+    --global-fig-caption-color          : #{$gray};
     --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
+    --global-link-color-hover           : #{$link-light};
+    --global-link-color-visited         : #a78bfa;
     --global-masthead-link-color        : #{$text};
     --global-masthead-link-color-hover  : #{$primary-color};
     --global-text-color                 : #{$text};
-    --global-text-color-light           : #f3f3f3;
-    --global-thead-color                : #{$background-lighter};
-}
+    --global-text-color-light           : #{$light-gray};
+    --global-thead-color                : #{$background-light};
 
+    /* Custom properties for portfolio styling */
+    --card-bg-color                     : #{$background-light};
+    --card-border-color                 : #{$background-lighter};
+    --card-shadow                       : 0 1px 3px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover                 : 0 4px 6px rgba(0, 0, 0, 0.4);
+    --section-divider-color             : #{$background-lighter};
+    --tag-bg-color                      : #{$background-lighter};
+    --tag-text-color                    : #{$light-gray};
+    --highlight-bg                      : #422006;
+
+    /* Sidebar styling - dark theme (slightly lighter than main content) */
+    --sidebar-bg-color                  : #2d1f18;
+    --sidebar-text-color                : #f5f5f0;
+    --sidebar-text-light                : #d4c8ba;
+    --sidebar-link-bg                   : #3d3124;
+    --sidebar-link-text                 : #f5f3ef;
+    --sidebar-link-icon                 : #c77a3c;
+    --sidebar-link-hover-bg             : #4d4134;
+    --sidebar-link-hover-text           : #ffffff;
+
+    /* Timeline styling for About Me page */
+    --timeline-date-color               : #e69b5c;
+    --timeline-location-color           : #c77a3c;
+    --timeline-border-color             : #{$background-lighter};
+
+    /* News badge styling */
+    --badge-highlight-bg                : #422006;
+    --badge-highlight-text              : #fbbf24;
+    --badge-highlight-border            : #713f12;
+    --badge-award-bg                    : #422006;
+    --badge-award-text                  : #fbbf24;
+
+    /* Project card styling */
+    --project-card-bg                   : #{$background-light};
+    --project-card-border               : #{$background-lighter};
+    --project-link-color                : #e69b5c;
+}

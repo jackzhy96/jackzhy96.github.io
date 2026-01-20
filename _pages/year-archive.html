@@ -1,13 +1,20 @@
 ---
 layout: archive
 permalink: /year-archive/
-title: "Blog posts"
+title: "Blog"
 author_profile: true
 redirect_from:
+  - /blog/
   - /wordpress/blog-posts/
 ---
 
+<p class="page-description">
+  Beyond robotics and engineering, I enjoy sharing my other interests and experiences.
+  Here you'll find posts about cooking, travel, and other personal projects.
+</p>
+
 {% include base_path %}
+
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.posts %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}

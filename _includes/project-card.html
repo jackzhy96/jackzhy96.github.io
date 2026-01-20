@@ -1,0 +1,189 @@
+{% include base_path %}
+
+{% comment %}
+  Project Card Include
+
+  This include creates a card layout with:
+  - Image/thumbnail on the left
+  - Title, description, authors, and links on the right
+  - Optional list of associated publications
+
+  Usage in pages:
+    {% for post in site.research reversed %}
+      {% include project-card.html post=post %}
+    {% endfor %}
+
+  Required front matter in project files:
+  - title: Project title
+  - excerpt: Short description
+
+  Optional front matter:
+  - teaser: Image path (relative to /images/ or absolute URL)
+  - authors: List of authors (your name will be highlighted if it matches site.author.name)
+  - venue: Publication venue or context
+  - date: Date
+  - website_url: Project website link
+  - paper_url: Paper/arXiv link
+  - video_url: Video link
+  - code_url: Code repository link (or "coming_soon" for placeholder)
+  - award: Award text (e.g., "Best Paper Award")
+  - publications: List of associated publications, each with:
+      - title: Publication title
+      - authors: Author string (Zhou, H. will be highlighted)
+      - venue: Conference/journal name
+      - year: Publication year
+      - paper_url: Link to paper
+      - arxiv_url: Link to arXiv
+      - video_url: Link to video
+      - code_url: Link to code (or "coming_soon")
+      - award: Award text
+{% endcomment %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% elsif post.teaser %}
+  {% capture teaser %}{{ post.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="project-card">
+  {% if teaser %}
+  <div class="project-image">
+    <a href="{{ base_path }}{{ post.url }}">
+      <img src=
+        {% if teaser contains "://" %}
+          "{{ teaser }}"
+        {% else %}
+          "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+        {% endif %}
+        alt="{{ title }}">
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="project-content">
+    <h3><a href="{{ base_path }}{{ post.url }}">{{ title }}</a></h3>
+
+    {% if post.excerpt %}
+    <p class="project-description">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+    {% endif %}
+
+    {% comment %} Show authors and venue if no publications list (backward compatibility) {% endcomment %}
+    {% unless post.publications %}
+      {% if post.authors %}
+      <p class="project-authors">
+        {% for author in post.authors %}
+          {% if author == site.author.name or author contains "Zhou" %}
+            <span class="highlight-author">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+          {% else %}
+            {{ author }}{% unless forloop.last %}, {% endunless %}
+          {% endif %}
+        {% endfor %}
+        {% if post.venue %}<span class="project-venue">. {{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}.</span>{% endif %}
+      </p>
+      {% elsif post.venue %}
+      <p class="project-venue">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</p>
+      {% endif %}
+
+      <div class="project-links">
+        {% if post.website_url %}
+        <a href="{{ post.website_url }}" class="project-link" target="_blank">[Website]</a>
+        {% endif %}
+
+        {% if post.paper_url %}
+        <a href="{{ post.paper_url }}" class="project-link" target="_blank">[arXiv]</a>
+        {% endif %}
+
+        {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" class="project-link" target="_blank">[Paper]</a>
+        {% endif %}
+
+        {% if post.video_url %}
+        <a href="{{ post.video_url }}" class="project-link" target="_blank">[Video]</a>
+        {% endif %}
+
+        {% if post.code_url %}
+          {% if post.code_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Code Coming Soon]</span>
+          {% else %}
+          <a href="{{ post.code_url }}" class="project-link" target="_blank">[Code]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if post.slides_url %}
+        <a href="{{ post.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+        {% endif %}
+
+        {% if post.award %}
+        <span class="project-badge">{{ post.award }}</span>
+        {% endif %}
+      </div>
+    {% endunless %}
+
+    {% comment %} Display publications list if available {% endcomment %}
+    {% if post.publications %}
+    <div class="project-publications">
+      {% for pub in post.publications %}
+      <div class="project-pub-item">
+        <div class="project-pub-title">{{ pub.title }}</div>
+
+        {% if pub.authors %}
+        <div class="project-pub-authors">
+          {{ pub.authors | replace: "Zhou, H.", "<span class='highlight-author'>Zhou, H.</span>" | replace: "Zhou, H.*", "<span class='highlight-author'>Zhou, H.*</span>" }}{% if pub.venue %}. <em>{{ pub.venue }}</em>{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+        </div>
+        {% endif %}
+
+        <div class="project-links">
+          {% if pub.website_url %}
+          <a href="{{ pub.website_url }}" class="project-link" target="_blank">[Website]</a>
+          {% endif %}
+
+          {% if pub.arxiv_url %}
+          <a href="{{ pub.arxiv_url }}" class="project-link" target="_blank">[arXiv]</a>
+          {% endif %}
+
+          {% if pub.paper_url %}
+          <a href="{{ pub.paper_url }}" class="project-link" target="_blank">[Paper]</a>
+          {% endif %}
+
+          {% if pub.video_url %}
+          <a href="{{ pub.video_url }}" class="project-link" target="_blank">[Video]</a>
+          {% endif %}
+
+          {% if pub.code_url %}
+            {% if pub.code_url == "coming_soon" %}
+            <span class="project-link coming-soon">[Code Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.code_url }}" class="project-link" target="_blank">[Code]</a>
+            {% endif %}
+          {% endif %}
+
+          {% if pub.slides_url %}
+          <a href="{{ pub.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+          {% endif %}
+
+          {% if pub.award %}
+          <span class="project-badge">{{ pub.award }}</span>
+          {% endif %}
+
+          {% comment %} Show "Coming Soon" if no links provided {% endcomment %}
+          {% unless pub.website_url or pub.arxiv_url or pub.paper_url or pub.video_url or pub.code_url %}
+            {% if pub.under_review %}
+            <span class="project-link coming-soon">[Under Review]</span>
+            {% endif %}
+          {% endunless %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+---
+
+<p class="page-description">
+  My research focuses on surgical robotics, with an emphasis on the da Vinci Research Kit (dVRK).
+  I work on developing high-fidelity simulation environments, multi-modal data collection systems,
+  dynamic model identification, and AI-driven perception and automation for surgical robotics applications.
+</p>
+
+{% include base_path %}
+
+{% for post in site.research reversed %}
+  {% include project-card.html post=post %}
+{% endfor %}
