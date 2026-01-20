@@ -9,9 +9,9 @@ redirect_from:
 
 ## Summary
 
-**Robotics Systems & Simulation Infrastructure Engineer** specializing in **asset pipelines (CAD to robot/scene)** and **multi-modal synchronized data collection & analysis**, with a **controls/dynamics backbone**. Also, a **software engineer** with a background in **computer vision** and **machine learning**.
+**Robotics Systems & Simulation Infrastructure Engineer** specializing in **asset pipelines (CAD/real-world scans to robot/scene)** and **multi-modal synchronized data collection & analysis**, with a **controls/dynamics backbone**. Also, a **software engineer** with a background in **computer vision** and **machine learning**.
 
-Final-year PhD candidate (Expected to graduate in May 2026) in Robotics Engineering at Worcester Polytechnic Institute, specializing in **robotics platform infrastructure**, **simulation**, **multi-modal dataset pipelines** and **AI-driven advanced perception & automation** for surgical robotics (**dVRK**, the da Vinci Research Kit), including robot hardware repair/maintenance/development, camera integration, video pipeline construction, synchronized logging, and dataset packaging with data-quality post-processing. Strong foundation in **robot kinematics/dynamics/control and dynamic system identification**. **Have driven cross-institution collaborations on shared dataset and system identification deliverables**.
+Final-year PhD candidate (Expected to graduate in May 2026) in Robotics Engineering at Worcester Polytechnic Institute, specializing in **robotics platform infrastructure**, **simulation**, **multi-modal dataset pipelines** and **AI-driven advanced perception & automation** for surgical robotics (**dVRK**, the da Vinci Research Kit), including robot hardware repair/maintenance/development, camera integration, video pipeline construction, synchronized logging, and dataset packaging with data-quality post-processing. Strong foundation in **model-based robotics (kinematics/dynamics/control), including dynamic system identification and gravity compensation**. **Have driven cross-institution collaborations on shared dataset and system identification deliverables**.
 
 I am a **practical robotic problem solver for both hardware and software**, open to relocation inside the U.S., and targeting Full-Time positions starting **May/June 2026**.
 
@@ -111,7 +111,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
     Led live demonstrations at the 2024 International Symposium on Medical Robotics (ISMR) <a href="https://surgical-robotics-ai.github.io/ismr-2024-workshop.html">Workshop</a>.
   </li>
   <li class="news-item">
-    <span class="news-date">2023 June:</span>
+    <span class="news-date">2023 Jun:</span>
     Started visiting scholar position at Johns Hopkins University
   </li>
 </ul>
