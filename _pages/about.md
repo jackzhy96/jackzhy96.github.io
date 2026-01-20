@@ -184,6 +184,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
     <span class="skill-tag">Git</span>
     <span class="skill-tag">Image pipeline (v4l2, udev)</span>
     <span class="skill-tag">PyQt</span>
+    <span class="skill-tag">CMake/catkin/colconn</span>
     <span class="skill-tag">Docker</span>
   </div>
 </div>
