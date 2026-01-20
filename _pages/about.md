@@ -92,7 +92,11 @@ I am a **practical robotic problem solver for both hardware and software**, open
 <ul class="news-list">
   <li class="news-item">
     <span class="news-date">2025 Oct:</span>
-    Our <a href="/publication/2025-isaac-sim-suturing">Isaac Sim Suturing</a> work has been accepted to ISMR 2025!
+    Dataset owner in the <a href="https://github.com/open-h-embodiment/data-collection">NVIDIA Open-H-Embodiment</a> Effort, building and delivering a multi-modal time-synchronized dataset (1000+ ex-vivo trajectories). Stay tuned!
+  </li>
+  <li class="news-item">
+    <span class="news-date">2025 Jun:</span>
+    Our <a href="https://github.com/jackzhy96/dVRK_Si_PSM_gravity_compensation">Gravity Compensation</a> work has been accepted to 2025 Hamlyn Symposium on Medical Robotics (HSMR)! Upcoming journal paper is on the way, stay tuned!
   </li>
   <li class="news-item">
     <span class="news-date">2025 Jun:</span>
