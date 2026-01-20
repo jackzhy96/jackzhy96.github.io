@@ -135,7 +135,6 @@ I am a **practical robotic problem solver for both hardware and software**, open
     <span class="skill-tag" data-level="expert">MATLAB</span>
     <span class="skill-tag">C/C++</span>
     <span class="skill-tag">Bash/Shell</span>
-    <span class="skill-tag">AI-assisted Rapid Prototyping</span>
   </div>
 </div>
 
