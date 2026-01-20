@@ -612,7 +612,13 @@ tags:
   - Deep Learning
   - Robotics
 
-# Publications list (RECOMMENDED)
+# Project-level links (all optional, use "coming_soon" for placeholder)
+paper_url: "https://arxiv.org/abs/..."
+code_url: "https://github.com/..."
+dataset_url: "coming_soon"
+video_url: "https://youtube.com/..."
+
+# Publications list (RECOMMENDED for multiple papers)
 publications:
   - title: "First Paper Title"
     authors: "Zhou, H., Author2, et al."
@@ -622,6 +628,7 @@ publications:
     arxiv_url: "https://arxiv.org/abs/..."
     video_url: "https://youtube.com/..."
     code_url: "https://github.com/..."
+    dataset_url: "https://dataset-link.com"
     award: "Best Paper Award"
 
   - title: "Second Paper (Under Review)"
@@ -629,7 +636,9 @@ publications:
     venue: "IEEE RAL"
     year: 2026
     under_review: true
+    paper_url: "coming_soon"
     code_url: "coming_soon"
+    dataset_url: "coming_soon"
 ---
 
 ## Overview
@@ -649,13 +658,14 @@ Project description here.
 
 ### Adding Images and GIFs to Research Projects
 
-**Step 1: Prepare your image/GIF**
+**Step 1: Prepare your image/GIF/PDF**
 - Place the file in `/images/research/` folder
-- Recommended formats: `.gif`, `.png`, `.jpg`, `.webp`
+- Supported formats: `.png`, `.jpg`, `.gif`, `.pdf`, `.webp`
 - Recommended sizes:
   - Teaser thumbnail: 400x250 px (for project card)
   - Content images: 800-1200 px width
   - GIFs: Keep under 5MB for fast loading
+  - PDFs: Any size (best for vector graphics)
 
 **Step 2: Add teaser (thumbnail) for project card**
 
@@ -704,7 +714,36 @@ images/
     └── multimodal-contact-results.png   # Results figure
 ```
 
-### Publication Fields
+### Project Links
+
+Research projects support multiple links. Each link can be a URL or `"coming_soon"`:
+
+| Field | Description |
+|-------|-------------|
+| `paper_url` | Paper/arXiv link |
+| `code_url` | Code repository link |
+| `dataset_url` | Dataset link |
+| `video_url` | Video link |
+| `website_url` | Project website |
+| `slides_url` | Slides link |
+
+**Example with links:**
+```yaml
+---
+title: "My Research Project"
+paper_url: "https://arxiv.org/abs/1234.5678"
+code_url: "https://github.com/user/repo"
+dataset_url: "coming_soon"
+video_url: "https://youtube.com/watch?v=..."
+---
+```
+
+**Result:**
+```
+[Paper] [Code] [Dataset Coming Soon] [Video]
+```
+
+### Publication Fields (for publications list)
 
 | Field | Description |
 |-------|-------------|
@@ -712,12 +751,13 @@ images/
 | `authors` | Author string ("Zhou, H." auto-highlighted) |
 | `venue` | Conference/journal |
 | `year` | Year |
-| `paper_url` | Direct PDF link |
-| `arxiv_url` | arXiv link |
-| `video_url` | Video link |
+| `paper_url` | Direct PDF link (or `"coming_soon"`) |
+| `arxiv_url` | arXiv link (or `"coming_soon"`) |
 | `code_url` | Code link (or `"coming_soon"`) |
+| `dataset_url` | Dataset link (or `"coming_soon"`) |
+| `video_url` | Video link (or `"coming_soon"`) |
 | `award` | Award badge text |
-| `under_review` | Set `true` for pending |
+| `under_review` | Set `true` for papers under review |
 
 ### Delete Research Project
 
@@ -946,9 +986,10 @@ Add in the markdown content below the front matter:
 
 | Format | Best For |
 |--------|----------|
+| `.png` | Diagrams, screenshots, figures with transparency |
+| `.jpg` | Photos, rendered images |
 | `.gif` | Animations, demos |
-| `.png` | Diagrams, screenshots |
-| `.jpg` | Photos |
+| `.pdf` | Vector graphics, high-quality figures (auto-converted) |
 | `.webp` | Optimized web images |
 | `.mp4` | Videos (use HTML embed) |
 
@@ -986,9 +1027,10 @@ Add in the markdown content below the front matter:
 | Type | Recommended Size | Notes |
 |------|-----------------|-------|
 | Profile photo | 300x300 px | Square, PNG or JPG |
-| Teaser thumbnail | 400x250 px | 16:10 aspect ratio |
-| Content images | 800-1200 px width | Auto-scales |
+| Teaser thumbnail | 400x250 px | PNG, JPG, or GIF |
+| Content images | 800-1200 px width | PNG, JPG, GIF, or PDF |
 | GIFs | Under 5MB | Compress if larger |
+| PDFs | Any size | Best for vector figures |
 
 ### Step-by-Step: Add Image to Research Project
 

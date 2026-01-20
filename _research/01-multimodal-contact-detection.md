@@ -12,7 +12,7 @@ tags:
   - dVRK
 
 # Add your image or GIF here:
-# teaser: "research/multimodal-contact.gif"
+teaser: "research/test_1.png"
 
 # Publications associated with this research
 publications:

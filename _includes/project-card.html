@@ -23,19 +23,21 @@
   - venue: Publication venue or context
   - date: Date
   - website_url: Project website link
-  - paper_url: Paper/arXiv link
-  - video_url: Video link
-  - code_url: Code repository link (or "coming_soon" for placeholder)
+  - paper_url: Paper/arXiv link (or "coming_soon")
+  - video_url: Video link (or "coming_soon")
+  - code_url: Code repository link (or "coming_soon")
+  - dataset_url: Dataset link (or "coming_soon")
   - award: Award text (e.g., "Best Paper Award")
   - publications: List of associated publications, each with:
       - title: Publication title
       - authors: Author string (Zhou, H. will be highlighted)
       - venue: Conference/journal name
       - year: Publication year
-      - paper_url: Link to paper
-      - arxiv_url: Link to arXiv
-      - video_url: Link to video
+      - paper_url: Link to paper (or "coming_soon")
+      - arxiv_url: Link to arXiv (or "coming_soon")
+      - video_url: Link to video (or "coming_soon")
       - code_url: Link to code (or "coming_soon")
+      - dataset_url: Link to dataset (or "coming_soon")
       - award: Award text
 {% endcomment %}
 
@@ -94,19 +96,27 @@
 
       <div class="project-links">
         {% if post.website_url %}
-        <a href="{{ post.website_url }}" class="project-link" target="_blank">[Website]</a>
+          {% if post.website_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Website Coming Soon]</span>
+          {% else %}
+          <a href="{{ post.website_url }}" class="project-link" target="_blank">[Website]</a>
+          {% endif %}
         {% endif %}
 
         {% if post.paper_url %}
-        <a href="{{ post.paper_url }}" class="project-link" target="_blank">[arXiv]</a>
-        {% endif %}
-
-        {% if post.paperurl %}
-        <a href="{{ post.paperurl }}" class="project-link" target="_blank">[Paper]</a>
+          {% if post.paper_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Paper Coming Soon]</span>
+          {% else %}
+          <a href="{{ post.paper_url }}" class="project-link" target="_blank">[Paper]</a>
+          {% endif %}
         {% endif %}
 
         {% if post.video_url %}
-        <a href="{{ post.video_url }}" class="project-link" target="_blank">[Video]</a>
+          {% if post.video_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Video Coming Soon]</span>
+          {% else %}
+          <a href="{{ post.video_url }}" class="project-link" target="_blank">[Video]</a>
+          {% endif %}
         {% endif %}
 
         {% if post.code_url %}
@@ -117,8 +127,20 @@
           {% endif %}
         {% endif %}
 
+        {% if post.dataset_url %}
+          {% if post.dataset_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Dataset Coming Soon]</span>
+          {% else %}
+          <a href="{{ post.dataset_url }}" class="project-link" target="_blank">[Dataset]</a>
+          {% endif %}
+        {% endif %}
+
         {% if post.slides_url %}
-        <a href="{{ post.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+          {% if post.slides_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Slides Coming Soon]</span>
+          {% else %}
+          <a href="{{ post.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+          {% endif %}
         {% endif %}
 
         {% if post.award %}
@@ -142,19 +164,35 @@
 
         <div class="project-links">
           {% if pub.website_url %}
-          <a href="{{ pub.website_url }}" class="project-link" target="_blank">[Website]</a>
+            {% if pub.website_url == "coming_soon" %}
+            <span class="project-link coming-soon">[Website Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.website_url }}" class="project-link" target="_blank">[Website]</a>
+            {% endif %}
           {% endif %}
 
           {% if pub.arxiv_url %}
-          <a href="{{ pub.arxiv_url }}" class="project-link" target="_blank">[arXiv]</a>
+            {% if pub.arxiv_url == "coming_soon" %}
+            <span class="project-link coming-soon">[arXiv Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.arxiv_url }}" class="project-link" target="_blank">[arXiv]</a>
+            {% endif %}
           {% endif %}
 
           {% if pub.paper_url %}
-          <a href="{{ pub.paper_url }}" class="project-link" target="_blank">[Paper]</a>
+            {% if pub.paper_url == "coming_soon" %}
+            <span class="project-link coming-soon">[Paper Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.paper_url }}" class="project-link" target="_blank">[Paper]</a>
+            {% endif %}
           {% endif %}
 
           {% if pub.video_url %}
-          <a href="{{ pub.video_url }}" class="project-link" target="_blank">[Video]</a>
+            {% if pub.video_url == "coming_soon" %}
+            <span class="project-link coming-soon">[Video Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.video_url }}" class="project-link" target="_blank">[Video]</a>
+            {% endif %}
           {% endif %}
 
           {% if pub.code_url %}
@@ -165,20 +203,30 @@
             {% endif %}
           {% endif %}
 
+          {% if pub.dataset_url %}
+            {% if pub.dataset_url == "coming_soon" %}
+            <span class="project-link coming-soon">[Dataset Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.dataset_url }}" class="project-link" target="_blank">[Dataset]</a>
+            {% endif %}
+          {% endif %}
+
           {% if pub.slides_url %}
-          <a href="{{ pub.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+            {% if pub.slides_url == "coming_soon" %}
+            <span class="project-link coming-soon">[Slides Coming Soon]</span>
+            {% else %}
+            <a href="{{ pub.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+            {% endif %}
           {% endif %}
 
           {% if pub.award %}
           <span class="project-badge">{{ pub.award }}</span>
           {% endif %}
 
-          {% comment %} Show "Coming Soon" if no links provided {% endcomment %}
-          {% unless pub.website_url or pub.arxiv_url or pub.paper_url or pub.video_url or pub.code_url %}
-            {% if pub.under_review %}
-            <span class="project-link coming-soon">[Under Review]</span>
-            {% endif %}
-          {% endunless %}
+          {% comment %} Show "Under Review" if specified {% endcomment %}
+          {% if pub.under_review %}
+          <span class="project-link coming-soon">[Under Review]</span>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
