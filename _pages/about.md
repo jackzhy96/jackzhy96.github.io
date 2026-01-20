@@ -9,9 +9,9 @@ redirect_from:
 
 ## Summary
 
-**Robotics Systems & Simulation Infrastructure Engineer** specializing in **asset pipelines (real2sim)** and **multi-modal synchronized data collection & analysis**, with a **controls/dynamics backbone**. Also, a **software engineer** with a background in **computer vision** and **machine learning**.
+**Robotics Systems & Simulation Infrastructure Engineer** specializing in **asset pipelines (CAD to robot/scene)** and **multi-modal synchronized data collection & analysis**, with a **controls/dynamics backbone**. Also, a **software engineer** with a background in **computer vision** and **machine learning**.
 
-Final-year PhD candidate (Expected to graduate in May 2026) in Robotics Engineering at Worcester Polytechnic Institute, specializing in surgical robotics (dVRK, the da Vinci Research Kit). I have a strong background in long-horizon R&D: from robot infrastructure development, dynamic model identification and system integration to simulation, multi-modal learning & analysis and AI-driven perception & automation.
+Final-year PhD candidate (Expected to graduate in May 2026) in Robotics Engineering at Worcester Polytechnic Institute, specializing in **robotics platform infrastructure**, **simulation**, **multi-modal dataset pipelines** and **AI-driven advanced perception & automation** for surgical robotics (**dVRK**, the da Vinci Research Kit), including robot hardware repair/maintenance/development, camera integration, video pipeline construction, synchronized logging, and dataset packaging with data-quality post-processing. Strong foundation in **robot kinematics/dynamics/control and dynamic system identification**. **Have driven cross-institution collaborations on shared dataset and system identification deliverables**.
 
 I am a **practical robotic problem solver for both hardware and software**, open to relocation inside the U.S., and targeting Full-Time positions starting **May/June 2026**.
 
