@@ -108,7 +108,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
   </li>
   <li class="news-item">
     <span class="news-date">2024 Dec:</span>
-    Our <a href="/publication/2024-surgicai">SurgicAI</a> paper accepted to 2024 NeurIPS Datasets and Benchmarks Track! Also see it on <a href="https://www.cs.jhu.edu/news/ais-stitch-in-time/">JHU CS News</a>.
+    Our <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/74c4f2b87b7499d365422152c76fd916-Paper-Datasets_and_Benchmarks_Track.pdf">SurgicAI</a> paper has been accepted to 2024 NeurIPS Datasets and Benchmarks Track! Also see it on <a href="https://www.cs.jhu.edu/news/ais-stitch-in-time/">JHU CS News</a>.
   </li>
   <li class="news-item">
     <span class="news-date">2024 Jun:</span>
