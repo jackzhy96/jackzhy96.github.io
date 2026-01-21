@@ -67,7 +67,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
     <span class="location">Boston, MA</span>
   </div>
   <div class="highlight-content">
-    M.S. in Mechanical Engineering at <a href="https://www.bu.edu/" target="_blank">Boston University</a>. Advisor: Prof. <a href="https://www.bu.edu/eng/profile/calin-belta-ph-d-me-se/" target="_blank">Calin Belta</a> and my <a href="https://www.proquest.com/openview/2d6dedf90421cb7378dd14d54d2a5220" target="_blank">Master's Thesis</a>: Imitation Learning with Dynamic Movement Primitives.
+    M.S. in Mechanical Engineering at <a href="https://www.bu.edu/" target="_blank">Boston University</a>. Advisor: Prof. <a href="https://www.bu.edu/eng/profile/calin-belta-ph-d-me-se/" target="_blank">Calin Belta</a> and my Master's Thesis: <a href="https://open.bu.edu/items/3e168bc0-abf7-4c33-bb12-af23a2bdb7a0" target="_blank">Imitation Learning with Dynamic Movement Primitives</a>.
   </div>
 </div>
 
