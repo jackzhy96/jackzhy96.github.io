@@ -27,7 +27,7 @@ publications:
     code_url: "coming_soon"
     dataset_url: "coming_soon"
     under_review: true
-    teaser: "research/test_1.png"
+    teaser: "research/surgsync_dataset_overview.png"
 ---
 
 ## Overview
@@ -50,7 +50,7 @@ This research represents Multi-Modal Time-Synchronized Data Collection and Post-
 
 ## SurgSync Overview
 <figure>
-  <img src="/images/research/test_1.png" alt="Description" style="width: 85%">
+  <img src="/images/research/surgsync_dataset_overview.png" alt="Description" style="width: 85%">
   <figcaption>SurgSync Overview</figcaption>
 </figure>
 

@@ -702,14 +702,13 @@ Project description here.
 
 ### Adding Images and GIFs to Research Projects
 
-**Step 1: Prepare your image/GIF/PDF**
+**Step 1: Prepare your image/GIF**
 - Place the file in `/images/research/` folder
-- Supported formats: `.png`, `.jpg`, `.gif`, `.pdf`, `.webp`
+- Supported formats: `.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`
 - Recommended sizes:
   - Teaser thumbnail: 400x250 px (for project card)
   - Content images: 800-1200 px width
   - GIFs: Keep under 5MB for fast loading
-  - PDFs: Any size (best for vector graphics)
 
 **Step 2: Add teaser (thumbnail) for project card**
 
@@ -846,7 +845,7 @@ video_url: "https://youtube.com/watch?v=..."
 | `authors` | Author string ("Zhou, H." auto-highlighted) | - |
 | `venue` | Conference/journal | - |
 | `year` | Year | - |
-| `teaser` | Publication-specific thumbnail (png, jpg, jpeg, gif, svg, pdf, webp) | Image on left |
+| `teaser` | Publication-specific thumbnail (png, jpg, jpeg, gif, svg, webp) | Image on left |
 | `website_url` | Project website (or `"coming_soon"`) | [Website] |
 | `arxiv_url` | arXiv link (or `"coming_soon"`) | [arXiv] |
 | `paper_url` | Paper link (or `"coming_soon"`) | [Paper] |
@@ -1100,7 +1099,6 @@ Add in the markdown content below the front matter:
 | `.jpg` / `.jpeg` | Photos, rendered images |
 | `.gif` | Animations, demos |
 | `.svg` | Vector graphics, logos, icons (scalable) |
-| `.pdf` | Vector graphics, high-quality figures |
 | `.webp` | Optimized web images |
 | `.mp4` | Videos (use HTML embed) |
 
@@ -1352,10 +1350,9 @@ Use the video-embed include in your markdown content:
 | Type | Recommended Size | Notes |
 |------|-----------------|-------|
 | Profile photo | 300x300 px | Square, PNG or JPG |
-| Teaser thumbnail | 400x250 px | PNG, JPG, or GIF |
-| Content images | 800-1200 px width | PNG, JPG, GIF, or PDF |
+| Teaser thumbnail | 400x250 px | PNG, JPG, GIF, or WebP |
+| Content images | 800-1200 px width | PNG, JPG, GIF, SVG, or WebP |
 | GIFs | Under 5MB | Compress if larger |
-| PDFs | Any size | Best for vector figures |
 
 ### Step-by-Step: Add Image to Research Project
 
