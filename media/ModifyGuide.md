@@ -1237,6 +1237,25 @@ When writing content in your project's markdown file (below the `---` front matt
 </figure>
 ```
 
+#### YouTube Thumbnail with Link (if embedding is disabled)
+Some YouTube videos don't allow embedding. Use a clickable thumbnail instead:
+```html
+<figure>
+  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
+    <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Video thumbnail" style="width: 85%;">
+  </a>
+  <figcaption>Click to watch on YouTube</figcaption>
+</figure>
+```
+
+**YouTube thumbnail URL options:**
+| URL | Resolution |
+|-----|------------|
+| `https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg` | 1280x720 (HD) |
+| `https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg` | 480x360 |
+| `https://img.youtube.com/vi/VIDEO_ID/mqdefault.jpg` | 320x180 |
+| `https://img.youtube.com/vi/VIDEO_ID/default.jpg` | 120x90 |
+
 **Width examples:**
 | Style | Result |
 |-------|--------|

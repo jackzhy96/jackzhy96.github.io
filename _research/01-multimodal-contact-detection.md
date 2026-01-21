@@ -67,10 +67,18 @@ This research represents Multi-Modal Time-Synchronized Data Collection and Post-
 ## test 2 
 <figure>
   <div class="video-container youtube-video" style="width: 85%">
-    <iframe src="https://www.youtube.com/embed/x3bDhtuC5yk" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
   </div>
-  <figcaption>test video 2</figcaption>
+  <figcaption>test video 2 (embedded, it may fail)</figcaption>
 </figure>
+
+## test 3
+<figure>                                                                      
+    <a href="https://www.youtube.com/watch?v=x3bDhtuC5yk" target="_blank">      
+      <img src="https://img.youtube.com/vi/x3bDhtuC5yk/maxresdefault.jpg" alt="Video thumbnail" style="width: 85%;">                                    
+    </a>                                                                        
+    <figcaption>test 3</figcaption>                          
+</figure> 
 
 <!-- Example for adding a GIF: -->
 <!-- ![Demo GIF](/images/research/multimodal-contact-demo.gif) -->
