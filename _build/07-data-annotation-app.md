@@ -2,7 +2,8 @@
 title: "Data Annotation Application"
 excerpt: "Novel data annotation application with GUI using PyQt for manual label annotations"
 collection: build
-date: 2024-11-01
+order: 7
+year: 2024
 venue: "Johns Hopkins University"
 tags:
   - PyQt

@@ -594,18 +594,28 @@ Find `<ul class="certificates-list">`:
 
 Create: `_research/XX-project-name.md` (XX = order number, e.g., `01`, `02`)
 
+**Important:** The `order` field controls display order (numerically sorted). The filename prefix (e.g., `01`, `02`) should match the `order` value for consistency.
+
 ```yaml
 ---
 title: "Your Research Title"
 excerpt: "Short description (1-2 sentences)"
 collection: research
-date: 2024-01-01
+order: 1                # REQUIRED: Numeric order for sorting (1, 2, 3...)
 venue: "University/Lab Name"
 location: "City, State"
+year: 2022              # Optional: Project year (displayed on cards)
+year_end: 2024          # Optional: End year for multi-year projects (displays as "2022-2024")
 
-# Thumbnail image/GIF for the project card (displayed on listing page)
+# Thumbnail image/GIF for the project card (displayed on listing page only)
 # Path is relative to /images/ folder
+# NOTE: Videos cannot be used as teasers - use static images or GIFs
 teaser: "research/your-project-thumbnail.gif"
+
+# Featured video on project DETAIL page only (not on listing cards)
+# Use YouTube URL or local MP4 file
+video_embed: "https://www.youtube.com/watch?v=VIDEO_ID"
+# OR: video_embed: "/images/research/demo.mp4"
 
 # Tags
 tags:
@@ -613,7 +623,9 @@ tags:
   - Robotics
 
 # Project-level links (all optional, use "coming_soon" for placeholder)
-paper_url: "https://arxiv.org/abs/..."
+website_url: "coming_soon"
+arxiv_url: "https://arxiv.org/abs/..."
+paper_url: "https://ieee.org/paper/..."
 code_url: "https://github.com/..."
 dataset_url: "coming_soon"
 video_url: "https://youtube.com/..."
@@ -624,11 +636,13 @@ publications:
     authors: "Zhou, H., Author2, et al."
     venue: "IEEE ICRA"
     year: 2025
-    paper_url: "https://link-to-paper.pdf"
+    website_url: "https://project-website.com"
     arxiv_url: "https://arxiv.org/abs/..."
-    video_url: "https://youtube.com/..."
+    paper_url: "https://link-to-paper.pdf"
     code_url: "https://github.com/..."
     dataset_url: "https://dataset-link.com"
+    video_url: "https://youtube.com/..."
+    slides_url: "https://slides-link.com"
     award: "Best Paper Award"
 
   - title: "Second Paper (Under Review)"
@@ -636,9 +650,12 @@ publications:
     venue: "IEEE RAL"
     year: 2026
     under_review: true
+    website_url: "coming_soon"
+    arxiv_url: "coming_soon"
     paper_url: "coming_soon"
     code_url: "coming_soon"
     dataset_url: "coming_soon"
+    video_url: "coming_soon"
 ---
 
 ## Overview
@@ -652,8 +669,35 @@ Project description here.
 
 ## Media
 
+### Inline Images (Markdown)
 ![Demo GIF](/images/research/demo.gif)
 ![Result Image](/images/research/result.png)
+
+### Images with Captions (HTML)
+<figure>
+  <img src="/images/research/result.png" alt="Results visualization">
+  <figcaption>Figure 1: Experimental results showing improved accuracy</figcaption>
+</figure>
+
+### Side-by-Side Images
+<div style="display: flex; gap: 1em;">
+  <img src="/images/research/before.png" alt="Before" style="width: 48%;">
+  <img src="/images/research/after.png" alt="After" style="width: 48%;">
+</div>
+
+### Embedded Video (in content)
+{% include video-embed.html url="/images/research/demo.mp4" %}
+{% include video-embed.html url="https://www.youtube.com/watch?v=VIDEO_ID" %}
+
+### Video with Centered Caption
+<figure>
+  <div class="video-container local-video">
+    <video controls playsinline>
+      <source src="/images/research/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>Figure 2: Demo video of the robotic system</figcaption>
+</figure>
 ```
 
 ### Adding Images and GIFs to Research Projects
@@ -714,24 +758,75 @@ images/
     └── multimodal-contact-results.png   # Results figure
 ```
 
+### Project Ordering and Sorting
+
+Projects are sorted **numerically by the `order` field** (not alphabetically by filename).
+
+```yaml
+order: 1    # This project appears first
+order: 2    # This project appears second
+order: 10   # This project appears tenth (not after 1 alphabetically)
+```
+
+**To add a new project at the beginning:** Use `order: 1` and increment others as needed.
+
+**To add a new project at the end:** Use the next available number.
+
+### Project Metadata (Venue, Location, Year)
+
+Projects display venue, location, and year on cards:
+
+```yaml
+venue: "Johns Hopkins University"    # University or lab name
+location: "Baltimore, MD"            # City, State
+year: 2022                           # Project year (displayed on cards)
+year_end: 2024                       # End year for multi-year projects (optional)
+```
+
+**Display format on cards:** `Johns Hopkins University | Baltimore, MD | 2022-2024`
+
+**Examples:**
+```yaml
+# Multi-year project
+venue: "WPI Automation and Interventional Medicine Lab"
+location: "Worcester, MA"
+year: 2020
+year_end: 2026
+
+# Single year project (year_end omitted)
+venue: "Philips Research"
+location: "Cambridge, MA"
+year: 2022
+
+# Venue only
+venue: "IEEE ICRA 2025"
+```
+
+**Note:** All fields except `order` are optional. Only defined fields will be displayed.
+
+---
+
 ### Project Links
 
 Research projects support multiple links. Each link can be a URL or `"coming_soon"`:
 
-| Field | Description |
-|-------|-------------|
-| `paper_url` | Paper/arXiv link |
-| `code_url` | Code repository link |
-| `dataset_url` | Dataset link |
-| `video_url` | Video link |
-| `website_url` | Project website |
-| `slides_url` | Slides link |
+| Field | Description | Display |
+|-------|-------------|---------|
+| `website_url` | Project website | [Website] |
+| `arxiv_url` | arXiv link | [arXiv] |
+| `paper_url` | Paper link | [Paper] |
+| `code_url` | Code repository | [Code] |
+| `dataset_url` | Dataset link | [Dataset] |
+| `video_url` | Video link | [Video] |
+| `slides_url` | Slides link | [Slides] |
 
 **Example with links:**
 ```yaml
 ---
 title: "My Research Project"
-paper_url: "https://arxiv.org/abs/1234.5678"
+website_url: "coming_soon"
+arxiv_url: "https://arxiv.org/abs/1234.5678"
+paper_url: "https://ieee.org/paper/..."
 code_url: "https://github.com/user/repo"
 dataset_url: "coming_soon"
 video_url: "https://youtube.com/watch?v=..."
@@ -740,24 +835,39 @@ video_url: "https://youtube.com/watch?v=..."
 
 **Result:**
 ```
-[Paper] [Code] [Dataset Coming Soon] [Video]
+[Website Coming Soon] [arXiv] [Paper] [Code] [Dataset Coming Soon] [Video]
 ```
 
 ### Publication Fields (for publications list)
 
-| Field | Description |
-|-------|-------------|
-| `title` | Paper title (required) |
-| `authors` | Author string ("Zhou, H." auto-highlighted) |
-| `venue` | Conference/journal |
-| `year` | Year |
-| `paper_url` | Direct PDF link (or `"coming_soon"`) |
-| `arxiv_url` | arXiv link (or `"coming_soon"`) |
-| `code_url` | Code link (or `"coming_soon"`) |
-| `dataset_url` | Dataset link (or `"coming_soon"`) |
-| `video_url` | Video link (or `"coming_soon"`) |
-| `award` | Award badge text |
-| `under_review` | Set `true` for papers under review |
+| Field | Description | Display |
+|-------|-------------|---------|
+| `title` | Paper title (required) | - |
+| `authors` | Author string ("Zhou, H." auto-highlighted) | - |
+| `venue` | Conference/journal | - |
+| `year` | Year | - |
+| `teaser` | Publication-specific thumbnail (png, jpg, jpeg, gif, svg, pdf, webp) | Image on left |
+| `website_url` | Project website (or `"coming_soon"`) | [Website] |
+| `arxiv_url` | arXiv link (or `"coming_soon"`) | [arXiv] |
+| `paper_url` | Paper link (or `"coming_soon"`) | [Paper] |
+| `code_url` | Code link (or `"coming_soon"`) | [Code] |
+| `dataset_url` | Dataset link (or `"coming_soon"`) | [Dataset] |
+| `video_url` | Video link (or `"coming_soon"`) | [Video] |
+| `slides_url` | Slides link (or `"coming_soon"`) | [Slides] |
+| `award` | Award badge text | Badge |
+| `under_review` | Set `true` for papers under review | [Under Review] |
+
+**Example with publication teaser:**
+```yaml
+publications:
+  - title: "SurgSync: Multi-modal Data Collection"
+    authors: "Zhou, H.*, Liu, C.*, et al."
+    venue: "IEEE ICRA"
+    year: 2026
+    teaser: "research/surgsync-teaser.png"  # Publication-specific image
+    arxiv_url: "coming_soon"
+    code_url: "coming_soon"
+```
 
 ### Delete Research Project
 
@@ -987,24 +1097,220 @@ Add in the markdown content below the front matter:
 | Format | Best For |
 |--------|----------|
 | `.png` | Diagrams, screenshots, figures with transparency |
-| `.jpg` | Photos, rendered images |
+| `.jpg` / `.jpeg` | Photos, rendered images |
 | `.gif` | Animations, demos |
-| `.pdf` | Vector graphics, high-quality figures (auto-converted) |
+| `.svg` | Vector graphics, logos, icons (scalable) |
+| `.pdf` | Vector graphics, high-quality figures |
 | `.webp` | Optimized web images |
 | `.mp4` | Videos (use HTML embed) |
 
+### Embedding Media in Detail Pages
+
+When writing content in your project's markdown file (below the `---` front matter), you can directly embed images and videos:
+
+#### Inline Image (Markdown)
+```markdown
+![Description](/images/research/figure.png)
+```
+
+#### Image with Caption (Centered by default)
+```html
+<figure>
+  <img src="/images/research/figure.png" alt="Description">
+  <figcaption>Figure 1: Your caption here</figcaption>
+</figure>
+```
+
+#### Image with Left-aligned Caption
+```html
+<figure class="caption-left">
+  <img src="/images/research/figure.png" alt="Description">
+  <figcaption>Figure 1: Left-aligned caption</figcaption>
+</figure>
+```
+
+#### Image with Right-aligned Caption
+```html
+<figure class="caption-right">
+  <img src="/images/research/figure.png" alt="Description">
+  <figcaption>Figure 1: Right-aligned caption</figcaption>
+</figure>
+```
+
+**Note:** The image/video is always centered. Only the caption alignment changes.
+
+#### Side-by-Side Images
+```html
+<div style="display: flex; gap: 1em; flex-wrap: wrap;">
+  <img src="/images/research/image1.png" alt="Image 1" style="width: 48%;">
+  <img src="/images/research/image2.png" alt="Image 2" style="width: 48%;">
+</div>
+```
+
+#### Inline Video (Local MP4)
+```liquid
+{% include video-embed.html url="/images/research/demo.mp4" %}
+```
+
+#### Inline Video (YouTube)
+```liquid
+{% include video-embed.html url="https://www.youtube.com/watch?v=VIDEO_ID" %}
+```
+
+#### Video with Caption (Centered by default)
+```html
+<figure>
+  <div class="video-container local-video">
+    <video controls playsinline>
+      <source src="/images/research/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>Figure 2: Demo video showing the system in action</figcaption>
+</figure>
+```
+
+#### Video with Left-aligned Caption
+```html
+<figure class="caption-left">
+  <div class="video-container local-video">
+    <video controls playsinline>
+      <source src="/images/research/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>Figure 2: Left-aligned caption</figcaption>
+</figure>
+```
+
+#### YouTube Video with Caption
+```html
+<figure>
+  <div class="video-container youtube-video">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+  </div>
+  <figcaption>Figure 3: Overview of our approach</figcaption>
+</figure>
+```
+
+**Caption alignment classes:**
+| Class | Caption Alignment |
+|-------|-------------------|
+| (none) | Centered (default) |
+| `caption-left` | Left |
+| `caption-center` | Center |
+| `caption-right` | Right |
+
+**Note:** The figure (image/video) is always centered. Only the caption alignment changes.
+
+#### Custom Width for Images
+```html
+<figure>
+  <img src="/images/research/figure.png" alt="Description" style="width: 85%;">
+  <figcaption>Figure 1: 85% width image</figcaption>
+</figure>
+
+<!-- Fixed pixel width -->
+<figure>
+  <img src="/images/research/figure.png" alt="Description" style="width: 600px;">
+  <figcaption>Figure 2: 600px width image</figcaption>
+</figure>
+```
+
+#### Custom Width for Local Video (MP4)
+```html
+<figure>
+  <div class="video-container local-video" style="width: 85%; margin: 0 auto;">
+    <video controls playsinline preload="metadata">
+      <source src="/images/research/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>Figure 1: 85% width video</figcaption>
+</figure>
+```
+
+#### Custom Width for YouTube Video
+```html
+<figure>
+  <div class="video-container youtube-video" style="width: 85%; margin: 0 auto;">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+  </div>
+  <figcaption>Figure 1: 85% width YouTube video</figcaption>
+</figure>
+```
+
+**Width examples:**
+| Style | Result |
+|-------|--------|
+| `style="width: 100%;"` | Full width (default) |
+| `style="width: 85%; margin: 0 auto;"` | 85% width, centered |
+| `style="width: 50%; margin: 0 auto;"` | Half width, centered |
+| `style="width: 800px; margin: 0 auto;"` | Fixed 800px, centered |
+
+**Note:** Add `margin: 0 auto;` to keep videos centered when using a smaller width.
+
+---
+
 ### Embedding Videos
+
+**Important:** Videos are only displayed on **project detail pages**, not on project cards/listing pages. For listing pages, use static images or GIFs as teasers.
+
+**Option 1: Front Matter (Recommended for featured video)**
+
+Add `video_embed` to your project's front matter to display a featured video at the top of the detail page:
+
+```yaml
+---
+title: "My Research Project"
+video_embed: "https://www.youtube.com/watch?v=VIDEO_ID"  # YouTube
+# OR
+video_embed: "/images/research/demo.mp4"  # Local MP4 file
+---
+```
+
+**Supported YouTube URL formats:**
+- `https://www.youtube.com/watch?v=VIDEO_ID`
+- `https://youtu.be/VIDEO_ID`
+- `https://www.youtube.com/embed/VIDEO_ID`
+
+**Supported local video formats:** MP4, WebM, OGG
+
+**Why only these formats?** HTML5 `<video>` only natively supports MP4 (H.264), WebM (VP8/VP9), and OGG (Theora). Other formats like AVI and MOV are not supported by browsers:
+
+| Format | Browser Support | Recommendation |
+|--------|----------------|----------------|
+| **MP4** | All browsers, all devices | **Use this** (universal) |
+| **WebM** | Most browsers (except old Safari) | Good alternative |
+| **OGG** | Most browsers | Rarely needed |
+| **AVI** | None | Convert to MP4 |
+| **MOV** | Safari only | Convert to MP4 |
+
+**To convert AVI/MOV to MP4:**
+- **FFmpeg:** `ffmpeg -i input.mov -c:v libx264 -c:a aac output.mp4`
+- **HandBrake:** Free GUI tool at [handbrake.fr](https://handbrake.fr/)
+- **Online:** CloudConvert, Convertio
+
+**Option 2: Inline in Content**
+
+Use the video-embed include in your markdown content:
+
+```liquid
+{% include video-embed.html url="https://www.youtube.com/watch?v=VIDEO_ID" %}
+{% include video-embed.html url="/images/research/demo.mp4" %}
+```
+
+**Option 3: Raw HTML (Manual)**
 
 ```html
 <!-- YouTube -->
-<iframe width="560" height="315"
-  src="https://www.youtube.com/embed/VIDEO_ID"
-  frameborder="0" allowfullscreen></iframe>
+<div class="video-container youtube-video">
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+</div>
 
 <!-- Local video -->
-<video width="100%" controls>
-  <source src="/images/research/demo.mp4" type="video/mp4">
-</video>
+<div class="video-container local-video">
+  <video controls>
+    <source src="/images/research/demo.mp4" type="video/mp4">
+  </video>
+</div>
 ```
 
 ### Image Gallery (for Blog Posts)
@@ -1149,11 +1455,13 @@ docker compose up
 
 ### File Naming
 
-| Type | Format |
-|------|--------|
-| Research/Projects/Build | `XX-name.md` |
-| Publications | `YYYY-name.md` |
-| Blog posts | `YYYY-MM-DD-title.md` |
+| Type | Format | Notes |
+|------|--------|-------|
+| Research/Projects/Build | `XX-name.md` | XX = order prefix (01, 02...), must match `order` field |
+| Publications | `YYYY-name.md` | Sorted by date |
+| Blog posts | `YYYY-MM-DD-title.md` | Sorted by date |
+
+**Important:** For Research/Projects/Build, the `order` field in the front matter controls sorting, not the filename. Keep filename prefix consistent with order for maintainability.
 
 ### YAML Rules
 

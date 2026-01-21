@@ -2,7 +2,8 @@
 title: "Surgical Instrument Maintenance Solutions"
 excerpt: "Novel approach for surgical instrument lubrication and internal cable tension recovery"
 collection: build
-date: 2022-01-01
+order: 3
+year: 2022
 venue: "Worcester Polytechnic Institute"
 tags:
   - dVRK

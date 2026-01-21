@@ -2,7 +2,8 @@
 title: "FaceSwap and Neural Radiance Fields (NeRF) Implementation"
 excerpt: "Implementation of FaceSwap algorithms and Neural Radiance Fields for 3D scene reconstruction"
 collection: projects
-date: 2022-06-01
+order: 2
+year: 2022
 venue: "Worcester Polytechnic Institute"
 tags:
   - Deep Learning

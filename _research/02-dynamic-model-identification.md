@@ -2,7 +2,8 @@
 title: "Surgical Robot Dynamic Model Identification and Control"
 excerpt: "Novel force estimation approach and gravity compensation for dVRK using convex optimization"
 collection: research
-date: 2022-11-01
+order: 2
+year: 2022
 venue: "Johns Hopkins University"
 location: "Baltimore, MD"
 tags:

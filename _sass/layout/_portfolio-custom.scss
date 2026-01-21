@@ -1001,6 +1001,25 @@
     line-height: 1.5;
   }
 
+  .project-meta {
+    color: var(--global-text-color-light);
+    font-size: 0.9em;
+    margin-bottom: 0.75em;
+
+    .project-venue {
+      font-weight: 500;
+      color: var(--global-text-color);
+    }
+
+    .project-location {
+      font-style: italic;
+    }
+
+    .project-year {
+      color: var(--global-text-color-light);
+    }
+  }
+
   .project-authors {
     font-style: italic;
     color: var(--global-text-color-light);
@@ -1084,6 +1103,39 @@
     border-bottom: none;
     padding-bottom: 0;
   }
+
+  /* Publication with teaser - flex layout */
+  &.has-teaser {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+  }
+}
+
+/* Publication teaser image */
+.project-pub-teaser {
+  flex: 0 0 120px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 80px;
+  }
+
+  @media (max-width: 480px) {
+    flex: 0 0 60px;
+  }
+}
+
+/* Publication content wrapper */
+.project-pub-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .project-pub-title {
@@ -1140,6 +1192,32 @@
     margin-right: 0;
     margin-bottom: 1em;
     max-width: 100%;
+  }
+}
+
+/* Contact section at bottom of project/post pages */
+.page__contact {
+  margin-top: 2em;
+  padding: 1.25em;
+  background: var(--global-hover-bg, rgba(0, 0, 0, 0.03));
+  border-radius: 8px;
+  border-left: 4px solid var(--global-link-color);
+
+  p {
+    margin: 0;
+    color: var(--global-text-color);
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--global-link-color);
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -1388,7 +1466,7 @@ hr {
 
 /* ==========================================================================
    MEDIA CONTENT STYLING
-   For images/GIFs in page content
+   For images/GIFs/videos in page content
    ========================================================================== */
 
 .page__content img,
@@ -1400,6 +1478,94 @@ hr {
 
 .page__content img:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Figure with caption - figure always centered, caption alignment options */
+.page__content figure {
+  margin: 1.5em 0;
+  text-align: center;
+  display: block;
+
+  /* Figure (image/video) always centered */
+  img,
+  .video-container {
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Caption - default centered */
+  figcaption {
+    margin-top: 0.75em;
+    font-size: 0.9em;
+    color: var(--global-text-color-light);
+    font-style: italic;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Caption alignment options - high specificity selectors */
+.page__content figure.caption-left > figcaption,
+figure.caption-left > figcaption {
+  text-align: left !important;
+}
+
+.page__content figure.caption-center > figcaption,
+figure.caption-center > figcaption {
+  text-align: center !important;
+}
+
+.page__content figure.caption-right > figcaption,
+figure.caption-right > figcaption {
+  text-align: right !important;
+}
+
+/* Video container - responsive wrapper */
+.video-container {
+  position: relative;
+  width: 100%;
+  margin: 1.5em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* YouTube video - 16:9 aspect ratio */
+.video-container.youtube-video {
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+/* Local video (MP4, WebM, etc.) */
+.video-container.local-video {
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Featured video at top of project page */
+.featured-video {
+  margin-bottom: 2em;
+
+  .video-container {
+    margin: 0;
+  }
 }
 
 /* ==========================================================================

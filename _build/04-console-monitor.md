@@ -2,7 +2,8 @@
 title: "Viewer Console Monitor Replacement"
 excerpt: "Replacement solution for dVRK viewer console monitors and height adjustment re-enablement"
 collection: build
-date: 2022-03-01
+order: 4
+year: 2022
 venue: "Worcester Polytechnic Institute"
 tags:
   - dVRK

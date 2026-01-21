@@ -2,7 +2,8 @@
 title: "Reaching-to-Grasping Task Automation with Robot Learning"
 excerpt: "Imitation learning approach for automating reaching and grasping tasks on Baxter Robot"
 collection: projects
-date: 2019-10-01
+order: 8
+year: 2019
 venue: "Boston University"
 tags:
   - Robot Learning

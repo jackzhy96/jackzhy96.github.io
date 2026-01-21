@@ -2,7 +2,8 @@
 title: "Suturing Automation with Robot Learning"
 excerpt: "Imitation learning algorithms for suturing automation achieving 95% success rate"
 collection: research
-date: 2021-09-01
+order: 4
+year: 2021
 venue: "Johns Hopkins University"
 location: "Baltimore, MD"
 tags:

@@ -2,7 +2,8 @@
 title: "Visual Inertial Odometry with Multi-Scale Constraint Kalman Filter"
 excerpt: "Implementation of VIO using multi-scale constraint Kalman filtering techniques"
 collection: projects
-date: 2023-01-01
+order: 1
+year: 2023
 venue: "Worcester Polytechnic Institute"
 tags:
   - Computer Vision

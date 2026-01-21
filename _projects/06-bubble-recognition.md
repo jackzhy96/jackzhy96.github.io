@@ -2,7 +2,8 @@
 title: "Real-Time Bubble Recognition"
 excerpt: "Computer vision system for real-time bubble detection and recognition"
 collection: projects
-date: 2018-02-01
+order: 6
+year: 2018
 venue: "University of California, Berkeley"
 tags:
   - Computer Vision

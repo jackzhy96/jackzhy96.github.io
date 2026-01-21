@@ -45,6 +45,13 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% comment %} Featured video from front matter {% endcomment %}
+        {% if page.video_embed %}
+        <div class="featured-video">
+          {% include video-embed.html url=page.video_embed %}
+        </div>
+        {% endif %}
+
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
@@ -82,8 +89,6 @@ layout: default
         {% endif %}
         {% include page__taxonomy.html %}
       </footer>
-
-      {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include post_pagination.html %}
     </div>

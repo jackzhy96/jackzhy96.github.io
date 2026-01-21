@@ -2,7 +2,8 @@
 title: "Joint Encoder and Brake Replacement Solutions"
 excerpt: "Novel replacement solutions for defective joint encoders and brakes of dVRK arms"
 collection: build
-date: 2021-06-01
+order: 2
+year: 2021
 venue: "Worcester Polytechnic Institute"
 tags:
   - dVRK

@@ -2,7 +2,8 @@
 title: "Endoscope Video Pipeline Development"
 excerpt: "Video pipeline for endoscope image stacks using Video for Linux v2 drivers"
 collection: build
-date: 2022-06-01
+order: 5
+year: 2022
 venue: "Worcester Polytechnic Institute"
 tags:
   - dVRK

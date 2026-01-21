@@ -2,7 +2,8 @@
 title: "Surgical Instruments Tracking and Pose Estimation"
 excerpt: "Real-time markerless 6D pose estimation achieving 1.76mm and 8.55 degrees average errors"
 collection: research
-date: 2022-02-01
+order: 5
+year: 2022
 venue: "Johns Hopkins University"
 location: "Baltimore, MD"
 tags:

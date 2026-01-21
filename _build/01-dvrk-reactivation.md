@@ -2,7 +2,8 @@
 title: "da Vinci Surgical System Reactivation"
 excerpt: "Reactivation of full da Vinci Surgical Systems using dVRK controllers and software"
 collection: build
-date: 2021-03-01
+order: 1
+year: 2021
 venue: "Worcester Polytechnic Institute"
 tags:
   - dVRK

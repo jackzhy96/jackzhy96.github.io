@@ -2,7 +2,8 @@
 title: "Adaptive Robustness Control Design for UAV with ROS Gazebo"
 excerpt: "Design and implementation of adaptive robust control for UAV systems in simulation"
 collection: projects
-date: 2022-03-01
+order: 3
+year: 2022
 venue: "Worcester Polytechnic Institute"
 tags:
   - Control Systems

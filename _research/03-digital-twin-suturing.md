@@ -2,7 +2,8 @@
 title: "Digital Twin for Suturing Scenes"
 excerpt: "High-fidelity simulation environments for suturing execution on AMBF and NVIDIA Isaac Sim"
 collection: research
-date: 2022-02-01
+order: 3
+year: 2022
 venue: "Johns Hopkins University"
 location: "Baltimore, MD"
 tags:
@@ -31,7 +32,6 @@ publications:
     year: 2025
     # paper_url: ""
     code_url: "coming_soon"
-    award: "ICRA 2025"
 
   - title: "FIRE-3DV: Framework-Independent Rendering Engine for 3D Graphics Using Vulkan"
     authors: "Allison, C. J., Zhou, H., Munawar, A., Kazanzides, P., Barragan, J. A."

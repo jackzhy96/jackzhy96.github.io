@@ -1,0 +1,48 @@
+{% comment %}
+  Video Embed Include
+
+  Supports:
+  - YouTube URLs (youtube.com/watch?v=, youtu.be/, youtube.com/embed/)
+  - MP4 files (local path relative to site root)
+
+  Usage in front matter:
+    video_embed: "https://www.youtube.com/watch?v=VIDEO_ID"
+    video_embed: "/images/research/demo.mp4"
+
+  Usage in content:
+    {% include video-embed.html url="/images/research/demo.mp4" %}
+    {% include video-embed.html url="https://youtu.be/VIDEO_ID" %}
+{% endcomment %}
+
+{% assign video_url = include.url %}
+
+{% if video_url contains "youtube.com" or video_url contains "youtu.be" %}
+  {% comment %} Extract YouTube video ID {% endcomment %}
+  {% if video_url contains "youtube.com/watch?v=" %}
+    {% assign video_id = video_url | split: "watch?v=" | last | split: "&" | first %}
+  {% elsif video_url contains "youtu.be/" %}
+    {% assign video_id = video_url | split: "youtu.be/" | last | split: "?" | first %}
+  {% elsif video_url contains "youtube.com/embed/" %}
+    {% assign video_id = video_url | split: "embed/" | last | split: "?" | first %}
+  {% endif %}
+
+  <div class="video-container youtube-video">
+    <iframe
+      src="https://www.youtube.com/embed/{{ video_id }}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+{% elsif video_url contains ".mp4" or video_url contains ".webm" or video_url contains ".ogg" %}
+  {% comment %} Local video file {% endcomment %}
+  <div class="video-container local-video">
+    <video controls playsinline preload="metadata" muted>
+      <source src="{{ video_url | relative_url }}" type="video/{% if video_url contains '.mp4' %}mp4{% elsif video_url contains '.webm' %}webm{% else %}ogg{% endif %}">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+{% endif %}

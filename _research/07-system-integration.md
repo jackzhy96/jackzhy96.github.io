@@ -2,7 +2,8 @@
 title: "Surgical Robotics System Integration"
 excerpt: "Integration of photo-acoustic probes, sEMG biofeedback, and AR measurement systems with dVRK"
 collection: research
-date: 2022-01-01
+order: 7
+year: 2022
 venue: "Worcester Polytechnic Institute"
 location: "Worcester, MA"
 tags:

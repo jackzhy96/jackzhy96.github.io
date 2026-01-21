@@ -2,7 +2,8 @@
 title: "Custom Capacitive Contact Sensor"
 excerpt: "Design and implementation of custom capacitive sensor for tool-tissue contact detection"
 collection: build
-date: 2024-10-01
+order: 6
+year: 2024
 venue: "Johns Hopkins University"
 tags:
   - Sensor Design

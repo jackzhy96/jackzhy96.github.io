@@ -2,7 +2,8 @@
 title: "Laboratory Animal Surgery"
 excerpt: "Training course in laboratory animal surgical procedures"
 collection: projects
-date: 2021-06-01
+order: 4
+year: 2021
 venue: "Worcester Polytechnic Institute"
 tags:
   - Surgical Training

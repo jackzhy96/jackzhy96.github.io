@@ -13,6 +13,7 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.build reversed %}
+{% assign sorted_build = site.build | sort: 'order' %}
+{% for post in sorted_build %}
   {% include project-card.html post=post %}
 {% endfor %}

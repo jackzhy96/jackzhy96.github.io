@@ -2,7 +2,8 @@
 title: "Object Tracking Mechatronics System Design and Manufacturing"
 excerpt: "Design and fabrication of a mechatronic system for object tracking"
 collection: projects
-date: 2018-01-01
+order: 7
+year: 2018
 venue: "University of California, Berkeley"
 tags:
   - Mechatronics

@@ -2,7 +2,8 @@
 title: "Lower-Limb Exoskeleton Walking Strategy Learning"
 excerpt: "Automated walking strategy using imitation learning and iLQR control"
 collection: research
-date: 2020-09-01
+order: 8
+year: 2020
 venue: "Worcester Polytechnic Institute"
 location: "Worcester, MA"
 tags:

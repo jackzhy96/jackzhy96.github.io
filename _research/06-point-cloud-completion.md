@@ -2,7 +2,8 @@
 title: "Point Cloud Completion"
 excerpt: "Novel chamfer distance loss function achieving state-of-the-art results on benchmark datasets"
 collection: research
-date: 2023-05-01
+order: 6
+year: 2023
 venue: "Worcester Polytechnic Institute"
 location: "Worcester, MA"
 tags:

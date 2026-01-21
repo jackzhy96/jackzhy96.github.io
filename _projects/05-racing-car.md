@@ -2,7 +2,8 @@
 title: "Autonomous Racing Car Dynamic and Control Design"
 excerpt: "Design and implementation of dynamics and control systems for autonomous racing vehicles"
 collection: projects
-date: 2018-03-01
+order: 5
+year: 2018
 venue: "University of California, Berkeley"
 tags:
   - Autonomous Vehicles

@@ -9,21 +9,27 @@
   - Optional list of associated publications
 
   Usage in pages:
-    {% for post in site.research reversed %}
+    {% assign sorted = site.research | sort: 'order' %}
+    {% for post in sorted %}
       {% include project-card.html post=post %}
     {% endfor %}
 
   Required front matter in project files:
   - title: Project title
   - excerpt: Short description
+  - order: Numeric order for sorting (matches filename prefix, e.g., 1, 2, 3...)
 
   Optional front matter:
-  - teaser: Image path (relative to /images/ or absolute URL)
+  - teaser: Image path (supports png, jpg, jpeg, gif, svg, pdf, webp)
   - authors: List of authors (your name will be highlighted if it matches site.author.name)
   - venue: Publication venue or context
-  - date: Date
-  - website_url: Project website link
-  - paper_url: Paper/arXiv link (or "coming_soon")
+  - location: Location (e.g., "Baltimore, MD")
+  - year: Project year (displayed on cards, e.g., 2022)
+  - year_end: End year for multi-year projects (optional, displays as "2022-2024")
+  - video_embed: Featured video on detail page (YouTube URL or local MP4/WebM path)
+  - website_url: Project website link (or "coming_soon")
+  - arxiv_url: arXiv link (or "coming_soon")
+  - paper_url: Paper link (or "coming_soon")
   - video_url: Video link (or "coming_soon")
   - code_url: Code repository link (or "coming_soon")
   - dataset_url: Dataset link (or "coming_soon")
@@ -33,12 +39,16 @@
       - authors: Author string (Zhou, H. will be highlighted)
       - venue: Conference/journal name
       - year: Publication year
-      - paper_url: Link to paper (or "coming_soon")
-      - arxiv_url: Link to arXiv (or "coming_soon")
-      - video_url: Link to video (or "coming_soon")
-      - code_url: Link to code (or "coming_soon")
-      - dataset_url: Link to dataset (or "coming_soon")
+      - teaser: Publication-specific thumbnail (supports png, jpg, jpeg, gif, svg, pdf, webp)
+      - website_url: Project website (or "coming_soon")
+      - arxiv_url: arXiv link (or "coming_soon")
+      - paper_url: Paper link (or "coming_soon")
+      - code_url: Code link (or "coming_soon")
+      - dataset_url: Dataset link (or "coming_soon")
+      - video_url: Video link (or "coming_soon")
+      - slides_url: Slides link (or "coming_soon")
       - award: Award text
+      - under_review: Set true for papers under review
 {% endcomment %}
 
 {% if post.header.teaser %}
@@ -77,7 +87,16 @@
     <p class="project-description">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
     {% endif %}
 
-    {% comment %} Show authors and venue if no publications list (backward compatibility) {% endcomment %}
+    {% comment %} Project metadata: venue/university, location, year (always shown if defined) {% endcomment %}
+    {% if post.venue or post.location or post.year %}
+    <p class="project-meta">
+      {% if post.venue %}<span class="project-venue">{{ post.venue }}</span>{% endif %}
+      {% if post.location %}<span class="project-location">{% if post.venue %} | {% endif %}{{ post.location }}</span>{% endif %}
+      {% if post.year %}<span class="project-year">{% if post.venue or post.location %} | {% endif %}{{ post.year }}{% if post.year_end %}-{{ post.year_end }}{% endif %}</span>{% endif %}
+    </p>
+    {% endif %}
+
+    {% comment %} Show authors only if no publications list (backward compatibility) {% endcomment %}
     {% unless post.publications %}
       {% if post.authors %}
       <p class="project-authors">
@@ -88,79 +107,97 @@
             {{ author }}{% unless forloop.last %}, {% endunless %}
           {% endif %}
         {% endfor %}
-        {% if post.venue %}<span class="project-venue">. {{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}.</span>{% endif %}
       </p>
-      {% elsif post.venue %}
-      <p class="project-venue">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</p>
+      {% endif %}
+    {% endunless %}
+
+    {% comment %} Project-level links (always shown if defined) {% endcomment %}
+    <div class="project-links">
+      {% if post.website_url %}
+        {% if post.website_url == "coming_soon" %}
+        <span class="project-link coming-soon">[Website Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.website_url }}" class="project-link" target="_blank">[Website]</a>
+        {% endif %}
       {% endif %}
 
-      <div class="project-links">
-        {% if post.website_url %}
-          {% if post.website_url == "coming_soon" %}
-          <span class="project-link coming-soon">[Website Coming Soon]</span>
-          {% else %}
-          <a href="{{ post.website_url }}" class="project-link" target="_blank">[Website]</a>
-          {% endif %}
+      {% if post.arxiv_url %}
+        {% if post.arxiv_url == "coming_soon" %}
+        <span class="project-link coming-soon">[arXiv Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.arxiv_url }}" class="project-link" target="_blank">[arXiv]</a>
         {% endif %}
+      {% endif %}
 
-        {% if post.paper_url %}
-          {% if post.paper_url == "coming_soon" %}
-          <span class="project-link coming-soon">[Paper Coming Soon]</span>
-          {% else %}
-          <a href="{{ post.paper_url }}" class="project-link" target="_blank">[Paper]</a>
-          {% endif %}
+      {% if post.paper_url %}
+        {% if post.paper_url == "coming_soon" %}
+        <span class="project-link coming-soon">[Paper Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.paper_url }}" class="project-link" target="_blank">[Paper]</a>
         {% endif %}
+      {% endif %}
 
-        {% if post.video_url %}
-          {% if post.video_url == "coming_soon" %}
-          <span class="project-link coming-soon">[Video Coming Soon]</span>
-          {% else %}
-          <a href="{{ post.video_url }}" class="project-link" target="_blank">[Video]</a>
-          {% endif %}
+      {% if post.code_url %}
+        {% if post.code_url == "coming_soon" %}
+        <span class="project-link coming-soon">[Code Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.code_url }}" class="project-link" target="_blank">[Code]</a>
         {% endif %}
+      {% endif %}
 
-        {% if post.code_url %}
-          {% if post.code_url == "coming_soon" %}
-          <span class="project-link coming-soon">[Code Coming Soon]</span>
-          {% else %}
-          <a href="{{ post.code_url }}" class="project-link" target="_blank">[Code]</a>
-          {% endif %}
+      {% if post.dataset_url %}
+        {% if post.dataset_url == "coming_soon" %}
+        <span class="project-link coming-soon">[Dataset Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.dataset_url }}" class="project-link" target="_blank">[Dataset]</a>
         {% endif %}
+      {% endif %}
 
-        {% if post.dataset_url %}
-          {% if post.dataset_url == "coming_soon" %}
-          <span class="project-link coming-soon">[Dataset Coming Soon]</span>
-          {% else %}
-          <a href="{{ post.dataset_url }}" class="project-link" target="_blank">[Dataset]</a>
-          {% endif %}
+      {% if post.video_url %}
+        {% if post.video_url == "coming_soon" %}
+        <span class="project-link coming-soon">[Video Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.video_url }}" class="project-link" target="_blank">[Video]</a>
         {% endif %}
+      {% endif %}
 
-        {% if post.slides_url %}
-          {% if post.slides_url == "coming_soon" %}
-          <span class="project-link coming-soon">[Slides Coming Soon]</span>
-          {% else %}
-          <a href="{{ post.slides_url }}" class="project-link" target="_blank">[Slides]</a>
-          {% endif %}
+      {% if post.slides_url %}
+        {% if post.slides_url == "coming_soon" %}
+        <span class="project-link coming-soon">[Slides Coming Soon]</span>
+        {% else %}
+        <a href="{{ post.slides_url }}" class="project-link" target="_blank">[Slides]</a>
         {% endif %}
+      {% endif %}
 
-        {% if post.award %}
-        <span class="project-badge">{{ post.award }}</span>
-        {% endif %}
-      </div>
-    {% endunless %}
+      {% if post.award %}
+      <span class="project-badge">{{ post.award }}</span>
+      {% endif %}
+    </div>
 
     {% comment %} Display publications list if available {% endcomment %}
     {% if post.publications %}
     <div class="project-publications">
       {% for pub in post.publications %}
-      <div class="project-pub-item">
-        <div class="project-pub-title">{{ pub.title }}</div>
-
-        {% if pub.authors %}
-        <div class="project-pub-authors">
-          {{ pub.authors | replace: "Zhou, H.", "<span class='highlight-author'>Zhou, H.</span>" | replace: "Zhou, H.*", "<span class='highlight-author'>Zhou, H.*</span>" }}{% if pub.venue %}. <em>{{ pub.venue }}</em>{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+      <div class="project-pub-item{% if pub.teaser %} has-teaser{% endif %}">
+        {% if pub.teaser %}
+        <div class="project-pub-teaser">
+          <img src=
+            {% if pub.teaser contains "://" %}
+              "{{ pub.teaser }}"
+            {% else %}
+              "{{ pub.teaser | prepend: "/images/" | prepend: base_path }}"
+            {% endif %}
+            alt="{{ pub.title }}">
         </div>
         {% endif %}
+        <div class="project-pub-content">
+          <div class="project-pub-title">{{ pub.title }}</div>
+
+          {% if pub.authors %}
+          <div class="project-pub-authors">
+            {{ pub.authors | replace: "Zhou, H.", "<span class='highlight-author'>Zhou, H.</span>" | replace: "Zhou, H.*", "<span class='highlight-author'>Zhou, H.*</span>" }}{% if pub.venue %}. <em>{{ pub.venue }}</em>{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+          </div>
+          {% endif %}
 
         <div class="project-links">
           {% if pub.website_url %}
@@ -227,6 +264,7 @@
           {% if pub.under_review %}
           <span class="project-link coming-soon">[Under Review]</span>
           {% endif %}
+        </div>
         </div>
       </div>
       {% endfor %}
