@@ -586,6 +586,28 @@ Find `<ul class="certificates-list">`:
 
 ---
 
+## Page Descriptions
+
+Each listing page (Research, Projects, Build, Publications, Blog) has a description at the top. To modify these descriptions, edit the `<p class="page-description">` block in each page file.
+
+| Page | File | Description Location |
+|------|------|---------------------|
+| Research | `_pages/research.html` | Lines 8-12 |
+| Projects | `_pages/projects.html` | Lines 8-12 |
+| Build | `_pages/build.html` | Lines 8-12 |
+| Publications | `_pages/publications.html` | Lines 8-11 |
+| Blog | `_pages/year-archive.html` | Lines 11-14 |
+
+**Example:**
+```html
+<p class="page-description">
+  Your description text here. Can span multiple lines.
+  Supports HTML like <strong>bold</strong> and <a href="url">links</a>.
+</p>
+```
+
+---
+
 ## Research Projects
 
 **Folder:** `_research/`

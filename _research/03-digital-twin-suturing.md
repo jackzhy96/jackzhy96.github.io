@@ -19,6 +19,13 @@ tags:
 
 # Publications associated with this research
 publications:
+  - title: "Surgical Robotics Environment in NVIDIA Isaac Sim for Robot-Assisted Suturing"
+    authors: "Kim, T. W., Zhou, H., Barragan, J. A., ..., Munawar, A."
+    venue: "Intl. Symp. on Medical Robotics (ISMR), IEEE"
+    year: 2025
+    # paper_url: ""
+    code_url: "coming_soon"
+    
   - title: "SurgicAI: A Hierarchical Platform for Fine-Grained Surgical Policy Learning and Benchmarking"
     authors: "Wu, J., Zhou, H., Kazanzides, P., Munawar, A., Liu, A."
     venue: "NeurIPS Datasets and Benchmarks Track"
@@ -26,19 +33,6 @@ publications:
     # paper_url: ""
     # video_url: ""
     code_url: "coming_soon"
-
-  - title: "Surgical Robotics Environment in NVIDIA Isaac Sim for Robot-Assisted Suturing"
-    authors: "Kim, T. W., Zhou, H., Barragan, J. A., ..., Munawar, A."
-    venue: "Intl. Symp. on Medical Robotics (ISMR), IEEE"
-    year: 2025
-    # paper_url: ""
-    code_url: "coming_soon"
-
-  - title: "FIRE-3DV: Framework-Independent Rendering Engine for 3D Graphics Using Vulkan"
-    authors: "Allison, C. J., Zhou, H., Munawar, A., Kazanzides, P., Barragan, J. A."
-    venue: "IEEE Intl. Conf. on Robotic Computing (IRC)"
-    year: 2024
-    # paper_url: ""
 
   - title: "Realistic Data Generation for 6D Pose Estimation of Surgical Instruments"
     authors: "Barragan, J. A., Zhang, J., Zhou, H., Munawar, A., Kazanzides, P."
@@ -57,7 +51,6 @@ Development of high-fidelity digital twin environments for surgical suturing sce
 - Scan the real-world suturing training phantoms using MRI and import the segmented 3D models into the simulation environment
 - Build photorealistic dVRK surgical instrument simulation models, sharing the models with the dVRK community
 - Construct high-fidelity digital twin for suturing scenes in NVIDIA Omniverse Isaac Sim
-- Implement Vulkan graphic engine to improve the AMBF simulation quality, **reducing the rendering time by 84%**
 
 <!-- Add your media content below -->
 <!-- ![Digital Twin Demo](/images/research/digital-twin.gif) -->
