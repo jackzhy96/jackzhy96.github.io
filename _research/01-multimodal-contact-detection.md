@@ -67,7 +67,7 @@ This research represents Multi-Modal Time-Synchronized Data Collection and Post-
 ## test 2 
 <figure>
   <div class="video-container youtube-video" style="width: 85%">
-    <iframe src="https://www.youtube.com/watch?v=x3bDhtuC5yk&list=RDx3bDhtuC5yk&start_radio=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/x3bDhtuC5yk" allowfullscreen></iframe>
   </div>
   <figcaption>test video 2</figcaption>
 </figure>
