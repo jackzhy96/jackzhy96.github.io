@@ -34,6 +34,7 @@
   - code_url: Code repository link (or "coming_soon")
   - dataset_url: Dataset link (or "coming_soon")
   - award: Award text (e.g., "Best Paper Award")
+  - publication_only: Set true to display first publication as the entire card (for single-publication projects)
   - publications: List of associated publications, each with:
       - title: Publication title
       - authors: Author string (Zhou, H. will be highlighted)
@@ -49,20 +50,33 @@
       - slides_url: Slides link (or "coming_soon")
       - award: Award text
       - under_review: Set true for papers under review
+      - submit_year: Submission year (optional, used for "submitted in" when under_review)
 {% endcomment %}
 
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% elsif post.teaser %}
-  {% capture teaser %}{{ post.teaser }}{% endcapture %}
+{% comment %} Handle publication_only mode - use first publication's data {% endcomment %}
+{% if post.publication_only and post.publications.first %}
+  {% assign pub = post.publications.first %}
+  {% if pub.teaser %}
+    {% capture teaser %}{{ pub.teaser }}{% endcapture %}
+  {% elsif post.teaser %}
+    {% capture teaser %}{{ post.teaser }}{% endcapture %}
+  {% else %}
+    {% assign teaser = site.teaser %}
+  {% endif %}
+  {% assign title = pub.title %}
 {% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
+  {% if post.header.teaser %}
+    {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+  {% elsif post.teaser %}
+    {% capture teaser %}{{ post.teaser }}{% endcapture %}
+  {% else %}
+    {% assign teaser = site.teaser %}
+  {% endif %}
+  {% if post.id %}
+    {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+  {% else %}
+    {% assign title = post.title %}
+  {% endif %}
 {% endif %}
 
 <div class="project-card">
@@ -82,6 +96,95 @@
 
   <div class="project-content">
     <h3><a href="{{ base_path }}{{ post.url }}">{{ title }}</a></h3>
+
+    {% comment %} Publication-only mode: show publication details directly {% endcomment %}
+    {% if post.publication_only and post.publications.first %}
+      {% assign pub = post.publications.first %}
+
+      {% if post.excerpt %}
+      <p class="project-description">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+      {% endif %}
+
+      {% if pub.authors %}
+      <p class="project-authors">
+        {{ pub.authors | replace: "Zhou, H.", "<span class='highlight-author'>Zhou, H.</span>" | replace: "Zhou, H.*", "<span class='highlight-author'>Zhou, H.*</span>" }}
+      </p>
+      {% endif %}
+
+      {% if pub.venue or pub.year %}
+      <p class="project-meta">
+        {% if pub.venue %}<em>{{ pub.venue }}</em>{% endif %}{% if pub.venue and pub.year %}, {% endif %}{% if pub.year %}{{ pub.year }}{% endif %}
+      </p>
+      {% endif %}
+
+      <div class="project-links">
+        {% if pub.website_url %}
+          {% if pub.website_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Website Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.website_url }}" class="project-link" target="_blank">[Website]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.arxiv_url %}
+          {% if pub.arxiv_url == "coming_soon" %}
+          <span class="project-link coming-soon">[arXiv Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.arxiv_url }}" class="project-link" target="_blank">[arXiv]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.paper_url %}
+          {% if pub.paper_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Paper Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.paper_url }}" class="project-link" target="_blank">[Paper]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.video_url %}
+          {% if pub.video_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Video Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.video_url }}" class="project-link" target="_blank">[Video]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.code_url %}
+          {% if pub.code_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Code Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.code_url }}" class="project-link" target="_blank">[Code]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.dataset_url %}
+          {% if pub.dataset_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Dataset Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.dataset_url }}" class="project-link" target="_blank">[Dataset]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.slides_url %}
+          {% if pub.slides_url == "coming_soon" %}
+          <span class="project-link coming-soon">[Slides Coming Soon]</span>
+          {% else %}
+          <a href="{{ pub.slides_url }}" class="project-link" target="_blank">[Slides]</a>
+          {% endif %}
+        {% endif %}
+
+        {% if pub.award %}
+        <span class="project-badge">{{ pub.award }}</span>
+        {% endif %}
+
+        {% if pub.under_review %}
+        <span class="project-link coming-soon">[Under Review]</span>
+        {% endif %}
+      </div>
+
+    {% else %}
+    {% comment %} Normal mode: show project details {% endcomment %}
 
     {% if post.excerpt %}
     <p class="project-description">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
@@ -270,6 +373,9 @@
       {% endfor %}
     </div>
     {% endif %}
+
+    {% endif %}
+    {% comment %} End of publication_only check {% endcomment %}
 
   </div>
 </div>

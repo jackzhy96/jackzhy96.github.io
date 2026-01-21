@@ -700,6 +700,51 @@ Project description here.
 </figure>
 ```
 
+### Publication-Only Mode
+
+For projects with a single publication where the publication IS the project, use `publication_only: true`. This displays the publication details directly on the card instead of project-level information.
+
+```yaml
+---
+# title is OPTIONAL in publication_only mode (publication title is used instead)
+collection: research
+order: 5
+publication_only: true
+excerpt: "Short description of the paper (optional, shown above authors)"
+teaser: "research/paper-thumbnail.png"
+
+publications:
+  - title: "Your Paper Title Here"
+    authors: "Zhou, H., Author2, Author3, et al."
+    venue: "IEEE ICRA"
+    year: 2025
+    teaser: "research/paper-figure.png"
+    arxiv_url: "https://arxiv.org/abs/..."
+    paper_url: "https://ieee.org/paper/..."
+    code_url: "https://github.com/..."
+    video_url: "https://youtube.com/..."
+    award: "Best Paper Award"
+    # For under review papers:
+    # under_review: true
+    # submit_year: 2024  # Optional, falls back to year if not set
+---
+
+Paper abstract or detailed description here.
+```
+
+**What changes with `publication_only: true`:**
+- `title` field is optional (publication title is used for both card and detail page)
+- Card title uses the publication title
+- Detail page title uses the publication title
+- Detail page shows "Published in *Venue*, Year" below title
+- If `under_review: true`, shows "Currently under review, submitted in {submit_year or year}"
+- Shows excerpt (if provided) above authors
+- Shows publication authors, venue, and year
+- Shows publication links directly
+- No separate "publications list" section
+
+---
+
 ### Adding Images and GIFs to Research Projects
 
 **Step 1: Prepare your image/GIF**
@@ -855,6 +900,7 @@ video_url: "https://youtube.com/watch?v=..."
 | `slides_url` | Slides link (or `"coming_soon"`) | [Slides] |
 | `award` | Award badge text | Badge |
 | `under_review` | Set `true` for papers under review | [Under Review] |
+| `submit_year` | Submission year (optional, for "submitted in" text) | - |
 
 **Example with publication teaser:**
 ```yaml

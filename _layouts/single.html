@@ -18,7 +18,11 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.publication_only and page.publications.first %}
+      <meta itemprop="headline" content="{{ page.publications.first.title | strip_html | strip_newlines | escape_once }}">
+    {% elsif page.title %}
+      <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
@@ -26,7 +30,18 @@ layout: default
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <header>
-          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+          {% comment %} Use publication title for publication_only mode {% endcomment %}
+          {% if page.publication_only and page.publications.first %}
+            {% assign pub = page.publications.first %}
+            <h1 class="page__title" itemprop="headline">{{ pub.title }}</h1>
+            {% if pub.under_review %}
+              <p>Currently under review{% if pub.submit_year %}, submitted in {{ pub.submit_year }}{% elsif pub.year %}, submitted in {{ pub.year }}{% endif %}</p>
+            {% elsif pub.venue or pub.year %}
+              <p>Published in {% if pub.venue %}<i>{{ pub.venue }}</i>{% endif %}{% if pub.venue and pub.year %}, {% endif %}{% if pub.year %}{{ pub.year }}{% endif %}</p>
+            {% endif %}
+          {% elsif page.title %}
+            <h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+          {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
@@ -98,7 +113,7 @@ layout: default
     {% endif %}
 
     <div class="page__copyright">
-      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}
+      &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. Website built and customized by Jack (Haoying) Zhou from the <a href="https://github.com/academicpages/academicpages.github.io" target="_blank">academicpages</a> template. Please let me know if you notice any glitches.
     </div>
   </article>
 

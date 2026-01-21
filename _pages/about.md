@@ -57,7 +57,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
     <span class="location">Worcester, MA</span>
   </div>
   <div class="highlight-content">
-    Support the dVRK systems in <a href="https://www.wpi.edu/research/core-research-facilities/practicepoint" target="_blank">PracticePoint</a> at WPI, reactivating the dVRK, developing the dVRK infrastructure solutions and conducting & leading dVRK-related research projects.
+    Support the dVRK systems at WPI (one in <a href="https://www.wpi.edu/research/core-research-facilities/practicepoint" target="_blank">PracticePoint</a>), reactivating the dVRK, developing the dVRK infrastructure solutions and conducting & leading dVRK-related research projects.
   </div>
 </div>
 
