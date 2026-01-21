@@ -3,7 +3,7 @@ title: "Multi-Modal Data Collection and Analysis for Surgical Robotics"
 excerpt: "Multi-Modal Time-Synchronized Data Collection and Post-Processing Framework for Surgical Robotics, along with datasets and AI-driven applications (will update later)"
 collection: research
 order: 1
-year: 2025
+year: 2024
 year_end: 2026
 venue: "Johns Hopkins University"
 location: "Baltimore, MD"
@@ -47,6 +47,7 @@ This research represents Multi-Modal Time-Synchronized Data Collection and Post-
 <!-- Add your media content below -->
 <!-- Example for adding an image: -->
 <!-- ![Research Overview](/images/research/multimodal-contact.png) -->
+
 ## SurgSync Overview
 <figure>
   <img src="/images/research/test_1.png" alt="Description" style="width: 85%">

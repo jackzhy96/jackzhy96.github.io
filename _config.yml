@@ -26,8 +26,8 @@ author:
   name             : "Jack (Haoying) Zhou"
   name_chinese     : "周昊英"  # Chinese name displayed below English name
   pronouns         : "he/him"
-  bio_title        : "Surgical Robotics, Simulation"          # Bold line 1 (optional)
-  bio_title2       : "Infrastructure and AI"                  # Bold line 2 (optional)
+  bio_title        : "Surgical Robotics Infrastructure, Control,"          # Bold line 1 (optional)
+  bio_title2       : "Simulation and AI"                  # Bold line 2 (optional)
   bio              : "Visiting Graduate Scholar at JHU"       # Regular line 1 (optional)
   bio2             : "Robotics Ph.D. Candidate at WPI"          # Regular line 2 (optional)
   location         : "Baltimore, MD"

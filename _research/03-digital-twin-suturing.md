@@ -3,7 +3,8 @@ title: "Digital Twin for Suturing Scenes"
 excerpt: "High-fidelity simulation environments for suturing execution on AMBF and NVIDIA Isaac Sim"
 collection: research
 order: 3
-year: 2022
+year: 2021
+year_end: 2026
 venue: "Johns Hopkins University"
 location: "Baltimore, MD"
 tags:
