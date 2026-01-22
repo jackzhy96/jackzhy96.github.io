@@ -13,7 +13,7 @@ tags:
   - dVRK
 # Add your image or GIF here:
 # header:
-#   teaser: "research/suturing-automation.gif"
+teaser: "research/suture_auto_sim_zhou.gif"
 ---
 
 ## Overview

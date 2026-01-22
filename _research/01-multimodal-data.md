@@ -26,8 +26,8 @@ publications:
     venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
     year: 2026
     submit_year: 2025
-    website_url: "coming_soon"
     arxiv_url: "coming_soon"
+    website_url: "coming_soon"
     code_url: "coming_soon"
     dataset_url: "coming_soon"
     under_review: true

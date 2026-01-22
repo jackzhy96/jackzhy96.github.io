@@ -7,6 +7,7 @@ excerpt: "Time-synchronized multi-modal data collection framework for surgical r
 date: 2026-01-01
 venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
 # paperurl: 'https://example.com/paper.pdf'
+under_review: True
 citation: 'Zhou, H.*, Liu, C.*, Wu, Y., ..., & Kazanzides, P. (2026, under review). "SurgSync: Time-Synchronized Multi-modal Data Collection Framework and Dataset for Surgical Robotics." In IEEE Intl. Conf. on Robotics and Automation (ICRA).'
 ---
 

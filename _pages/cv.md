@@ -27,10 +27,11 @@ redirect_from:
   <div class="cv-timeline-content">
     <h3>Ph.D. in Robotics Engineering</h3>
     <span class="organization">Worcester Polytechnic Institute</span>
-    <div class="advisor">Advisor: <a href="https://users.wpi.edu/~gfischer/" target="_blank">Prof. Gregory S. Fischer</a></div>
+    <div class="advisor">Advisor: Prof. <a href="https://www.wpi.edu/people/faculty/gfischer" target="_blank">Gregory S. Fischer</a></div>
     <div class="gpa">GPA: 3.95/4.0</div>
     <ul>
-      <li>Research focus: Surgical robotics, dynamic model identification, simulation, multi-modal learning</li>
+      <li>Research focus: Surgical robotics, robot infrastructure, model-based robotics, simulation, multi-modal data pipeline, advanced perception and automation using AI algorithms</li>
+      <li>Visiting Graduate Scholar at LCSR JHU between June 2023 and May 2026</li>
     </ul>
   </div>
 </div>
@@ -43,7 +44,11 @@ redirect_from:
   <div class="cv-timeline-content">
     <h3>M.S. in Mechanical Engineering</h3>
     <span class="organization">Boston University</span>
+    <div class="advisor">Advisor: Prof. <a href="https://www.bu.edu/eng/profile/calin-belta-ph-d-me-se/" target="_blank">Calin Belta</a></div>
     <div class="gpa">GPA: 3.78/4.0</div>
+    <ul>
+    <li>Thesis: <a href="https://open.bu.edu/items/3e168bc0-abf7-4c33-bb12-af23a2bdb7a0" target="_blank">Imitation Learning with Dynamic Movement Primitives</a></li>
+    </ul>
   </div>
 </div>
 
@@ -86,7 +91,7 @@ redirect_from:
   <div class="cv-timeline-content">
     <h3>Visiting Graduate Scholar</h3>
     <span class="organization">Johns Hopkins University</span>
-    <div class="advisor">Advisor: <a href="https://engineering.jhu.edu/faculty/peter-kazanzides/" target="_blank">Prof. Peter Kazanzides</a></div>
+    <div class="advisor">Advisor: Prof. <a href="https://engineering.jhu.edu/faculty/peter-kazanzides/" target="_blank">Peter Kazanzides</a></div>
     <ul>
       <li>Develop infrastructures to be shared with the dVRK community</li>
       <li>Develop high-fidelity simulation environments for NSF AccelNet Surgical Robotics Challenges</li>
