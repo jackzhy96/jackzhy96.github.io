@@ -34,17 +34,24 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # Inject the analytics tracking ID from secrets (only if secret is set)
+      # Inject the analytics tracking ID from secrets (only if secret is set and provider is not "false")
       - name: Inject Analytics Tracking ID
-        if: ${{ secrets.GA_TRACKING_ID != '' }}
+        env:
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
         run: |
-          # Check if analytics provider is not "false" before injecting
-          if ! grep -q 'provider.*:.*"false"' _config.yml; then
-            sed -i "s/tracking_id.*:.*/tracking_id: \"${{ secrets.GA_TRACKING_ID }}\"/" _config.yml
-            echo "Analytics tracking ID injected"
-          else
-            echo "Analytics provider is disabled, skipping tracking ID injection"
+          # Skip if secret is not set
+          if [ -z "$GA_TRACKING_ID" ]; then
+            echo "GA_TRACKING_ID secret not set, skipping injection"
+            exit 0
           fi
+          # Skip if analytics provider is "false"
+          if grep -q 'provider.*:.*"false"' _config.yml; then
+            echo "Analytics provider is disabled, skipping tracking ID injection"
+            exit 0
+          fi
+          # Inject the tracking ID
+          sed -i "s/tracking_id.*:.*/tracking_id: \"$GA_TRACKING_ID\"/" _config.yml
+          echo "Analytics tracking ID injected"
 
       - name: Build with Jekyll
         run: bundle exec jekyll build
