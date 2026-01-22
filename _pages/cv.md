@@ -10,7 +10,8 @@ redirect_from:
 {% include base_path %}
 
 <div class="cv-download">
-  <a href="/media/JackHaoyingZhou_CV_2026.pdf" class="btn btn--primary btn--large" download>Download CV (PDF)</a>
+<a href="/media/JackHaoyingZhou_Resume_2026.pdf" class="btn btn--primary btn--large" download>Download Resume (PDF)</a>
+<a href="/media/JackHaoyingZhou_CV_2026.pdf" class="btn btn--secondary btn--large" download>Download CV (PDF)</a>
 </div>
 
 ---
@@ -141,13 +142,80 @@ redirect_from:
 
 ## Technical Skills
 
-**Programming Languages:** Python, MATLAB, C/C++, ROS/ROS 2, bash and shell scripting
+<div class="skills-section">
 
-**Simulation:** AMBF (Bullet Physics), Blender 3D, Slicer, V-REP, Gazebo, Rviz, NVIDIA Isaac Sim, VTK, ITK, VMTK, Simulink, Ansys FEA
+<div class="skills-category">
+  <h3><i class="fas fa-code"></i> Programming Languages</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert"><i class="fab fa-python"></i>Python</span>
+    <span class="skill-tag" data-level="expert">MATLAB</span>
+    <span class="skill-tag">C/C++</span>
+    <span class="skill-tag">Bash/Shell</span>
+  </div>
+</div>
 
-**Platform & Frameworks:** dVRK Classic/Si, Magic Leap 1, NVIDIA Clara AGX, Git, Linux, PyTorch, TensorFlow, PyQt, Docker/NGC
+<div class="skills-category">
+  <h3><i class="fas fa-robot"></i> Robotics</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert">ROS/ROS2</span>
+    <span class="skill-tag" data-level="expert">model-based robotics (kinematics/dynamics/control)</span>
+    <span class="skill-tag" data-level="expert">system identification</span>
+    <span class="skill-tag">teleoperation</span>
+    <span class="skill-tag">calibration</span>
+  </div>
+</div>
 
-**Design & Manufacturing:** SolidWorks, Auto CAD, 3D Printing, Machine Shop Experience, Rapid Prototyping
+<div class="skills-category">
+  <h3><i class="fas fa-gears"></i> Simulation & Visualization</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert">AMBF (Bullet Physics)</span>
+    <span class="skill-tag">Blender</span>
+    <span class="skill-tag">Gazebo/RViz</span>
+    <span class="skill-tag">CoppeliaSim (V-REP)</span>
+    <span class="skill-tag">NVIDIA Isaac Sim</span>
+    <span class="skill-tag">3D Slicer</span>
+    <span class="skill-tag">Simulink</span>
+    <span class="skill-tag">Ansys FEA</span>
+  </div>
+</div>
+
+<div class="skills-category">
+  <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert">PyTorch</span>
+    <span class="skill-tag">OpenCV</span>
+    <span class="skill-tag">Computer Vision</span>
+    <span class="skill-tag">Deep Learning</span>
+    <span class="skill-tag">Imitation Learning</span>
+    <span class="skill-tag">TensorFlow</span>
+  </div>
+</div>
+
+<div class="skills-category">
+  <h3><i class="fas fa-server"></i> Platform & Infrastructure</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert">dVRK Classic/Si</span>
+    <span class="skill-tag" data-level="expert">Linux</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">Image pipeline (v4l2, udev)</span>
+    <span class="skill-tag">PyQt</span>
+    <span class="skill-tag">CMake/catkin/colconn</span>
+    <span class="skill-tag">Docker</span>
+  </div>
+</div>
+
+<div class="skills-category">
+  <h3><i class="fas fa-wrench"></i> Design & Manufacturing</h3>
+  <div class="skills-tags">
+    <span class="skill-tag" data-level="expert">Rapid Prototyping</span>
+    <span class="skill-tag">3D Printing</span>
+    <span class="skill-tag">Machine Shop</span>
+    <span class="skill-tag">SolidWorks</span>
+    <span class="skill-tag">AutoCAD</span>
+  </div>
+</div>
+
+</div>
 
 ---
 

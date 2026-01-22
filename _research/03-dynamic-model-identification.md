@@ -1,6 +1,6 @@
 ---
 title: "Surgical Robot Dynamic Model Identification and Control"
-excerpt: "Dynamic model identification and gravity compensation (shown) for dVRK-Si using convex optimization; upcoming journal paper is on the way, stay tuned! Develop a novel force estimation method using modal-based and learning-based hybrid approach for trocar interaction."
+excerpt: "Dynamic model identification and gravity compensation (shown) for dVRK-Si PSM using convex optimization; upcoming journal paper is on the way, stay tuned! Develop a novel force estimation method using modal-based and learning-based hybrid approach for trocar interaction."
 collection: research
 order: 3
 year: 2022
@@ -19,7 +19,7 @@ teaser: "research/enable_gc.gif"
 
 publications:
   - title: "Gravity Compensation of the dVRK-Si Patient Side Manipulator based on Dynamic Model Identification"
-    authors: "Zhou, H., Yang, H., Deguet, A., ..., Kazanzides, P."
+    authors: "Zhou, H., Yang, H., Deguet, A., ..., & Kazanzides, P."
     venue: "Hamlyn Symp. on Medical Robotics"
     year: 2025
     paper_url: "https://doi.org/10.31256/HSMR25.46"
@@ -37,7 +37,20 @@ publications:
 
 ## Overview
 
-This research develops novel approaches for force estimation and gravity compensation of the da Vinci Research Kit (dVRK) Patient Side Manipulator using model-based and learning-based hybrid methods.
+This research develops novel 
+- Dynamic model identification and gravity compensation (shown) for dVRK-Si (the next-generation da Vinci Research Kit) Patient Side Manipulator (PSM) using convex optimization
+<figure>
+  <div style="display: flex; gap: 1em;">
+  <img src="/images/research/no_gc.gif" alt="Before" style="width: 42%;">
+  <img src="/images/research/enable_gc.gif" alt="After" style="width: 42%;">
+</div>
+  <figcaption>Left: Without gravity compensation (free fall). Right: Enable gravity compensation. Both 6x speed</figcaption>
+</figure>
+- a novel force estimation method using a model-based and learning-based hybrid approach for trocar interaction.
+<figure>
+  <img src="/images/research/hybrid_fe_overview.png" alt="Description" style="width: 85%;">
+  <figcaption>Hybrid Force Estimation Overview</figcaption>
+</figure>
 
 ## Key Contributions
 

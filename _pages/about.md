@@ -124,7 +124,7 @@ I am a **practical robotic problem solver for both hardware and software**, open
 
 ---
 
-## Technical Skills
+## Technical Skills {#technical-skills}
 
 <div class="skills-section">
 

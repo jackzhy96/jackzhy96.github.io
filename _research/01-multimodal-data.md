@@ -14,6 +14,8 @@ tags:
   - Deep Learning
   - Multi-Modal
   - Computer Vision
+  - System Integration
+  - Synchronized Data Collection
 publication_only: true
 
 # Add your image or GIF here:
@@ -22,7 +24,7 @@ teaser: "research/surgsync_dataset_overview.png"
 # Publications associated with this research
 publications:
   - title: "SurgSync: Time-Synchronized Multi-modal Data Collection Framework and Dataset for Surgical Robotics"
-    authors: "Zhou, H.*, Liu, C.*, Wu, Y., ..., Kazanzides, P."
+    authors: "Zhou, H.*, Liu, C.*, Wu, Y., ..., & Kazanzides, P."
     venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
     year: 2026
     submit_year: 2025
@@ -44,7 +46,7 @@ This research represents Multi-Modal Time-Synchronized Data Collection and Post-
 
 ## Key Contributions
 - Lead and manage 8-person cross-functional team, delivering IRB-compliant data collection and analysis that accelerated publication timeline and demo readiness
-- Build time-synchronized multi-modal data collection pipeline (vision + kinematics + sensor) and large (100+ instances) ex-vivo dataset
+- Build time-synchronized (multi-modality sync time latency within 10ms) multi-modal data collection pipeline (vision + kinematics + sensor) and large (100+ instances) ex-vivo dataset
 - Enable a novel kinematic projection approach and downstream optical flow/depth estimation using deep learning
 - Design and implement a custom capacitive contact sensor to acquire the ground truth of tool-tissue contact
 - Integrate a modern endoscope with the dVRK seamlessly, enabling high-quality image data acquisition

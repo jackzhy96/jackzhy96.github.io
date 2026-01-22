@@ -859,12 +859,16 @@
 
 /* Skill proficiency levels - optional visual indicator */
 .skill-tag[data-level="expert"] {
-  background: linear-gradient(135deg, var(--tag-bg-color), var(--global-base-color));
+  background: var(--global-base-color);
   color: #ffffff;
   border: none;
 
   i {
     color: #ffffff;
+  }
+
+  &:hover {
+    background: var(--global-link-color-hover);
   }
 }
 
@@ -1373,6 +1377,10 @@
 .cv-download {
   text-align: center;
   margin: 2em 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .btn {
@@ -1395,6 +1403,20 @@
 .btn--primary:hover {
   background-color: var(--global-link-color-hover);
   border-color: var(--global-link-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn--secondary {
+  background-color: #5ba3e0;
+  color: #ffffff;
+  border: 2px solid #5ba3e0;
+}
+
+.btn--secondary:hover {
+  background-color: #3d8fd4;
+  color: #ffffff;
+  border-color: #3d8fd4;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

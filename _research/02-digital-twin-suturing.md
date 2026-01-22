@@ -19,20 +19,28 @@ teaser: "research/digital_twin_suture_sim.png"
 # Publications associated with this research
 publications:
   - title: "Robot-Assisted Suturing in Surgical Simulation: A Comparative Analysis between NVIDIA's Simulator and an Open Platform"
-    authors: "Kim, T. W., Zhou, H., Barragan, J. A., ..., Munawar, A."
+    authors: "Kim, T. W., Zhou, H., Barragan, J. A., ..., & Munawar, A."
     venue: "Journal of Medical Robotics Research"
     year: 2026
     paper_url: "https://doi.org/10.1142/S2424905X26400052"
     
   - title: "Surgical Robotics Environment in NVIDIA Isaac Sim for Robot-Assisted Suturing"
-    authors: "Kim, T. W., Zhou, H., Barragan, J. A., ..., Munawar, A."
+    authors: "Kim, T. W., Zhou, H., Barragan, J. A., ..., & Munawar, A."
     venue: "Intl. Symp. on Medical Robotics (ISMR), IEEE"
     year: 2025
     paper_url: "https://doi.org/10.1109/ISMR67322.2025.11025977"
     code_url: "https://github.com/surgical-robotics-ai/isaac-sim-surgical-robotics-challenge"
     
+  - title: "FIRE-3DV: Framework-Independent Rendering Engine for 3D Graphics Using Vulkan"
+    authors: "Allison, C. J., Zhou, H., Munawar, A., Kazanzides, P., & Barragan, J. A."
+    venue: "IEEE Intl. Conf. on Robotic Computing (IRC)"
+    year: 2024
+    paper_url: "https://doi.org/10.1109/IRC63610.2024.00053"
+    arxiv_url: "https://arxiv.org/abs/2410.05095"
+    code_url: "https://github.com/FIRE-3DV-repositories/FIRE-3DV"
+    
   - title: "SurgicAI: A Hierarchical Platform for Fine-Grained Surgical Policy Learning and Benchmarking"
-    authors: "Wu, J., Zhou, H., Kazanzides, P., Munawar, A., Liu, A."
+    authors: "Wu, J., Zhou, H., Kazanzides, P., Munawar, A., & Liu, A."
     venue: "NeurIPS Datasets and Benchmarks Track"
     year: 2024
     paper_url: "https://doi.org/10.52202/079017-2037"
@@ -40,7 +48,7 @@ publications:
     code_url: "https://github.com/surgical-robotics-ai/SurgicAI"
 
   - title: "Realistic Data Generation for 6D Pose Estimation of Surgical Instruments"
-    authors: "Barragan, J. A., Zhang, J., Zhou, H., Munawar, A., Kazanzides, P."
+    authors: "Barragan, J. A., Zhang, J., Zhou, H., Munawar, A., & Kazanzides, P."
     venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
     year: 2024
     paper_url: "https://doi.org/10.1109/ICRA57147.2024.10611638"
@@ -60,6 +68,7 @@ Development of high-fidelity digital twin environments for surgical suturing sce
 - Scan the real-world suturing training phantoms using MRI and import the segmented 3D models into the simulation environment
 - Build photorealistic dVRK surgical instrument simulation models, sharing the models with the dVRK community
 - Construct high-fidelity digital twin for suturing scenes in NVIDIA Omniverse Isaac Sim
+- Develop an autonomous synthetic data generation pipeline using the high-fidelity simulation environment in the AMBF simulator
 
 ## Simulation Scene Examples
 
