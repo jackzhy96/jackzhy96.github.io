@@ -1074,6 +1074,20 @@
       color: var(--global-text-color-light);
     }
   }
+
+  &.under-review-tag {
+    background-color: #e67e22;
+    color: #ffffff;
+    border-color: #e67e22;
+    cursor: default;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #d35400;
+      border-color: #d35400;
+      color: #ffffff;
+    }
+  }
 }
 
 .project-badge {
