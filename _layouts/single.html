@@ -117,17 +117,18 @@ layout: default
     </div>
   </article>
 
-  {% comment %}<!-- only show related on a post page when not disabled -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    <div class="page__related">
-      {% if site.data.ui-text[site.locale].related_label %}
-        <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-      {% endif %}
-      <div class="grid__wrapper">
-        {% for post in site.related_posts limit:4 %}
-          {% include archive-single.html type="grid" %}
+  {% comment %}<!-- Related posts - only for blog posts, filtered by same category -->{% endcomment %}
+  {% if page.collection == 'posts' and page.category %}
+    {% assign related_posts = site.posts | where: "category", page.category | where_exp: "post", "post.url != page.url" %}
+    {% if related_posts.size > 0 %}
+    <div class="page__related page__related--minimal">
+      <h4 class="page__related-title">More in {{ page.category | capitalize }}</h4>
+      <ul class="related-posts-list">
+        {% for post in related_posts limit:3 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a> <span class="related-date">{{ post.date | date: "%b %Y" }}</span></li>
         {% endfor %}
-      </div>
+      </ul>
     </div>
+    {% endif %}
   {% endif %}
 </div>

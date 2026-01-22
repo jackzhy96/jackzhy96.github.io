@@ -92,4 +92,10 @@ html[data-theme="dark"] {
     --project-card-bg                   : #{$background-light};
     --project-card-border               : #{$background-lighter};
     --project-link-color                : #e69b5c;
+
+    /* Code styling for blog posts */
+    --code-bg-color                     : #{$background-lighter};
+    --code-text-color                   : #f472b6;
+    --code-block-bg                     : #{$background};
+    --code-block-text                   : #{$light-gray};
 }

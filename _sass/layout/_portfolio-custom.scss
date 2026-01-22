@@ -1803,6 +1803,290 @@ figure.caption-right > figcaption {
 }
 
 /* ==========================================================================
+   BLOG SECTION STYLING
+   ========================================================================== */
+
+.blog-section-title {
+  color: var(--global-text-color);
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 3px solid var(--global-base-color);
+  display: inline-block;
+
+  i {
+    margin-right: 0.5em;
+    color: var(--global-base-color);
+  }
+}
+
+.blog-section-desc {
+  color: var(--global-text-color-light);
+  font-size: 0.95em;
+  margin-bottom: 1.5em;
+}
+
+.no-posts {
+  color: var(--global-text-color-light);
+  font-style: italic;
+  padding: 1em;
+  background: var(--tag-bg-color);
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Minimal related posts for blog - simple list at bottom */
+.page__related--minimal {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--global-border-color);
+
+  .page__related-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--global-text-color-light);
+    margin-bottom: 0.75em;
+  }
+
+  .related-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.4em 0;
+      font-size: 0.9em;
+      border-bottom: 1px solid var(--global-border-color);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        color: var(--global-link-color);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .related-date {
+        color: var(--global-text-color-light);
+        font-size: 0.85em;
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   BLOG POST DETAIL PAGE STYLING
+   Clean, readable typography for blog content
+   ========================================================================== */
+
+.page__content {
+  /* Better base typography for blog posts */
+  p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    color: var(--global-text-color);
+  }
+
+  /* Headings with clear hierarchy */
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    color: var(--global-text-color);
+    border-bottom: 2px solid var(--global-base-color);
+    padding-bottom: 0.3em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    color: var(--global-text-color);
+    border-bottom: 1px solid var(--global-border-color);
+    padding-bottom: 0.3em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-top: 1.75em;
+    margin-bottom: 0.5em;
+    color: var(--global-text-color);
+  }
+
+  h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: var(--global-text-color);
+  }
+
+  /* Improved lists */
+  ul, ol {
+    margin: 1.25em 0;
+    padding-left: 1.75em;
+    line-height: 1.8;
+
+    li {
+      margin-bottom: 0.5em;
+      color: var(--global-text-color);
+
+      &::marker {
+        color: var(--global-base-color);
+      }
+    }
+
+    /* Nested lists */
+    ul, ol {
+      margin: 0.5em 0;
+    }
+  }
+
+  /* Styled code blocks */
+  pre {
+    background: var(--code-bg-color, #f6f8fa);
+    border: 1px solid var(--global-border-color);
+    border-radius: 8px;
+    padding: 1.25em;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.6;
+
+    code {
+      background: transparent;
+      padding: 0;
+      border: none;
+      font-size: inherit;
+    }
+  }
+
+  /* Inline code */
+  code {
+    background: var(--code-bg-color, #f6f8fa);
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--code-text-color, #d63384);
+    border: 1px solid var(--global-border-color);
+  }
+
+  /* Blockquotes */
+  blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid var(--global-base-color);
+    background: var(--tag-bg-color);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--global-text-color-light);
+
+    p {
+      margin-bottom: 0.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /* Links */
+  a {
+    color: var(--global-link-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-bottom-color: var(--global-link-color);
+    }
+  }
+
+  /* Horizontal rules */
+  hr {
+    border: none;
+    border-top: 2px solid var(--global-border-color);
+    margin: 2.5em 0;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+
+    th, td {
+      padding: 0.75em 1em;
+      border: 1px solid var(--global-border-color);
+      text-align: left;
+    }
+
+    th {
+      background: var(--tag-bg-color);
+      font-weight: 600;
+      color: var(--global-text-color);
+    }
+
+    tr:nth-child(even) {
+      background: var(--card-bg-color);
+    }
+  }
+
+  /* Better image styling in blog posts */
+  > p > img {
+    display: block;
+    margin: 2em auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Strong and emphasis */
+  strong {
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+
+  em {
+    font-style: italic;
+  }
+}
+
+/* Blog post meta info (date, read time) */
+.page__meta {
+  color: var(--global-text-color-light);
+  font-size: 0.9em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--global-border-color);
+
+  i {
+    margin-right: 0.3em;
+  }
+}
+
+/* Blog post title styling */
+.page__title {
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+  color: var(--global-text-color);
+}
+
+/* ==========================================================================
    PRINT STYLES
    ========================================================================== */
 

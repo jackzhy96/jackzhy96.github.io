@@ -13,6 +13,18 @@ tags:
 # Add your image or GIF here:
 # header:
 #   teaser: "build/annotation-app.jpg"
+
+publications:
+  - title: "SurgSync: Time-Synchronized Multi-modal Data Collection Framework and Dataset for Surgical Robotics"
+    authors: "Zhou, H.*, Liu, C.*, Wu, Y., ..., & Kazanzides, P."
+    venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
+    year: 2026
+    submit_year: 2025
+    arxiv_url: "coming_soon"
+    website_url: "coming_soon"
+    code_url: "coming_soon"
+    dataset_url: "coming_soon"
+    under_review: true
 ---
 
 ## Overview

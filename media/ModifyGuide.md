@@ -1065,31 +1065,106 @@ Paper details here.
 
 **Folder:** `_posts/`
 
+The Blog page has two sections:
+- **Technical** - Posts about robotics, programming, research, and engineering topics
+- **Hobby** - Posts about cooking, travel, hobbies, and personal interests
+
 ### Create New Blog Post
 
 Create: `_posts/YYYY-MM-DD-post-title.md`
 
+**Technical Post Example:**
 ```yaml
 ---
-title: 'Post Title'
+title: 'ROS2 Tips and Tricks'
 date: 2026-01-15
-permalink: /posts/2026/01/post-title/
+category: technical
+permalink: /posts/2026/01/ros2-tips/
 tags:
-  - cooking
-  - personal
+  - robotics
+  - ROS2
+  - programming
 ---
 
-Your content here.
+Your technical content here...
+```
+
+**Hobby Post Example:**
+```yaml
+---
+title: 'My Homemade Ramen'
+date: 2026-01-20
+category: hobby
+permalink: /posts/2026/01/homemade-ramen/
+tags:
+  - cooking
+  - food
+---
+
+Your hobby content here...
 
 ## Image Gallery
 
 <div class="image-gallery">
   <div class="gallery-item">
-    <img src="/images/cooking/dish1.jpg" alt="Description">
+    <img src="/images/cooking/ramen1.jpg" alt="Description">
     <div class="caption">Caption text</div>
   </div>
 </div>
 ```
+
+### Blog Post Categories
+
+| Category | Description | Example Topics |
+|----------|-------------|----------------|
+| `technical` | Technical and professional posts | Robotics, programming, research, tutorials |
+| `hobby` | Personal interests and hobbies | Cooking, travel, photography, crafts |
+
+**Important:** Posts without a `category` field won't appear in either section. Always specify `category: technical` or `category: hobby`.
+
+### Blog Post Front Matter Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `title` | Yes | Post title |
+| `date` | Yes | Publication date (YYYY-MM-DD) |
+| `category` | Yes | Either `technical` or `hobby` |
+| `permalink` | No | Custom URL path |
+| `tags` | No | List of tags for the post |
+
+### Blog Post Detail Page Features
+
+Blog post detail pages have optimized styling for readability:
+
+**Typography:**
+- Larger paragraph text with comfortable line height (1.8)
+- Clear heading hierarchy (h1, h2, h3, h4) with proper spacing
+- h1 and h2 headings have subtle bottom borders
+
+**Code Styling:**
+- Styled code blocks with background, borders, and rounded corners
+- Inline code with distinct color highlighting
+- Proper syntax highlighting support
+
+**Content Elements:**
+- Styled blockquotes with left border accent
+- Tables with alternating row colors
+- Lists with colored bullet markers
+- Images centered with rounded corners and shadow
+
+**Related Posts Section:**
+- Appears only at the bottom of blog posts (not on research/projects/build pages)
+- Shows only posts from the **same category** (Technical or Hobby)
+- Minimal list format: title + date (max 3 posts)
+- Hidden automatically if no other posts exist in the same category
+
+### Example Blog Posts
+
+Two example posts are provided as templates:
+- `_posts/2026-01-20-example-technical-post.md` - Technical post template
+- `_posts/2026-01-21-example-hobby-post.md` - Hobby post template
+
+You can use these as starting points or delete them when no longer needed.
 
 ---
 

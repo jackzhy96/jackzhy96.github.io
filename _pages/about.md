@@ -17,6 +17,10 @@ I am a **practical robotic problem solver for both hardware and software**, open
 
 ---
 
+Feel free to check out and investigate my projects in [Research](/research/), [Projects](/projects/) and [Build](/build/) pages!
+
+---
+
 ## Experience
 
 <div class="experience-highlights">

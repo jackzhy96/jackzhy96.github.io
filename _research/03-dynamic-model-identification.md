@@ -1,6 +1,6 @@
 ---
 title: "Surgical Robot Dynamic Model Identification and Control"
-excerpt: "Dynamic model identification and gravity compensation (shown) for dVRK-Si PSM using convex optimization; upcoming journal paper is on the way, stay tuned! Develop a novel force estimation method using modal-based and learning-based hybrid approach for trocar interaction."
+excerpt: "Dynamic model identification and gravity compensation (shown) for dVRK-Si PSM using convex optimization; upcoming journal paper is on the way, stay tuned! Develop a novel force estimation method using a modal-based and learning-based hybrid approach for trocar interaction."
 collection: research
 order: 3
 year: 2022

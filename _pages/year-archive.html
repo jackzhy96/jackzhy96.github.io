@@ -9,18 +9,47 @@ redirect_from:
 ---
 
 <p class="page-description">
-  Beyond robotics and engineering, I enjoy sharing my other interests and experiences.
-  Here you'll find posts about cooking, travel, and other personal projects.
+  A collection of my writings on technical topics and personal interests.
 </p>
 
 {% include base_path %}
 
-{% capture written_year %}'None'{% endcapture %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
-  {% endif %}
-  {% include archive-single.html %}
-{% endfor %}
+{% comment %} Get posts by category using where filter {% endcomment %}
+{% assign technical_posts = site.posts | where: "category", "technical" %}
+{% assign hobby_posts = site.posts | where: "category", "hobby" %}
+
+<h2 class="blog-section-title"><i class="fas fa-microchip"></i> Technical</h2>
+<p class="blog-section-desc">Posts about robotics, programming, research, and engineering topics.</p>
+
+{% if technical_posts.size > 0 %}
+  {% capture written_year %}'None'{% endcapture %}
+  {% for post in technical_posts %}
+    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% if year != written_year %}
+      <h3 id="technical-{{ year | slugify }}" class="archive__subtitle">{{ year }}</h3>
+      {% capture written_year %}{{ year }}{% endcapture %}
+    {% endif %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p class="no-posts">No technical posts yet. Stay tuned!</p>
+{% endif %}
+
+<hr>
+
+<h2 class="blog-section-title"><i class="fas fa-heart"></i> Hobby</h2>
+<p class="blog-section-desc">Posts about cooking, travel, hobbies, and other personal interests.</p>
+
+{% if hobby_posts.size > 0 %}
+  {% capture written_year %}'None'{% endcapture %}
+  {% for post in hobby_posts %}
+    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% if year != written_year %}
+      <h3 id="hobby-{{ year | slugify }}" class="archive__subtitle">{{ year }}</h3>
+      {% capture written_year %}{{ year }}{% endcapture %}
+    {% endif %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p class="no-posts">No hobby posts yet. Stay tuned!</p>
+{% endif %}
