@@ -223,6 +223,12 @@ Both Resume and CV will be updated on a monthly or bi-monthly basis. Last update
 
 ---
 
+## Projects
+
+Most projects can be found in [Research](/research/), [Projects](/projects/) and [Build](/build/) pages!
+
+---
+
 ## Publications
 
 For a complete list of publications, please visit the [Publications](/publications/) page.
@@ -232,8 +238,8 @@ For a complete list of publications, please visit the [Publications](/publicatio
 ## Awards and Certificates
 
 ### Awards
-- **Dr. Glenn H. Yee Award** - Worcester Polytechnic Institute, 2024
-- **Dr. Glenn H. Yee Award** - Worcester Polytechnic Institute, 2023
+- **Dr. Glenn Yee Graduate Student Tuition Award** - Worcester Polytechnic Institute, Fall 2024, Spring 2025 and Spring 2026
+- **Dr. Glenn Yee Graduate Student Travel Award** - Worcester Polytechnic Institute, Spring 2024
 
 ### Certificates
 - CITI Program Training - Social & Behavioral Research - Johns Hopkins University
