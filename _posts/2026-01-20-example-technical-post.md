@@ -1,7 +1,7 @@
 ---
 title: 'Example Technical Post: ROS2 Development Tips'
 date: 2026-01-20
-category: technical
+#category: technical
 permalink: /posts/2026/01/example-technical-post/
 tags:
   - robotics

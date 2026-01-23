@@ -7,4 +7,5 @@ excerpt: "Markerless 6-DOF pose tracking for suture needles"
 date: 2023-06-01
 venue: "Journal of Medical Robotics Research"
 authors: "Jiang, Y., Zhou, H., & Fischer, G. S."
+paper_url: "https://doi.org/10.1142/S2424905X23400093"
 ---

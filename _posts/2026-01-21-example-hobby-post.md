@@ -1,7 +1,7 @@
 ---
 title: 'Example Hobby Post: My Weekend Ramen Adventure'
 date: 2026-01-21
-category: hobby
+#category: hobby
 permalink: /posts/2026/01/example-hobby-post/
 tags:
   - cooking

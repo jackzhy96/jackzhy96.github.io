@@ -7,9 +7,7 @@ excerpt: "Comparative analysis of surgical simulation platforms for robot-assist
 date: 2026-01-01
 venue: "Journal of Medical Robotics Research"
 authors: "Kim, T. W., Zhou, H., Barragan, J. A., Ishida, H., Deguet, A., Kazanzides, P., & Munawar, A."
-# paperurl: ''
-# arxiv_url: ''
-# code_url: ''
+paper_url: "https://doi.org/10.1142/S2424905X26400052"
 ---
 
 This paper presents a comparative analysis between NVIDIA's Isaac Sim and an open-source surgical simulation platform for robot-assisted suturing tasks.

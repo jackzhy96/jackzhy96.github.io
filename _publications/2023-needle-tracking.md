@@ -7,6 +7,7 @@ excerpt: "Deep learning approach for markerless suture needle tracking"
 date: 2023-04-01
 venue: "IEEE International Symposium on Medical Robotics (ISMR)"
 authors: "Jiang, Y., Zhou, H., & Fischer, G. S."
+paper_url: "https://doi.org/10.1109/ISMR57123.2023.10130199"
 ---
 
 This paper presents a deep learning approach for real-time markerless suture needle tracking from robotic endoscope imagery.

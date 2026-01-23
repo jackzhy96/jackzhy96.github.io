@@ -16,6 +16,10 @@ redirect_from:
 
 ---
 
+Both Resume and CV will be updated on a monthly or bi-monthly basis. Last update: 2025.12.26. Stay tuned!
+
+---
+
 ## Education
 
 <div class="cv-timeline">

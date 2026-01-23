@@ -7,6 +7,7 @@ excerpt: "Intraoperative photoacoustic image guidance system"
 date: 2023-08-01
 venue: "Biomedical Optics Express"
 authors: "Gao, S., Wang, Y., Ma, X., Zhou, H., Jiang, Y., Yang, K., Lu, L., Wang, S., Nephew, B. C., Fichera, L., Fischer, G. S., & Zhang, H. K."
+paper_url: "https://doi.org/10.1364/BOE.498052"
 ---
 
 This journal paper presents an intraoperative laparoscopic photoacoustic image guidance system integrated with the da Vinci surgical system.
