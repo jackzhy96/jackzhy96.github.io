@@ -5,7 +5,7 @@ collection: build
 order: 5
 year: 2024
 year_end: 2025
-venue: "Worcester Polytechnic Institute"
+venue: "Johns Hopkins University"
 tags:
   - dVRK
   - Video Pipeline
