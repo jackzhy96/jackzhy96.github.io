@@ -62,7 +62,7 @@ This guide explains how to add, remove, or modify content on your portfolio webs
 | Publications | `_publications/` folder |
 | Blog posts | `_posts/` folder |
 | Images | `images/` folder |
-| Resume PDF | `media/` folder |
+| Resume/CV PDF | `files/` folder |
 
 ---
 
@@ -1180,10 +1180,12 @@ The CV page contains:
 - Link to Publications page
 - Training Certificates
 
-### Update Resume PDF
+### Update Resume/CV PDF
 
-1. Replace `/media/JackHaoyingZhou_Resume_2026.pdf`
-2. Or update the link in `_pages/cv.md` and `_pages/about.md`
+1. Replace the PDF files in `/files/` folder:
+   - `files/JackHaoyingZhou_Resume_2026.pdf` - Short resume
+   - `files/JackHaoyingZhou_CV_2026.pdf` - Full CV
+2. Or update the links in `_pages/cv.md` and `_pages/about.md`
 
 ---
 
@@ -1689,6 +1691,84 @@ touch _posts/2026-01-20-post-title.md
   </div>
 </div>
 ```
+
+---
+
+## Google Analytics
+
+The website supports Google Analytics 4 (GA4) for tracking visitor statistics. The tracking ID is kept private using GitHub Actions secrets.
+
+### How It Works
+
+1. The tracking ID is stored as a GitHub secret (not in the repository code)
+2. During deployment, GitHub Actions injects the tracking ID into the site
+3. The live site has analytics enabled, but the tracking ID is not visible in the repo
+
+### Setup Google Analytics
+
+**Step 1: Create a GA4 Property**
+
+1. Go to [Google Analytics](https://analytics.google.com/)
+2. Create a new GA4 property for your website
+3. Get your Measurement ID (format: `G-XXXXXXXXXX`)
+
+**Step 2: Add the Secret to GitHub**
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Environments** → **github-pages**
+3. Under **Environment secrets**, click **Add secret**
+4. Name: `GA_TRACKING_ID`
+5. Value: Your GA4 Measurement ID (e.g., `G-XXXXXXXXXX`)
+6. Click **Add secret**
+
+**Step 3: Configure _config.yml**
+
+The analytics section in `_config.yml` should look like this:
+
+```yaml
+# Analytics
+# Note: tracking_id is injected via GitHub Actions from repository secrets
+# To set up: Go to repo Settings > Environments > github-pages > Secrets
+# If provider is "false", the workflow will skip tracking ID injection
+analytics:
+  provider: "google-analytics-4"  # Use "false" to disable
+  google:
+    tracking_id: ""  # Injected by GitHub Actions workflow
+```
+
+**Step 4: Ensure GitHub Actions Workflow Exists**
+
+The deployment workflow (`.github/workflows/deploy.yml`) handles injecting the tracking ID. It:
+- Checks if the `GA_TRACKING_ID` secret is set
+- Checks if the provider is not `"false"`
+- Injects the tracking ID only if both conditions are met
+
+### Disable Analytics
+
+To disable analytics entirely:
+
+1. Set `provider: "false"` in `_config.yml`:
+   ```yaml
+   analytics:
+     provider: "false"
+   ```
+
+2. The workflow will skip tracking ID injection automatically
+
+### For Forked Repositories
+
+If you fork this repository:
+
+1. Analytics will not work until you set up your own `GA_TRACKING_ID` secret
+2. The site will build and deploy normally without analytics
+3. Follow the setup steps above to enable analytics with your own tracking ID
+
+### Privacy Notes
+
+- The tracking ID only allows *sending* data to your analytics, not *reading* it
+- Visitors on networks that block Google Analytics will still see your site normally
+- Some users with ad blockers won't be tracked (estimated 20-30% of tech users)
+- For EU visitors, consider adding a cookie consent banner for GDPR compliance
 
 ---
 

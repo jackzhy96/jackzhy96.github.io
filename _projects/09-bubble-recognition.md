@@ -9,6 +9,7 @@ tags:
   - Computer Vision
   - Real-Time Processing
   - Image Processing
+  - MATLAB
 # Add your image or GIF here:
 # header:
 #   teaser: "projects/bubble-recognition.gif"
@@ -16,13 +17,13 @@ tags:
 
 ## Overview
 
-Course project at UC Berkeley developing a real-time computer vision system for bubble detection and recognition.
+Undergraduate Research Project at UC Berkeley developing a real-time computer vision system for bubble detection and recognition.
 
 ## Technical Details
 
 - Implemented image processing algorithms for bubble detection
-- Developed real-time processing pipeline for continuous video streams
-- Achieved robust recognition under varying lighting conditions
+- Developed real-time processing pipeline for continuous video streams using MATLAB
+- Achieved robust recognition at 15 FPS
 
 <!-- Add your media content below -->
 <!-- ![Bubble Recognition Demo](/images/projects/bubble-recognition.gif) -->

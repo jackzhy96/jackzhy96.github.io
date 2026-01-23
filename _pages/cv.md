@@ -10,8 +10,8 @@ redirect_from:
 {% include base_path %}
 
 <div class="cv-download">
-<a href="/media/JackHaoyingZhou_Resume_2026.pdf" class="btn btn--primary btn--large" download>Download Resume (PDF)</a>
-<a href="/media/JackHaoyingZhou_CV_2026.pdf" class="btn btn--secondary btn--large" download>Download CV (PDF)</a>
+<a href="/files/JackHaoyingZhou_Resume_2026.pdf" class="btn btn--primary btn--large" download>Download Resume (PDF)</a>
+<a href="/files/JackHaoyingZhou_CV_2026.pdf" class="btn btn--secondary btn--large" download>Download CV (PDF)</a>
 </div>
 
 ---

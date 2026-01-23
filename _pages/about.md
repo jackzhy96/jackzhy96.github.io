@@ -233,7 +233,7 @@ Feel free to check out and investigate my projects in [Research](/research/), [P
 ## Download Resume
 
 <div class="cv-download">
-  <a href="/media/JackHaoyingZhou_Resume_2026.pdf" class="btn btn--primary btn--large" download>
+  <a href="/files/JackHaoyingZhou_Resume_2026.pdf" class="btn btn--primary btn--large" download>
     <i class="fas fa-download"></i> Download My Resume (PDF)
   </a>
 </div>

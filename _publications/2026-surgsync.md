@@ -5,10 +5,9 @@ category: conferences
 permalink: /publication/2026-surgsync
 excerpt: "Time-synchronized multi-modal data collection framework for surgical robotics"
 date: 2026-01-01
-venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
-# paperurl: 'https://example.com/paper.pdf'
-under_review: True
-citation: 'Zhou, H.*, Liu, C.*, Wu, Y., ..., & Kazanzides, P. (2026, under review). "SurgSync: Time-Synchronized Multi-modal Data Collection Framework and Dataset for Surgical Robotics." In IEEE Intl. Conf. on Robotics and Automation (ICRA).'
+venue: "IEEE International Conference on Robotics and Automation (ICRA)"
+authors: "Zhou, H.*, Liu, C.*, Wu, Y., Wu, J., Wu, Z., Lee, Y. C., Martuscelli, S., Salcudean, S. E., Fischer, G. S., & Kazanzides, P."
+under_review: true
 ---
 
 **Status: Under Review**

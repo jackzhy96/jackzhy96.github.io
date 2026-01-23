@@ -21,8 +21,9 @@ Completed training course in laboratory animal surgery, gaining hands-on experie
 
 - Proper handling and care of laboratory animals
 - Sterile surgical techniques
-- Post-operative care procedures
 - Ethical considerations in animal research
+- Perform canonical surgical procedures on lab rats, such as suturing and incision.
+- Perform hysterectomy on a lab rat.
 
 <!-- Add your media content below -->
 <!-- ![Lab Surgery Training](/images/projects/lab-surgery.png) -->

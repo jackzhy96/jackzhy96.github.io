@@ -17,7 +17,7 @@ tags:
 # header:
 teaser: "research/baxter_demo_bu.gif"
 publications:
-  - title: "Imitation learning with dynamic movement primitives"
+  - title: "Imitation Learning with Dynamic Movement Primitives"
     authors: "Zhou, H."
     venue: "Boston University, Master's Thesis"
     year: 2020
@@ -33,7 +33,7 @@ Master's Thesis at Boston University developing automation algorithms for reachi
   <img src="/images/research/baxter_original.gif" alt="Before" style="width: 42%;">
   <img src="/images/research/baxter_demo_bu.gif" alt="After" style="width: 42%;">
 </div>
-  <figcaption>Left: Manual movements teleoperated by Joystick, 10x speed. Right: Automated movements via imitation learning. 6x speed</figcaption>
+  <figcaption>Left: Manual movements teleoperated using a joystick controller, 10x speed. Right: Automated movements via imitation learning. 6x speed</figcaption>
 </figure>
 
 ## Key Contributions
