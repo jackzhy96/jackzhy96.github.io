@@ -4,10 +4,10 @@
   Publication Item Include
 
   This include creates a clean publication list item with:
-  - Title (clickable if paper URL available)
+  - Title (always plain text, non-clickable)
   - Authors with highlighted author name
   - Venue and year
-  - Links for paper, code, dataset, etc.
+  - Links for paper, code, dataset, etc. (shown beneath)
 
   Usage in pages:
     {% for post in site.publications reversed %}
@@ -21,7 +21,7 @@
 
   Optional front matter:
   - website_url: Link to project website (or "coming_soon")
-  - paperurl: Link to paper/PDF (or "coming_soon")
+  - paper_url: Link to paper/PDF (or "coming_soon")
   - arxiv_url: Link to arXiv (or "coming_soon")
   - code_url: Link to code (or "coming_soon")
   - dataset_url: Link to dataset (or "coming_soon")
@@ -39,13 +39,8 @@
 
 <div class="publication-item">
   <div class="pub-title">
-    {% if post.paperurl %}
-      <a href="{{ post.paperurl }}" target="_blank">{{ title }}</a>
-    {% elsif post.arxiv_url %}
-      <a href="{{ post.arxiv_url }}" target="_blank">{{ title }}</a>
-    {% else %}
-      <span>{{ title }}</span>
-    {% endif %}
+    {% comment %} Title is always plain text (non-clickable). Paper links are shown in pub-links section below. {% endcomment %}
+    <span>{{ title }}</span>
   </div>
 
   {% if post.authors %}
@@ -70,11 +65,11 @@
       {% endif %}
     {% endif %}
 
-    {% if post.paperurl %}
-      {% if post.paperurl == "coming_soon" %}
+    {% if post.paper_url %}
+      {% if post.paper_url == "coming_soon" %}
         <span class="pub-link under-review">[Paper Coming Soon]</span>
       {% else %}
-        <a href="{{ post.paperurl }}" class="pub-link" target="_blank">[Paper]</a>
+        <a href="{{ post.paper_url }}" class="pub-link" target="_blank">[Paper]</a>
       {% endif %}
     {% endif %}
 
