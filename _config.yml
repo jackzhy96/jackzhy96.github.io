@@ -163,7 +163,7 @@ social:
 analytics:
   provider               :  "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          : ""  # Injected by GitHub Actions workflow
+    tracking_id          : ""  # Injected by GitHub Actions workflow, from secrets.GA_TRACKING_ID
 
 
 # Reading Files
