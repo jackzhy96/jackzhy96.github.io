@@ -158,12 +158,12 @@ social:
 
 # Analytics
 # Note: tracking_id is injected via GitHub Actions from repository secrets
-# To set up: Go to repo Settings > Secrets > Actions > New secret > GA_TRACKING_ID
-# If provider is "false", the workflow will skip tracking ID injection
+# To set up: Go to repo Settings > Environments > github-pages > Add secret > GA_TRACKING_ID
+# If provider is "false", analytics will be disabled entirely
 analytics:
-  provider               :  "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider: "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id          : ""  # Injected by GitHub Actions workflow, from secrets.GA_TRACKING_ID
+    tracking_id: "__GA_TRACKING_ID_PLACEHOLDER__"
 
 
 # Reading Files

@@ -34,37 +34,57 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # Inject the analytics tracking ID from secrets (only if secret is set and provider is not "false")
+      # Inject the analytics tracking ID from secrets
+      # Uses a placeholder pattern for reliable replacement
       - name: Inject Analytics Tracking ID
         env:
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
         run: |
+          PLACEHOLDER="__GA_TRACKING_ID_PLACEHOLDER__"
+
+          # Check if analytics provider is disabled
+          if grep -q 'provider: "false"' _config.yml || grep -q "provider: false" _config.yml; then
+            echo "Analytics provider is disabled, skipping injection"
+            # Remove placeholder to avoid it appearing in output
+            sed -i "s/$PLACEHOLDER//" _config.yml
+            exit 0
+          fi
+
           # Trim any whitespace from the tracking ID
           GA_TRACKING_ID=$(echo "$GA_TRACKING_ID" | tr -d '[:space:]')
 
-          # Skip if secret is not set or empty after trimming
+          # Validate tracking ID is set
           if [ -z "$GA_TRACKING_ID" ]; then
-            echo "GA_TRACKING_ID secret not set or empty, skipping injection"
-            exit 0
+            echo "::error::GA_TRACKING_ID secret is not set in github-pages environment!"
+            echo "Please add it at: Settings > Environments > github-pages > Add secret"
+            exit 1
           fi
 
-          # Skip if analytics provider is "false"
-          if grep -q 'provider.*:.*"false"' _config.yml; then
-            echo "Analytics provider is disabled, skipping tracking ID injection"
-            exit 0
+          # Validate tracking ID format (G-XXXXXXXXXX or UA-XXXXXXXX-X)
+          if [[ ! "$GA_TRACKING_ID" =~ ^(G-[A-Z0-9]+|UA-[0-9]+-[0-9]+)$ ]]; then
+            echo "::error::Invalid tracking ID format: $GA_TRACKING_ID"
+            echo "Expected format: G-XXXXXXXXXX (GA4) or UA-XXXXXXXX-X (Universal)"
+            exit 1
           fi
 
-          # Show tracking ID format (masked for security, just show pattern)
-          echo "Tracking ID format check: ${GA_TRACKING_ID:0:2}-XXXXXX (length: ${#GA_TRACKING_ID})"
+          # Check placeholder exists before replacement
+          if ! grep -q "$PLACEHOLDER" _config.yml; then
+            echo "::error::Placeholder '$PLACEHOLDER' not found in _config.yml"
+            echo "Please ensure tracking_id is set to '$PLACEHOLDER' in _config.yml"
+            exit 1
+          fi
 
-          # Inject the tracking ID (preserve indentation with \1 backreference)
-          sed -i "s/\([ ]*\)tracking_id.*:.*/\1tracking_id: \"$GA_TRACKING_ID\"/" _config.yml
+          # Replace placeholder with actual tracking ID
+          sed -i "s/$PLACEHOLDER/$GA_TRACKING_ID/g" _config.yml
 
-          # Verify the injection worked
-          echo "Verifying injection..."
-          grep "tracking_id" _config.yml | head -2
-
-          echo "Analytics tracking ID injected successfully"
+          # Verify the replacement worked
+          if grep -q "$GA_TRACKING_ID" _config.yml; then
+            echo "✓ Analytics tracking ID injected successfully"
+            echo "  Format: ${GA_TRACKING_ID:0:2}-XXXXXX (${#GA_TRACKING_ID} chars)"
+          else
+            echo "::error::Failed to inject tracking ID into _config.yml"
+            exit 1
+          fi
 
       - name: Build with Jekyll
         run: bundle exec jekyll build

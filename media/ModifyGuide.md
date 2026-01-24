@@ -1700,9 +1700,15 @@ The website supports Google Analytics 4 (GA4) for tracking visitor statistics. T
 
 ### How It Works
 
-1. The tracking ID is stored as a GitHub secret (not in the repository code)
-2. During deployment, GitHub Actions injects the tracking ID into the site
-3. The live site has analytics enabled, but the tracking ID is not visible in the repo
+1. A placeholder (`__GA_TRACKING_ID_PLACEHOLDER__`) exists in `_config.yml`
+2. The tracking ID is stored as a GitHub environment secret
+3. During deployment, GitHub Actions replaces the placeholder with the real tracking ID
+4. The workflow **fails the build** if:
+   - Analytics is enabled but the secret is missing
+   - The tracking ID format is invalid
+   - The placeholder replacement fails
+
+This ensures analytics works reliably on every deployment.
 
 ### Setup Google Analytics
 
@@ -1714,34 +1720,43 @@ The website supports Google Analytics 4 (GA4) for tracking visitor statistics. T
 
 **Step 2: Add the Secret to GitHub**
 
+⚠️ **Important:** The secret must be in the `github-pages` **environment**, not repository secrets.
+
 1. Go to your repository on GitHub
 2. Navigate to **Settings** → **Environments** → **github-pages**
 3. Under **Environment secrets**, click **Add secret**
 4. Name: `GA_TRACKING_ID`
 5. Value: Your GA4 Measurement ID (e.g., `G-XXXXXXXXXX`)
+   - **No extra spaces or newlines!**
+   - Format must be `G-XXXXXXXXXX` (GA4) or `UA-XXXXXXXX-X` (Universal)
 6. Click **Add secret**
 
-**Step 3: Configure _config.yml**
+**Step 3: Verify _config.yml**
 
-The analytics section in `_config.yml` should look like this:
+The analytics section in `_config.yml` must have the placeholder:
 
 ```yaml
 # Analytics
-# Note: tracking_id is injected via GitHub Actions from repository secrets
-# To set up: Go to repo Settings > Environments > github-pages > Secrets
-# If provider is "false", the workflow will skip tracking ID injection
 analytics:
   provider: "google-analytics-4"  # Use "false" to disable
   google:
-    tracking_id: ""  # Injected by GitHub Actions workflow
+    tracking_id: "__GA_TRACKING_ID_PLACEHOLDER__"
 ```
 
-**Step 4: Ensure GitHub Actions Workflow Exists**
+⚠️ **Do not change the placeholder value!** The workflow looks for this exact string.
 
-The deployment workflow (`.github/workflows/deploy.yml`) handles injecting the tracking ID. It:
-- Checks if the `GA_TRACKING_ID` secret is set
-- Checks if the provider is not `"false"`
-- Injects the tracking ID only if both conditions are met
+**Step 4: Deploy and Verify**
+
+1. Push a commit to trigger deployment
+2. Go to **Actions** tab → click on the latest "Deploy Jekyll Site" run
+3. Expand the **"Inject Analytics Tracking ID"** step
+4. You should see:
+   ```
+   ✓ Analytics tracking ID injected successfully
+     Format: G--XXXXXX (12 chars)
+   ```
+
+5. If the build fails, check the error message for what went wrong.
 
 ### Disable Analytics
 
@@ -1753,15 +1768,35 @@ To disable analytics entirely:
      provider: "false"
    ```
 
-2. The workflow will skip tracking ID injection automatically
+2. The workflow will automatically remove the placeholder and skip injection
+
+### Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| Build fails: "secret is not set" | Add `GA_TRACKING_ID` to Settings → Environments → github-pages → Secrets |
+| Build fails: "Invalid tracking ID format" | Check the secret value is exactly `G-XXXXXXXXXX` with no spaces |
+| Build fails: "Placeholder not found" | Ensure `_config.yml` has `tracking_id: "__GA_TRACKING_ID_PLACEHOLDER__"` |
+| Analytics not working on live site | Clear browser cache or check in incognito mode |
+
+### Checking Workflow Logs
+
+To debug analytics issues:
+
+1. Go to your repo on GitHub
+2. Click **Actions** tab
+3. Click on the latest "Deploy Jekyll Site" workflow run
+4. Expand **"Inject Analytics Tracking ID"** step
+5. Review the output messages
 
 ### For Forked Repositories
 
 If you fork this repository:
 
-1. Analytics will not work until you set up your own `GA_TRACKING_ID` secret
-2. The site will build and deploy normally without analytics
-3. Follow the setup steps above to enable analytics with your own tracking ID
+1. The build will **fail** until you either:
+   - Set up your own `GA_TRACKING_ID` secret, OR
+   - Disable analytics by setting `provider: "false"`
+2. This is intentional to ensure analytics is properly configured
 
 ### Privacy Notes
 
