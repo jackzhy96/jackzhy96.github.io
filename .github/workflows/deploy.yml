@@ -39,19 +39,32 @@ jobs:
         env:
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
         run: |
-          # Skip if secret is not set
+          # Trim any whitespace from the tracking ID
+          GA_TRACKING_ID=$(echo "$GA_TRACKING_ID" | tr -d '[:space:]')
+
+          # Skip if secret is not set or empty after trimming
           if [ -z "$GA_TRACKING_ID" ]; then
-            echo "GA_TRACKING_ID secret not set, skipping injection"
+            echo "GA_TRACKING_ID secret not set or empty, skipping injection"
             exit 0
           fi
+
           # Skip if analytics provider is "false"
           if grep -q 'provider.*:.*"false"' _config.yml; then
             echo "Analytics provider is disabled, skipping tracking ID injection"
             exit 0
           fi
+
+          # Show tracking ID format (masked for security, just show pattern)
+          echo "Tracking ID format check: ${GA_TRACKING_ID:0:2}-XXXXXX (length: ${#GA_TRACKING_ID})"
+
           # Inject the tracking ID (preserve indentation with \1 backreference)
           sed -i "s/\([ ]*\)tracking_id.*:.*/\1tracking_id: \"$GA_TRACKING_ID\"/" _config.yml
-          echo "Analytics tracking ID injected"
+
+          # Verify the injection worked
+          echo "Verifying injection..."
+          grep "tracking_id" _config.yml | head -2
+
+          echo "Analytics tracking ID injected successfully"
 
       - name: Build with Jekyll
         run: bundle exec jekyll build
