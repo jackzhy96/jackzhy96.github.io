@@ -1696,19 +1696,7 @@ touch _posts/2026-01-20-post-title.md
 
 ## Google Analytics
 
-The website supports Google Analytics 4 (GA4) for tracking visitor statistics. The tracking ID is kept private using GitHub Actions secrets.
-
-### How It Works
-
-1. A placeholder (`__GA_TRACKING_ID_PLACEHOLDER__`) exists in `_config.yml`
-2. The tracking ID is stored as a GitHub environment secret
-3. During deployment, GitHub Actions replaces the placeholder with the real tracking ID
-4. The workflow **fails the build** if:
-   - Analytics is enabled but the secret is missing
-   - The tracking ID format is invalid
-   - The placeholder replacement fails
-
-This ensures analytics works reliably on every deployment.
+The website supports Google Analytics 4 (GA4) for tracking visitor statistics.
 
 ### Setup Google Analytics
 
@@ -1718,89 +1706,40 @@ This ensures analytics works reliably on every deployment.
 2. Create a new GA4 property for your website
 3. Get your Measurement ID (format: `G-XXXXXXXXXX`)
 
-**Step 2: Add the Secret to GitHub**
+**Step 2: Add Tracking ID to _config.yml**
 
-⚠️ **Important:** The secret must be in the `github-pages` **environment**, not repository secrets.
-
-1. Go to your repository on GitHub
-2. Navigate to **Settings** → **Environments** → **github-pages**
-3. Under **Environment secrets**, click **Add secret**
-4. Name: `GA_TRACKING_ID`
-5. Value: Your GA4 Measurement ID (e.g., `G-XXXXXXXXXX`)
-   - **No extra spaces or newlines!**
-   - Format must be `G-XXXXXXXXXX` (GA4) or `UA-XXXXXXXX-X` (Universal)
-6. Click **Add secret**
-
-**Step 3: Verify _config.yml**
-
-The analytics section in `_config.yml` must have the placeholder:
+Edit the analytics section in `_config.yml`:
 
 ```yaml
-# Analytics
 analytics:
-  provider: "google-analytics-4"  # Use "false" to disable
+  provider: "google-analytics-4"
   google:
-    tracking_id: "__GA_TRACKING_ID_PLACEHOLDER__"
+    tracking_id: "G-XXXXXXXXXX"  # Replace with your actual tracking ID
 ```
 
-⚠️ **Do not change the placeholder value!** The workflow looks for this exact string.
+**Step 3: Commit and Push**
 
-**Step 4: Deploy and Verify**
-
-1. Push a commit to trigger deployment
-2. Go to **Actions** tab → click on the latest "Deploy Jekyll Site" run
-3. Expand the **"Inject Analytics Tracking ID"** step
-4. You should see:
-   ```
-   ✓ Analytics tracking ID injected successfully
-     Format: G--XXXXXX (12 chars)
-   ```
-
-5. If the build fails, check the error message for what went wrong.
+```bash
+git add _config.yml
+git commit -m "Add Google Analytics tracking ID"
+git push
+```
 
 ### Disable Analytics
 
-To disable analytics entirely:
+To disable analytics entirely, set `provider` to `"false"`:
 
-1. Set `provider: "false"` in `_config.yml`:
-   ```yaml
-   analytics:
-     provider: "false"
-   ```
-
-2. The workflow will automatically remove the placeholder and skip injection
-
-### Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| Build fails: "secret is not set" | Add `GA_TRACKING_ID` to Settings → Environments → github-pages → Secrets |
-| Build fails: "Invalid tracking ID format" | Check the secret value is exactly `G-XXXXXXXXXX` with no spaces |
-| Build fails: "Placeholder not found" | Ensure `_config.yml` has `tracking_id: "__GA_TRACKING_ID_PLACEHOLDER__"` |
-| Analytics not working on live site | Clear browser cache or check in incognito mode |
-
-### Checking Workflow Logs
-
-To debug analytics issues:
-
-1. Go to your repo on GitHub
-2. Click **Actions** tab
-3. Click on the latest "Deploy Jekyll Site" workflow run
-4. Expand **"Inject Analytics Tracking ID"** step
-5. Review the output messages
-
-### For Forked Repositories
-
-If you fork this repository:
-
-1. The build will **fail** until you either:
-   - Set up your own `GA_TRACKING_ID` secret, OR
-   - Disable analytics by setting `provider: "false"`
-2. This is intentional to ensure analytics is properly configured
+```yaml
+analytics:
+  provider: "false"
+  google:
+    tracking_id: ""
+```
 
 ### Privacy Notes
 
 - The tracking ID only allows *sending* data to your analytics, not *reading* it
+- The tracking ID is visible in your page source (this is normal for all websites)
 - Visitors on networks that block Google Analytics will still see your site normally
 - Some users with ad blockers won't be tracked (estimated 20-30% of tech users)
 - For EU visitors, consider adding a cookie consent banner for GDPR compliance

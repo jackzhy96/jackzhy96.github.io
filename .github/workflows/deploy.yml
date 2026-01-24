@@ -1,4 +1,6 @@
-# GitHub Actions workflow for building and deploying Jekyll site with private analytics
+# GitHub Actions workflow for building and deploying Jekyll site
+# Note: This workflow is only used if Pages Source is set to "GitHub Actions"
+# If using "Deploy from a branch", this workflow is ignored
 name: Deploy Jekyll Site
 
 on:
@@ -20,7 +22,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: github-pages  # Required to access environment secrets
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,83 +34,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
-      # Inject the analytics tracking ID from secrets
-      # Uses a placeholder pattern for reliable replacement
-      - name: Inject Analytics Tracking ID
-        env:
-          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
-        run: |
-          PLACEHOLDER="__GA_TRACKING_ID_PLACEHOLDER__"
-
-          # Check if analytics provider is disabled
-          if grep -q 'provider: "false"' _config.yml || grep -q "provider: false" _config.yml; then
-            echo "Analytics provider is disabled, skipping injection"
-            # Remove placeholder to avoid it appearing in output
-            sed -i "s/$PLACEHOLDER//" _config.yml
-            exit 0
-          fi
-
-          # Trim any whitespace from the tracking ID
-          GA_TRACKING_ID=$(echo "$GA_TRACKING_ID" | tr -d '[:space:]')
-
-          # Validate tracking ID is set
-          if [ -z "$GA_TRACKING_ID" ]; then
-            echo "::error::GA_TRACKING_ID secret is not set in github-pages environment!"
-            echo "Please add it at: Settings > Environments > github-pages > Add secret"
-            exit 1
-          fi
-
-          # Validate tracking ID format (G-XXXXXXXXXX or UA-XXXXXXXX-X)
-          if [[ ! "$GA_TRACKING_ID" =~ ^(G-[A-Z0-9]+|UA-[0-9]+-[0-9]+)$ ]]; then
-            echo "::error::Invalid tracking ID format: $GA_TRACKING_ID"
-            echo "Expected format: G-XXXXXXXXXX (GA4) or UA-XXXXXXXX-X (Universal)"
-            exit 1
-          fi
-
-          # Check placeholder exists before replacement
-          if ! grep -q "$PLACEHOLDER" _config.yml; then
-            echo "::error::Placeholder '$PLACEHOLDER' not found in _config.yml"
-            echo "Please ensure tracking_id is set to '$PLACEHOLDER' in _config.yml"
-            exit 1
-          fi
-
-          # Replace placeholder with actual tracking ID
-          sed -i "s/$PLACEHOLDER/$GA_TRACKING_ID/g" _config.yml
-
-          # Verify the replacement worked
-          if grep -q "$GA_TRACKING_ID" _config.yml; then
-            echo "✓ Analytics tracking ID injected successfully"
-            echo "  Format: ${GA_TRACKING_ID:0:2}-XXXXXX (${#GA_TRACKING_ID} chars)"
-            # Show masked version of the actual line
-            echo "  Config line: $(grep 'tracking_id' _config.yml | head -1 | sed "s/$GA_TRACKING_ID/[REDACTED]/g")"
-          else
-            echo "::error::Failed to inject tracking ID into _config.yml"
-            exit 1
-          fi
-
-      # Debug: Verify analytics config before Jekyll build
-      - name: Verify Analytics Config
-        env:
-          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
-        run: |
-          echo "Checking analytics section in _config.yml..."
-          # Check that placeholder is NOT present (should be replaced)
-          if grep -q "__GA_TRACKING_ID_PLACEHOLDER__" _config.yml; then
-            echo "::error::Placeholder still present - replacement failed!"
-            exit 1
-          fi
-          # Check that tracking_id line exists and is not empty
-          TRACKING_LINE=$(grep "tracking_id:" _config.yml | head -1)
-          if echo "$TRACKING_LINE" | grep -q '""'; then
-            echo "::error::tracking_id is empty!"
-            exit 1
-          fi
-          if echo "$TRACKING_LINE" | grep -q "tracking_id:.*[A-Z0-9]"; then
-            echo "✓ tracking_id contains a value"
-          else
-            echo "::warning::tracking_id format may be incorrect"
-          fi
 
       - name: Build with Jekyll
         run: bundle exec jekyll build

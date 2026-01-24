@@ -157,13 +157,11 @@ social:
 
 
 # Analytics
-# Note: tracking_id is injected via GitHub Actions from repository secrets
-# To set up: Go to repo Settings > Environments > github-pages > Add secret > GA_TRACKING_ID
-# If provider is "false", analytics will be disabled entirely
+# Set provider to "false" to disable analytics entirely
 analytics:
   provider: "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
-    tracking_id: "__GA_TRACKING_ID_PLACEHOLDER__"
+    tracking_id: "G-H3YZEXGZGK"  # Replace with your actual GA4 tracking ID    VERY IMPORTANT!!!!!
 
 
 # Reading Files
