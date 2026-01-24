@@ -49,7 +49,7 @@ This research represents Multi-Modal Time-Synchronized Data Collection and Post-
 - Build time-synchronized (multi-modality sync time latency within 10ms) multi-modal data collection pipeline (vision + kinematics + sensor) and large (100+ instances) ex-vivo dataset
 - Enable a novel kinematic projection approach and downstream optical flow/depth estimation using deep learning
 - Design and implement a custom capacitive contact sensor to acquire the ground truth of tool-tissue contact
-- Integrate a modern endoscope with the dVRK seamlessly, enabling high-quality image data acquisition
+- Integrate a modern chip-on-tip endoscope with the dVRK seamlessly, enabling high-quality image data acquisition
 - Design a novel data annotation application with graphic user interface (GUI) using PyQt for manual label annotations
 - The data collection pipeline has been employed for efforts on Open-H-Embodiment
 

@@ -1,6 +1,6 @@
 ---
-title: "Modern Endoscope Integration with the da Vinci Research Kit"
-excerpt: "Integrate a modern endoscope with the dVRK-Si for surgical robotics research."
+title: "Modern Chip-on-Tip Endoscope Integration with the da Vinci Research Kit"
+excerpt: "Integrate a modern chip-on-tip endoscope with the dVRK-Si for surgical robotics research."
 collection: build
 order: 4
 year: 2025

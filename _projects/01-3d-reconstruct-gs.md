@@ -1,6 +1,6 @@
 ---
 title: "3D Reconstruction using Gaussian Splatting and Simulation Integration"
-excerpt: "A toy project using 3D Gaussian splatting (Free-SurGS) for 3D reconstruction from images; integrate the reconstructed into AMBF simulator as a static object and enable teleoperation."
+excerpt: "A toy project using 3D Gaussian splatting (Free-SurGS) for 3D reconstruction from images; integrate the reconstructed mesh into AMBF simulator as a static object and enable teleoperation."
 collection: projects
 order: 1
 year: 2025
