@@ -11,7 +11,7 @@ tags:
   - Computer Vision
   - Simulation Infrastructure
   
-code_url: "coming_soon"
+code_url: "https://github.com/jackzhy96/3d_reconstruct_using_freesurgs/tree/main"
 # Add your image or GIF here:
 # header:
 teaser: "projects/3d_reconstruct_demo.gif"
