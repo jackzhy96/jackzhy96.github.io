@@ -203,7 +203,7 @@ Both Resume and CV will be updated on a monthly or bi-monthly basis. Last update
     <span class="skill-tag">Git</span>
     <span class="skill-tag">Image pipeline (v4l2, udev)</span>
     <span class="skill-tag">PyQt</span>
-    <span class="skill-tag">CMake/catkin/colconn</span>
+    <span class="skill-tag">CMake/catkin/colcon</span>
     <span class="skill-tag">Docker</span>
   </div>
 </div>

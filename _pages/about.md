@@ -187,7 +187,7 @@ Feel free to check out and investigate my projects in [Research](/research/), [P
     <span class="skill-tag">Git</span>
     <span class="skill-tag">Image pipeline (v4l2, udev)</span>
     <span class="skill-tag">PyQt</span>
-    <span class="skill-tag">CMake/catkin/colconn</span>
+    <span class="skill-tag">CMake/catkin/colcon</span>
     <span class="skill-tag">Docker</span>
   </div>
 </div>
