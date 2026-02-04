@@ -32,7 +32,6 @@ publications:
     website_url: "coming_soon"
     code_url: "coming_soon"
     dataset_url: "coming_soon"
-    under_review: true
 ---
 
 ## Overview

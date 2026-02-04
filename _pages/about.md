@@ -95,8 +95,12 @@ Feel free to check out and investigate my projects in [Research](/research/), [P
 
 <ul class="news-list">
   <li class="news-item">
+    <span class="news-date">2026 Feb</span>
+    Our SurgSync paper has been accepted to ICRA 2026!. Stay tuned for arXiv, source code and dataset!
+  </li>
+  <li class="news-item">
     <span class="news-date">2025 Oct:</span>
-    Dataset owner in the <a href="https://github.com/open-h-embodiment/data-collection">NVIDIA Open-H-Embodiment</a> effort, building and delivering a multi-modal time-synchronized dataset (1000+ ex-vivo trajectories). Stay tuned!
+    Dataset owner in the <a href="https://github.com/open-h-embodiment/data-collection">NVIDIA Open-H-Embodiment</a> effort, building and delivering a multi-modal time-synchronized dataset (2500+ ex-vivo trajectories). Stay tuned!
   </li>
   <li class="news-item">
     <span class="news-date">2025 Jun:</span>

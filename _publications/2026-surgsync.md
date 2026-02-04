@@ -7,14 +7,13 @@ excerpt: "Time-synchronized multi-modal data collection framework for surgical r
 date: 2026-01-01
 venue: "IEEE International Conference on Robotics and Automation (ICRA)"
 authors: "Zhou, H.*, Liu, C.*, Wu, Y., Wu, J., Wu, Z., Lee, Y. C., Martuscelli, S., Salcudean, S. E., Fischer, G. S., & Kazanzides, P."
-under_review: true
 arxiv_url: "coming_soon"
 website_url: "coming_soon"
 code_url: "coming_soon"
 dataset_url: "coming_soon"
 ---
 
-**Status: Under Review**
+**Status: Accepted for ICRA 2026**
 
 This paper presents SurgSync, a time-synchronized multi-modal data collection framework and dataset for surgical robotics research.
 
