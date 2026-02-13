@@ -21,7 +21,6 @@ publications:
     venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
     year: 2026
     submit_year: 2025
-    under_review: true
 ---
 
 ## Overview
