@@ -29,7 +29,7 @@ publications:
     year: 2026
     submit_year: 2025
     arxiv_url: "coming_soon"
-    website_url: "coming_soon"
+    website_url: "https://surgsync.github.io/"
     code_url: "coming_soon"
     dataset_url: "coming_soon"
 ---
