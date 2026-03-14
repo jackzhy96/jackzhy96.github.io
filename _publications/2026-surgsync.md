@@ -7,8 +7,8 @@ excerpt: "Time-synchronized multi-modal data collection framework for surgical r
 date: 2026-01-01
 venue: "IEEE International Conference on Robotics and Automation (ICRA)"
 authors: "Zhou, H.*, Liu, C.*, Wu, Y., Wu, J., Wu, Z., Lee, Y. C., Martuscelli, S., Salcudean, S. E., Fischer, G. S., & Kazanzides, P."
-arxiv_url: "coming_soon"
-website_url: "coming_soon"
+arxiv_url: "https://arxiv.org/abs/2603.06919"
+website_url: "https://surgsync.github.io/"
 code_url: "coming_soon"
 dataset_url: "coming_soon"
 ---

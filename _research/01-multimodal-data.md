@@ -28,7 +28,7 @@ publications:
     venue: "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
     year: 2026
     submit_year: 2025
-    arxiv_url: "coming_soon"
+    arxiv_url: "https://arxiv.org/abs/2603.06919"
     website_url: "https://surgsync.github.io/"
     code_url: "coming_soon"
     dataset_url: "coming_soon"

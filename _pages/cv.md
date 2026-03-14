@@ -16,7 +16,7 @@ redirect_from:
 
 ---
 
-Both Resume and CV will be updated on a monthly or bi-monthly basis. Last update: 2026.02.03. Stay tuned!
+Both Resume and CV will be updated on a monthly or bi-monthly basis. Last update: 2026.03.14. Stay tuned!
 
 ---
 
